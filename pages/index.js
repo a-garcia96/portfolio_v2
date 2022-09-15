@@ -11,13 +11,18 @@ export default function Home() {
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs and Tailwind" />
       </Head>
-
       <Nav />
-      
+      <header>
+        <div className='container'>
+          <h1>Alex Garica</h1>
+        </div>
+      </header>
 
-      
 
-      
+
+
+
+
     </div>
   )
 }
