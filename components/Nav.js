@@ -5,7 +5,7 @@ import Link from 'next/Link'
 export default function Nav() {
     return (
         <nav className='p-8'>
-            <div className='container grid grid-cols-2'>
+            <div className='container mx-auto grid grid-cols-2'>
 
                 <div className='col'>
                     <h1 className='uppercase'>Alex Garcia</h1>
