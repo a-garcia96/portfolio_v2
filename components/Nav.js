@@ -4,29 +4,40 @@ import Link from 'next/Link'
 
 export default function Nav() {
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link href='/'>
-                        <a>Home</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href='/about'>
-                        <a>About</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href='/contact'>
-                        <a>Contact</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href='/projects'>
-                        <a>Projects</a>
-                    </Link>
-                </li>
-            </ul>
+        <nav className='p-8'>
+            <div className='container grid grid-cols-2'>
+
+                <div className='col'>
+                    <h1 className='uppercase'>Alex Garcia</h1>
+                </div>
+
+                <div className='col'>
+                    <ul className='flex flex-row gap-x-6 justify-end'>
+                        <li>
+                            <Link href='/'>
+                                <a className='uppercase text-blue-600'>Home</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/portfolio'>
+                                <a className='uppercase text-blue-600'>Portfolio</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/blog'>
+                                <a className='uppercase text-blue-600'>Blog</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/contact'>
+                                <a className='uppercase text-blue-600'>Contact</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
         </nav>
     )
 }
