@@ -8,7 +8,7 @@ export default function Nav() {
             <div className='container mx-auto grid grid-cols-2'>
 
                 <div className='col'>
-                    <h1 className='uppercase'>Alex Garcia</h1>
+                    <h1 className='uppercase'>LOGO</h1>
                 </div>
 
                 <div className='col'>
