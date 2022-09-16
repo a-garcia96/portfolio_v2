@@ -17,16 +17,23 @@ export default function Home() {
       </Head>
       <Nav />
       <header className='p-8'>
-        <div className='container mx-auto grid grid-cols-1 place-items-center'>
-          <div>
-          <Image
+        <div className='container mx-auto grid grid-cols-2'>
+          <div className='place-self-start mt-16 ml-20'>
+            <h1 className='text-4xl'>Alex Garcia</h1>
+            <p className='py-8 w-3/4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, rem obcaecati eligendi tenetur necessitatibus fuga ipsa dolorem sequi labore quas temporibus, magni sunt eaque at veniam, ullam assumenda saepe accusantium.</p>
+            <button>Portfolio</button>
+            <button>Resume</button>
+          </div>
+
+          <div className='place-self-center'>
+            <Image
+              className='rounded-full'
               src={profilePic}
-              width={300}
-              height={300}
+              width={350}
+              height={350}
               placeholder='blur'
             />
-            </div>
-            <h1 className='text-6xl p-8'>Alex Garcia</h1>
+          </div>
           {/* <div className='col'>
             <Image
               src={profilePic}
