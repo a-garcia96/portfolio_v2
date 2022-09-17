@@ -22,8 +22,8 @@ export default function Home() {
             <h1 className='text-3xl'>Hey, I'm Alex  👋</h1>
             <p className='my-4'>I'm a front-end developer. I like to blend technical topics with a love of art to create websites.</p>
             <div className='flex flex-row items-center space-x-6'>
-              <button className= 'w-2/4 rounded-md bg-slate-500 py-2 shadow-md hover:shadow transition-all'>Portfolio</button>
-              <button className='w-2/4 rounded-md bg-slate-500 py-2 shadow-md hover:shadow transition-all'>Resume</button>
+              <button className= 'w-2/4 rounded-md bg-slate-500 text-white py-2 shadow-md hover:shadow transition-all'>Portfolio</button>
+              <button className='w-2/4 rounded-md bg-slate-500 text-white py-2 shadow-md hover:shadow transition-all'>Resume</button>
             </div>
           </div>
 
