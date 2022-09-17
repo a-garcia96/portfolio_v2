@@ -5,12 +5,12 @@ import Link from 'next/Link'
 export default function Nav() {
     return (
         <nav className='p-8'>
-            <div className='md:container md:mx-auto flex flex-col'>
+            <div className='flex flex-col md:container md:mx-auto '>
                 <div className='w-full md:w-3/6'>
                     <h1 className='text-xl text-center fs'>LOGO</h1>
                 </div>
                 <div className='w-full md:w-3/6'>
-                    <ul className='flex flex-row text-center mt-8 space-x-4'>
+                    <ul className='flex flex-row justify-center mt-8 space-x-4'>
                         <li>
                             <Link href='/'>
                                 <a>Home</a>
