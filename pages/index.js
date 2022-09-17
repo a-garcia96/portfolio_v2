@@ -16,16 +16,18 @@ export default function Home() {
         <meta name="description" content="Built with NextJs and Tailwind" />
       </Head>
       <Nav />
-      <header className=' bg-zinc-100 h-screen'>
-        <div className='container mx-auto grid grid-cols-2'>
-          <div className='place-self-start mt-16 ml-20'>
-            <h1 className='text-4xl'>Hey, I'm Alex  👋</h1>
-            <p className='py-8 w-3/4'>I'm a front-end developer. I like to blend technical topics with a love of art to create websites.</p>
-            <button className='mr-2 uppercase'>Portfolio</button>
-            <button className='ml-2 uppercase'>Resume</button>
+      <header className=' bg-zinc-100'>
+        <div className='container mx-auto flex flex-col-reverse p-8'>
+          <div className='my-8'>
+            <h1 className='text-3xl'>Hey, I'm Alex  👋</h1>
+            <p className='my-4'>I'm a front-end developer. I like to blend technical topics with a love of art to create websites.</p>
+            <div className='flex flex-row items-center space-x-6'>
+              <button className= 'w-2/4 rounded-md bg-slate-500 py-2 shadow-md hover:shadow transition-all'>Portfolio</button>
+              <button className='w-2/4 rounded-md bg-slate-500 py-2 shadow-md hover:shadow transition-all'>Resume</button>
+            </div>
           </div>
 
-          <div className='place-self-center'>
+          <div>
             <Image
               className='rounded-full'
               src={profilePic}
