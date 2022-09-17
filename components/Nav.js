@@ -5,38 +5,34 @@ import Link from 'next/Link'
 export default function Nav() {
     return (
         <nav className='p-8'>
-            <div className='container mx-auto grid grid-cols-2'>
-
-                <div className='col'>
-                    <h1 className='uppercase'>LOGO</h1>
+            <div className='md:container md:mx-auto flex flex-col'>
+                <div className='w-full md:w-3/6'>
+                    <h1 className='text-xl text-center fs'>LOGO</h1>
                 </div>
-
-                <div className='col'>
-                    <ul className='flex flex-row gap-x-6 justify-end'>
+                <div className='w-full md:w-3/6'>
+                    <ul className='flex flex-col text-center mt-8 space-y-4'>
                         <li>
                             <Link href='/'>
-                                <a className='uppercase text-blue-600'>Home</a>
+                                <a>Home</a>
                             </Link>
                         </li>
                         <li>
                             <Link href='/portfolio'>
-                                <a className='uppercase text-blue-600'>Portfolio</a>
+                                <a>Portfolio</a>
                             </Link>
                         </li>
                         <li>
                             <Link href='/blog'>
-                                <a className='uppercase text-blue-600'>Blog</a>
+                                <a>Blog</a>
                             </Link>
                         </li>
                         <li>
                             <Link href='/contact'>
-                                <a className='uppercase text-blue-600'>Contact</a>
+                                <a>Contact</a>
                             </Link>
                         </li>
                     </ul>
                 </div>
-
-
             </div>
         </nav>
     )
