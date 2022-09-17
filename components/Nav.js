@@ -10,7 +10,7 @@ export default function Nav() {
                     <h1 className='text-xl text-center fs'>LOGO</h1>
                 </div>
                 <div className='w-full md:w-3/6'>
-                    <ul className='flex flex-col text-center mt-8 space-y-4'>
+                    <ul className='flex flex-row text-center mt-8 space-x-4'>
                         <li>
                             <Link href='/'>
                                 <a>Home</a>
