@@ -10,19 +10,19 @@ import profilePic from '../public/profilePic.jpg'
 
 export default function Home() {
   return (
-    <div>
+    <div className='h-full'>
       <Head>
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs and Tailwind" />
       </Head>
       <Nav />
-      <header className='p-8'>
+      <header className=' bg-zinc-100 h-screen'>
         <div className='container mx-auto grid grid-cols-2'>
           <div className='place-self-start mt-16 ml-20'>
-            <h1 className='text-4xl'>Alex Garcia</h1>
-            <p className='py-8 w-3/4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, rem obcaecati eligendi tenetur necessitatibus fuga ipsa dolorem sequi labore quas temporibus, magni sunt eaque at veniam, ullam assumenda saepe accusantium.</p>
-            <button>Portfolio</button>
-            <button>Resume</button>
+            <h1 className='text-4xl'>Hey, I'm Alex  👋</h1>
+            <p className='py-8 w-3/4'>I'm a front-end developer. I like to blend technical topics with a love of art to create websites.</p>
+            <button className='mr-2 uppercase'>Portfolio</button>
+            <button className='ml-2 uppercase'>Resume</button>
           </div>
 
           <div className='place-self-center'>
@@ -34,14 +34,6 @@ export default function Home() {
               placeholder='blur'
             />
           </div>
-          {/* <div className='col'>
-            <Image
-              src={profilePic}
-              width={500}
-              height={500}
-              placeholder='blur'
-            />
-          </div> */}
         </div>
       </header>
 
