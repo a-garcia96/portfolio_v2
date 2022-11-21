@@ -24,6 +24,20 @@ nav ul.mobile-nav {
     display: none;
 }
 
+header .container {
+    display: flex;
+}
+
+header .container div {
+    border: 1px solid red;
+    width: 50%;
+    padding: 10rem;
+}
+
+header .img-wrapper {
+    position: relative;
+}
+
 @media (max-width: 810px) {
 
     nav{border: 1px solid red; padding: 15rem;}
