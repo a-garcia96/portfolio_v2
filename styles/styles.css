@@ -29,7 +29,6 @@ header .container {
 }
 
 header .container div {
-    border: 1px solid red;
     width: 50%;
     padding: 10rem;
 }
