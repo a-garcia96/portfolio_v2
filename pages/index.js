@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 // components
 import Nav from "../components/Nav";
+import Button from "../components/Buttons"
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
@@ -29,8 +30,8 @@ export default function Home() {
               asperiores.
             </p>
             <div>
-              <button>Portfolio</button>
-              <button>Resume</button>
+              <Button text="Portfolio" type="primary"/>
+              <Button text="Resume" type="primary" />
             </div>
           </div>
           <div className="">
