@@ -5,7 +5,7 @@ import Image from "next/image";
 import Nav from "../components/Nav";
 
 // assets
-import profilePic from "../public/profilePic.jpg";
+import profilePic from "../public/profilePic2.jpg";
 
 export default function Home() {
   return (
@@ -18,28 +18,27 @@ export default function Home() {
       <Nav />
       <header>
         <div className="container">
-          <h1>Hey, I'm Alex 👋</h1>
-          <p>
-            I'm a front-end developer. I like to blend technical topics with a
-            love of art to create websites. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Nemo, iste neque nulla distinctio,
-            voluptates nisi, similique corrupti quibusdam natus velit mollitia?
-            Dolores in dolorem unde quasi obcaecati magni cumque asperiores.
-          </p>
-
-          {/* BUTTONS */}
           <div>
-            <button>Portfolio</button>
-            <button>Resume</button>
+            <h1>Hey, I'm Alex 👋</h1>
+            <p>
+              I'm a front-end developer. I like to blend technical topics with a
+              love of art to create websites. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Nemo, iste neque nulla distinctio,
+              voluptates nisi, similique corrupti quibusdam natus velit
+              mollitia? Dolores in dolorem unde quasi obcaecati magni cumque
+              asperiores.
+            </p>
+            <div>
+              <button>Portfolio</button>
+              <button>Resume</button>
+            </div>
           </div>
-
-          <div>
-            {/* <Image
+          <div className="">
+            <Image
               src={profilePic}
-              width={450}
-              height={450}
+              objectFit="contain"
               placeholder="blur"
-            /> */}
+            />
           </div>
         </div>
       </header>
