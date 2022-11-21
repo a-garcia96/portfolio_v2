@@ -13,6 +13,7 @@ export default function Home() {
       <Head>
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Nav />
       <header>
