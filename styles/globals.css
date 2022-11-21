@@ -29,6 +29,7 @@ h2 {
 }
 
 .btn-primary {
-  background-color: var(--primary-text-color);
+  background-color: var(--heading-text-color);
   padding: 10rem 20rem;
+  border-radius: 10rem;
 }
