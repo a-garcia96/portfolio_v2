@@ -31,7 +31,6 @@ export default function Home() {
                   src={profilePic}
                   objectFit="contain"
                   className="profile-pic"
-                  style={{ border: "10px solid white" }}
                 />
               </div>
             </section>
@@ -43,14 +42,103 @@ export default function Home() {
           <section className="main-content-about-section">
             <h1>About Me</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Architecto, obcaecati vero ipsa voluptatum aliquam quaerat quasi
-              non exercitationem, labore rerum numquam esse maiores ut nemo eum
-              beatae iusto ex vel.
+              I am a front-end developer based in San Diego, California. For the last 4
+              years I have worked as a systems engineer and administrator
+              managing IT infrastructure and assets for businesses in a multitude of industries. I have a
+              passion for art and technology that drives me as a developer to
+              build products that are both functional and visually appealing.
             </p>
+          </section>
+          <section className="main-content-skills-section">
+            <h1>Skills</h1>
+            <div className="skills-grid">
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="https://place-hold.it/200"
+                objectFit="contain"
+                width={200}
+                height={200}
+              />
+            </div>
           </section>
         </div>
       </main>
+      <footer>
+        <div className="container">
+          <h1>this be the footer</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+            dicta veniam quis ratione optio quo quasi suscipit, unde eligendi
+            tempore itaque amet eum, autem voluptatem consequuntur molestiae
+            obcaecati enim distinctio!
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
