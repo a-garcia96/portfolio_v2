@@ -53,15 +53,15 @@ export default function Home() {
         <div className="container">
           <section className="main-content-about-section">
             <div className="about-col-1">
-              <h2>
-                <div>A</div>
+              <h2 className="uppercase-text"> About Me
+                {/* <div>A</div>
                 <div>B</div>
                 <div>O</div>
                 <div>U</div>
                 <div>T</div>
-                <div> </div>
+                <br />
                 <div>M</div>
-                <div>E</div>
+                <div>E</div> */}
               </h2>
             </div>
             <div className="about-col-2">
