@@ -1,3 +1,7 @@
 .content-margin-bottom {
     margin-bottom: var(--content-margin);
 }
+
+.uppercase-text {
+    text-transform: uppercase;
+}
