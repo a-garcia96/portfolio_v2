@@ -3,6 +3,10 @@
   max-width: 75vw;
 }
 
+* {
+    border: 1px soild red;
+}
+
 nav {
     padding: 20rem;
     margin-bottom: var(--section-margin);
@@ -30,7 +34,6 @@ header .container {
 
 header h1 {
     font-size: 100rem;
-    text-shadow: var(--shadow-elevation-medium);
 }
 
 .header-grid {
@@ -63,6 +66,7 @@ header h1 {
 .main-content-about-section h1 {
     /* writing-mode: vertical-rl; */
 }
+
 
 @media (max-width: 1500px){
     header h1 {
