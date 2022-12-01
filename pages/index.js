@@ -7,6 +7,18 @@ import Button from "../components/Buttons";
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
+import reactIcon from "../public/react.svg";
+import htmlIcon from "../public/html5.svg";
+import cssIcon from "../public/css3.svg";
+import jsIcon from "../public/javascript.svg";
+import nodeIcon from "../public/nodejs.svg";
+import npmIcon from "../public/npm.svg";
+import sassIcon from "../public/sass.svg";
+import bootstrapIcon from "../public/bootstrap.svg";
+import firebaseIcon from "../public/firebase.svg";
+import contentfulIcon from "../public/contentful.svg";
+import wordpressIcon from "../public/wordpress.svg";
+import nextjsIcon from "../public/nextjs.svg";
 
 export default function Home() {
   return (
@@ -67,76 +79,76 @@ export default function Home() {
             <h1>Skills</h1>
             <div className="skills-grid">
               <Image
-                src="https://place-hold.it/200"
+                src={htmlIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={cssIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={jsIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={reactIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={nodeIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={npmIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={sassIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={bootstrapIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={firebaseIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={contentfulIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={wordpressIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
               <Image
-                src="https://place-hold.it/200"
+                src={nextjsIcon}
                 objectFit="contain"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
             </div>
           </section>
