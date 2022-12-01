@@ -27,14 +27,29 @@ export default function Home() {
             </section>
             <section className="header-col-2">
               <div className="header-image-wrapper">
-                <Image src={profilePic} objectFit="contain" className="profile-pic" style={{border: "10px solid white"}}/>
+                <Image
+                  src={profilePic}
+                  objectFit="contain"
+                  className="profile-pic"
+                  style={{ border: "10px solid white" }}
+                />
               </div>
             </section>
           </div>
         </div>
       </header>
-      <main>
-        <h1></h1>
+      <main className="main-content">
+        <div className="container">
+          <section className="main-content-about-section">
+            <h1>About Me</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Architecto, obcaecati vero ipsa voluptatum aliquam quaerat quasi
+              non exercitationem, labore rerum numquam esse maiores ut nemo eum
+              beatae iusto ex vel.
+            </p>
+          </section>
+        </div>
       </main>
     </div>
   );
