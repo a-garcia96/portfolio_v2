@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 // components
 import Nav from "../components/Nav";
-import Button from "../components/Buttons"
+import Button from "../components/Buttons";
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
@@ -19,30 +19,23 @@ export default function Home() {
       <Nav />
       <header>
         <div className="container">
-          <div>
-            <h1>Hey, I'm Alex 👋</h1>
-            <p>
-              I'm a front-end developer. I like to blend technical topics with a
-              love of art to create websites. Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Nemo, iste neque nulla distinctio,
-              voluptates nisi, similique corrupti quibusdam natus velit
-              mollitia? Dolores in dolorem unde quasi obcaecati magni cumque
-              asperiores.
-            </p>
-            <div>
-              <Button text="Portfolio" type="primary"/>
-              <Button text="Resume" type="primary" />
-            </div>
-          </div>
-          <div className="">
-            <Image
-              src={profilePic}
-              objectFit="contain"
-              placeholder="blur"
-            />
+          <div className="header-grid">
+            <section className="header-col-1">
+              <h1 className="content-margin-bottom">
+                Developer & Photographer
+              </h1>
+            </section>
+            <section className="header-col-2">
+              <div className="header-image-wrapper">
+                <Image src={profilePic} objectFit="contain" className="profile-pic" style={{border: "10px solid white"}}/>
+              </div>
+            </section>
           </div>
         </div>
       </header>
+      <main>
+        <h1></h1>
+      </main>
     </div>
   );
 }
