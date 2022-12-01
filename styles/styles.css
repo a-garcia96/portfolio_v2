@@ -63,9 +63,7 @@ header h1 {
 }
 
 /* BEGIN MAIN CONTENT STYLING */
-.main-content-about-section h1 {
-    /* writing-mode: vertical-rl; */
-}
+
 
 
 @media (max-width: 1500px){
