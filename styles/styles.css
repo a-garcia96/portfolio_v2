@@ -59,6 +59,11 @@ header h1 {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+/* BEGIN MAIN CONTENT STYLING */
+.main-content-about-section h1 {
+    /* writing-mode: vertical-rl; */
+}
+
 @media (max-width: 1500px){
     header h1 {
         font-size: 60rem;
