@@ -6,7 +6,7 @@ export default function Nav() {
     <nav>
       <div className="container">
         <div>
-          <h1>Alex Garcia</h1>
+          <h1 className="uppercase-text">Alex Garcia</h1>
         </div>
         <div>
           <ul className="main-nav">
