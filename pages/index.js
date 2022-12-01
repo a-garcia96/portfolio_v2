@@ -22,7 +22,7 @@ export default function Home() {
           <div className="header-grid">
             <section className="header-col-1">
               <h1 className="content-margin-bottom">
-                Developer & Photographer
+                Developer & Photographer.
               </h1>
             </section>
             <section className="header-col-2">
@@ -40,14 +40,28 @@ export default function Home() {
       <main className="main-content">
         <div className="container">
           <section className="main-content-about-section">
-            <h1>About Me</h1>
-            <p>
-              I am a front-end developer based in San Diego, California. For the last 4
-              years I have worked as a systems engineer and administrator
-              managing IT infrastructure and assets for businesses in a multitude of industries. I have a
-              passion for art and technology that drives me as a developer to
-              build products that are both functional and visually appealing.
-            </p>
+            <div className="about-col-1">
+              <h2>
+                <div>A</div>
+                <div>B</div>
+                <div>O</div>
+                <div>U</div>
+                <div>T</div>
+                <div> </div>
+                <div>M</div>
+                <div>E</div>
+              </h2>
+            </div>
+            <div className="about-col-2">
+              <p>
+                I am a self-taught front-end developer based in San Diego, California. For
+                the last 4 years I have worked as a systems engineer and
+                administrator managing IT infrastructure and assets for
+                businesses in a multitude of industries. Recently I have transitioned into a developer role for one of San Diego's top financial broker dealers. I have a passion for
+                art and technology that drives me as a developer to build
+                products that are both functional and visually appealing.
+              </p>
+            </div>
           </section>
           <section className="main-content-skills-section">
             <h1>Skills</h1>

@@ -63,8 +63,23 @@ header h1 {
 }
 
 /* BEGIN MAIN CONTENT STYLING */
+.main-content-about-section {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    gap: 20rem;
+}
 
+.about-col-1 {
+    grid-column: col-start 1 / span 4;
+}
 
+.about-col-2 {
+    grid-column: col-start 6/ span 7;
+}
+
+.about-col-2 p {
+    font-size: 20rem;
+}
 
 @media (max-width: 1500px){
     header h1 {
