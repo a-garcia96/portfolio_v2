@@ -88,6 +88,17 @@ header h1 {
   font-size: 20rem;
 }
 
+.main-content-skills-section {
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: 20rem;
+    grid-row-gap: 60rem;
+}
+
 @media (max-width: 1500px) {
   header h1 {
     font-size: 60rem;

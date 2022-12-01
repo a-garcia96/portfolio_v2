@@ -53,30 +53,23 @@ export default function Home() {
         <div className="container">
           <section className="main-content-about-section">
             <div className="about-col-1">
-              <h2 className="uppercase-text"> About Me
-                {/* <div>A</div>
-                <div>B</div>
-                <div>O</div>
-                <div>U</div>
-                <div>T</div>
-                <br />
-                <div>M</div>
-                <div>E</div> */}
-              </h2>
+              <h2 className="uppercase-text"> About Me</h2>
             </div>
             <div className="about-col-2">
               <p>
-                I am a self-taught front-end developer based in San Diego, California. For
-                the last 4 years I have worked as a systems engineer and
-                administrator managing IT infrastructure and assets for
-                businesses in a multitude of industries. Recently I have transitioned into a developer role for one of San Diego's top financial broker dealers. I have a passion for
-                art and technology that drives me as a developer to build
-                products that are both functional and visually appealing.
+                I am a self-taught front-end developer based in San Diego,
+                California. For the last 4 years I have worked as a systems
+                engineer and administrator managing IT infrastructure and assets
+                for businesses in a multitude of industries. Recently I have
+                transitioned into a developer role for one of San Diego's top
+                financial broker dealers. I have a passion for art and
+                technology that drives me as a developer to build products that
+                are both functional and visually appealing.
               </p>
             </div>
           </section>
           <section className="main-content-skills-section">
-            <h1>Skills</h1>
+            <h2 className="uppercase-text">Skills</h2>
             <div className="skills-grid">
               <Image
                 src={htmlIcon}
