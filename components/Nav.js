@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/Link";
 
 export default function Nav() {
+  const [isHidden, setIsHidden] = useState('hide')
+  const [isShown, setIsShown] = useState('show')
+
   return (
     <nav className="nav">
       <div className="container">
@@ -31,7 +34,7 @@ export default function Nav() {
               </Link>
             </li>
           </ul>
-          <ul className="nav__desktop nav__desktop--hide">
+          <ul className="nav__desktop">
             <li>
               <Link href="/">
                 <a>Home</a>
