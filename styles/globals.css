@@ -31,8 +31,7 @@ h2 {
   font-weight: 600;
 }
 
-.btn-primary {
-  background-color: var(--heading-text-color);
-  padding: 10rem 20rem;
-  border-radius: 10rem;
+.container {
+  max-width: 1200rem;
+  margin: 0 auto;
 }
