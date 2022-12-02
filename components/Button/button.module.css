@@ -1,0 +1,13 @@
+.btn {
+    background-color: var(--heading-text-color);
+    padding: 10rem 20rem;
+    border-radius: 10rem;
+}
+
+.btn--primary {
+
+}
+
+.btn--secondary {
+    
+}
