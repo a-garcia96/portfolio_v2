@@ -1,7 +1,13 @@
 :root {
-  --main-bg-color: #474747;
-  --primary-text-color: #ffffff;
-  --heading-text-color: #c14747;
+  --color-primary-dark: #c14747;
+  --color-secondary-dark: #D6D4A0;
+  --color-primary-light: #55828B;
+  --color-secondary-light: #F3DE8A;
+  --color-dark: #252525;
+  --color-light: #EBEBEB;
+
+
+
   --section-margin: 50rem;
   --content-margin: 20rem;
 
