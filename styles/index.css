@@ -1,0 +1,37 @@
+.home-header {
+    margin-bottom: 32rem;
+}
+.home-header__col-1 h1 {
+    margin-bottom: 16rem;
+}
+
+.home-header__image-wrapper {
+    max-width: 75%;
+    margin: 0 auto;
+    border: 5rem solid white;
+    border-radius: 15rem;
+}
+
+.home-header__image-wrapper > img {
+    border-radius: 15rem;
+}
+
+.home-about {
+    margin-bottom: 32rem;
+}
+
+.home-about h2 {
+    margin-bottom: 16rem;
+}
+
+.home-skills h2 {
+    margin-bottom: 16rem;
+    text-align: center;
+}
+
+.home-skills__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30rem;
+    justify-content: center;
+}

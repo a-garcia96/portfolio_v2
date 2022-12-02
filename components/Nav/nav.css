@@ -1,3 +1,7 @@
+.nav {
+    margin-bottom: 40rem;
+}
+
 .nav__heading {
     display: flex;
     justify-content: space-between;

@@ -58,7 +58,6 @@ export default function Home() {
               <div className="home-about__col-1">
                 <h2> About Me</h2>
               </div>
-              ¬
               <div className="home-about__col-2">
                 <p>
                   I am a self-taught front-end developer based in San Diego,
