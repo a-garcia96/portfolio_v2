@@ -13,10 +13,12 @@ export default function Nav() {
     if(visibility == "false") {
       mobileNav.setAttribute('data-visible', true);
       navToggle.setAttribute('data-toggled', true);
+      document.body.style.overflowY = 'hidden'
       
     } else if (visibility == "true") {
       navToggle.setAttribute('data-toggled', false);
       mobileNav.setAttribute('data-visible', false);
+      document.body.style.overflowY = 'visible'
     }
 
     console.log(visibility);
@@ -26,10 +28,10 @@ export default function Nav() {
   return (
     <nav className="nav">
       <div className="container">
-        <div>
+        <div className="nav__heading">
           <h1 className="uppercase-text">Alex Garcia</h1>
+          <button onClick={handleClick} className="nav__toggle" data-toggles="false"></button>
         </div>
-        <button onClick={handleClick} className="nav__toggle" data-toggles="false"></button>
         <div data-visible="false" className="nav__mobile">
           <ul>
             <li>
