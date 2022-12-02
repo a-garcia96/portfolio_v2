@@ -1,10 +1,13 @@
 @import "./reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 @import "./variables.css";
-@import "../components/Nav/nav.css";
-@import "./styles.css";
 @import "./utilities.css";
 
+/* COMPONENT STYLES*/
+@import "../components/Nav/nav.css";
+
+/* PAGE STYLES */
+@import "./index.css";
 html {
   font-size: 6.25%;
 }
