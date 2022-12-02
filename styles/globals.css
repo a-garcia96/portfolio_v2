@@ -5,6 +5,7 @@
 
 /* COMPONENT STYLES*/
 @import "../components/Nav/nav.css";
+@import "../components/Footer/footer.css";
 
 /* PAGE STYLES */
 @import "./index.css";

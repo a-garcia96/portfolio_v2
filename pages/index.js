@@ -4,6 +4,7 @@ import Image from "next/image";
 // components
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
+import Footer from "../components/Footer/Footer";
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
@@ -187,21 +188,7 @@ export default function Home() {
           </section>
         </div>
       </main>
-      <footer>
-        <div className="container">
-          <div>
-            <h1>Alex Garcia</h1>
-          </div>
-          <div>
-            <ul>
-              <li>Portfolio</li>
-              <li>Blog</li>
-              <li>Resume</li>
-            </ul>
-          </div>
-          <div>© 2023 Alex Garcia</div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
