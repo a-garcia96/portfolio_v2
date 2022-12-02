@@ -13,7 +13,7 @@ html {
 body {
   background-color: var(--main-bg-color);
   color: var(--primary-text-color);
-  font-size: 18rem;
+  font-size: 14rem;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -34,5 +34,13 @@ h2 {
 
 .container {
   max-width: 1200rem;
-  margin: 0 auto;
+  padding: 0 15rem;
+}
+
+
+@media screen and (min-width: 450px) {
+  .container {
+    padding: 0;
+    margin: 0 auto;
+  }
 }
