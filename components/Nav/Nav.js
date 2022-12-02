@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Link from "next/Link";
 
+import styles from './nav.module.css'
+
 export default function Nav() {
-  const [isHidden, setIsHidden] = useState('hide')
-  const [isShown, setIsShown] = useState('show')
 
   return (
     <nav className="nav">
