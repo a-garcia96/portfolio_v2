@@ -15,14 +15,14 @@ html {
 
 
 body {
-  background-color: var(--main-bg-color);
-  color: var(--primary-text-color);
-  font-size: 14rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-size: 16rem;
   font-family: 'Poppins', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-text-color);
+  color: var(--color-primary-dark);
   text-shadow: var(--shadow-elevation-medium);
 }
 
