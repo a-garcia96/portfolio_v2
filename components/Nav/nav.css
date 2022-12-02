@@ -1,0 +1,62 @@
+
+
+.nav__toggle {
+    position: fixed;
+    z-index: 9999;
+    background: url(../../public/menu-icon.svg);
+    width: 40rem;
+    aspect-ratio: 1;
+    top: 10rem;
+    right: 10rem;
+    background-repeat: no-repeat;
+    transition: all 350ms ease-out;
+}
+
+.nav__toggle[data-toggled="true"] {
+    background-image: url(../../public/close-menu-icon.svg);
+}
+
+.nav__mobile {
+    position: fixed;
+    inset: 0 0 0 min(20%, 100%);
+    background-color: hsl(0 0% 0% / 0.3);
+    backdrop-filter: blur(8rem);
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+}
+
+.nav__mobile[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.nav__mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30rem;
+    padding: min(30vh, 100rem) 20rem
+}
+
+.nav__mobile ul li > a {
+    font-weight: 300;
+}
+
+.nav__desktop {
+    display: none;
+}
+
+
+@media screen and (min-width: 450px) {
+    .nav__toggle {
+        display: none;
+    }
+    
+    .nav__desktop {
+        display: initial;
+    }
+
+    .nav__mobile {
+        display: none;
+    }
+}
+
