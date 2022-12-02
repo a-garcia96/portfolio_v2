@@ -2,8 +2,8 @@
 import Head from "next/head";
 import Image from "next/image";
 // components
-import Nav from "../components/Nav";
-import Button from "../components/Buttons";
+import Nav from "../components/Nav/Nav";
+import Button from "../components/Button/Button";
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
