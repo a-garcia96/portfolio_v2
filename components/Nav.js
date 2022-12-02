@@ -3,13 +3,13 @@ import Link from "next/Link";
 
 export default function Nav() {
   return (
-    <nav>
+    <nav className="nav">
       <div className="container">
         <div>
           <h1 className="uppercase-text">Alex Garcia</h1>
         </div>
         <div>
-          <ul className="main-nav">
+          <ul className="nav__mobile">
             <li>
               <Link href="/">
                 <a>Home</a>
@@ -31,7 +31,7 @@ export default function Nav() {
               </Link>
             </li>
           </ul>
-          <ul className="mobile-nav">
+          <ul className="nav__desktop nav__desktop--hide">
             <li>
               <Link href="/">
                 <a>Home</a>
