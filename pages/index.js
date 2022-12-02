@@ -22,11 +22,11 @@ import nextjsIcon from "../public/nextjs.svg";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
       </Head>
       <Nav />
       <header>
@@ -61,7 +61,7 @@ export default function Home() {
                 California. For the last 4 years I have worked as a systems
                 engineer and administrator managing IT infrastructure and assets
                 for businesses in a multitude of industries. Recently I have
-                transitioned into a developer role for one of San Diego's top
+                transitioned into a developer role for one of San Diego&aposs top
                 financial broker dealers. I have a passion for art and
                 technology that drives me as a developer to build products that
                 are both functional and visually appealing.
@@ -69,75 +69,87 @@ export default function Home() {
             </div>
           </section>
           <section className="main-content-skills-section">
-            <h2 className="uppercase-text">Skills</h2>
+            <h2 className="uppercase-text content-margin-bottom">Skills</h2>
             <div className="skills-grid">
               <Image
+                alt="icon"
                 src={htmlIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={cssIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={jsIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={reactIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={nodeIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={npmIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={sassIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={bootstrapIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={firebaseIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={contentfulIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={wordpressIcon}
                 objectFit="contain"
                 width={100}
                 height={100}
               />
               <Image
+                alt="icon"
                 src={nextjsIcon}
                 objectFit="contain"
                 width={100}
@@ -149,15 +161,19 @@ export default function Home() {
       </main>
       <footer>
         <div className="container">
-          <h1>this be the footer</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            dicta veniam quis ratione optio quo quasi suscipit, unde eligendi
-            tempore itaque amet eum, autem voluptatem consequuntur molestiae
-            obcaecati enim distinctio!
-          </p>
+          <div>
+            <h1>Alex Garcia</h1>
+          </div>
+          <div>
+            <ul>
+              <li>Portfolio</li>
+              <li>Blog</li>
+              <li>Resume</li>
+            </ul>
+          </div>
+          <div>© 2023 Alex Garcia</div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
