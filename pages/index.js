@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 // NEXTJS COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
@@ -22,6 +24,21 @@ import wordpressIcon from "../public/wordpress.svg";
 import nextjsIcon from "../public/nextjs.svg";
 
 export default function Home() {
+  const [dimension, setDimension] = useState(100);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 450) {
+        setDimension(80);
+      } else if(window.innerWidth > 450) {
+        setDimension(100);
+      }
+
+    }
+
+    window.addEventListener('resize', handleResize)
+  }, []);
+
   return (
     <>
       <Head>
@@ -80,9 +97,8 @@ export default function Home() {
                 <Image
                   alt="icon"
                   src={htmlIcon}
-                  objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -90,8 +106,8 @@ export default function Home() {
                   alt="icon"
                   src={cssIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -99,8 +115,8 @@ export default function Home() {
                   alt="icon"
                   src={jsIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -108,8 +124,8 @@ export default function Home() {
                   alt="icon"
                   src={reactIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -117,8 +133,8 @@ export default function Home() {
                   alt="icon"
                   src={nodeIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -126,8 +142,8 @@ export default function Home() {
                   alt="icon"
                   src={npmIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -135,8 +151,8 @@ export default function Home() {
                   alt="icon"
                   src={sassIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -144,8 +160,8 @@ export default function Home() {
                   alt="icon"
                   src={bootstrapIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -153,8 +169,8 @@ export default function Home() {
                   alt="icon"
                   src={firebaseIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -162,8 +178,8 @@ export default function Home() {
                   alt="icon"
                   src={contentfulIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -171,8 +187,8 @@ export default function Home() {
                   alt="icon"
                   src={wordpressIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
               <div className="home-skills__col">
@@ -180,8 +196,8 @@ export default function Home() {
                   alt="icon"
                   src={nextjsIcon}
                   objectFit="contain"
-                  width={100}
-                  height={100}
+                  width={dimension}
+                  height={dimension}
                 />
               </div>
             </div>
