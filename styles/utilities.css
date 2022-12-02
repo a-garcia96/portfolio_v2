@@ -6,6 +6,6 @@
     text-transform: uppercase;
 }
 
-.sr-only {
-    
+.set-bold {
+    font-weight: 700;
 }

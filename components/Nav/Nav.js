@@ -36,22 +36,22 @@ export default function Nav() {
           <ul>
             <li>
               <Link href="/">
-                <a><span>00</span> Home</a>
+                <a><span className="set-bold">00</span> Home</a>
               </Link>
             </li>
             <li>
               <Link href="/portfolio">
-                <a><span>01</span> Portfolio</a>
+                <a><span className="set-bold">01</span> Portfolio</a>
               </Link>
             </li>
             <li>
               <Link href="/blog">
-                <a><span>02</span> Blog</a>
+                <a><span className="set-bold">02</span> Blog</a>
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                <a><span>03</span> Contact</a>
+                <a><span className="set-bold">03</span> Contact</a>
               </Link>
             </li>
           </ul>
