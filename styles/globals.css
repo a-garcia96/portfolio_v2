@@ -10,14 +10,14 @@
 /* PAGE STYLES */
 @import "./index.css";
 html {
-  font-size: 6.25%;
+  font-size: 62.5%;
 }
 
 
 body {
   background-color: var(--color-dark);
   color: var(--color-light);
-  font-size: 16rem;
+  font-size: 1.6rem;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -27,24 +27,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 35rem;
+  font-size: 3.5rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 30rem;
+  font-size: 3rem;
   font-weight: 600;
 }
 
 .container {
-  max-width: 1200rem;
-  padding: 0 24rem;
+  max-width: 120rem;
+  padding: 0 2.4rem;
 }
 
 
 @media screen and (min-width: 450px) {
   .container {
-    padding: 0;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0 5rem;
   }
 }

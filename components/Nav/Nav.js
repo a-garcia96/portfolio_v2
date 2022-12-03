@@ -28,7 +28,7 @@ export default function Nav() {
   return (
     <nav className="nav">
       <div className="container">
-        <div className="nav__heading">
+        <div className="nav__mobile-heading">
           <h1 className="uppercase-text">Alex Garcia</h1>
           <button onClick={handleClick} className="nav__toggle" data-toggles="false"></button>
         </div>

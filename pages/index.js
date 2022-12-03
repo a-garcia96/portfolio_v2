@@ -48,10 +48,7 @@ export default function Home() {
       <Head>
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
       <header className="home-header">
@@ -59,12 +56,12 @@ export default function Home() {
           <div className="home-header__grid">
             <section className="home-header__col-1">
               <h1>Developer & Photographer.</h1>
+              <h2></h2>
             </section>
             <section className="home-header__col-1">
               <div className="home-header__image-wrapper">
                 <Image
                   src={profilePic}
-                  objectFit="contain"
                   className="home-header__profile-pic"
                 />
               </div>
