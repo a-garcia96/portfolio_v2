@@ -84,7 +84,7 @@ export default function Home() {
                   engineer and administrator managing IT infrastructure and
                   assets for businesses in a multitude of industries. Recently I
                   have transitioned into a developer role for one of San
-                  Diego&aposs top financial broker dealers. I have a passion for
+                  Diego&#39;s top financial broker dealers. I have a passion for
                   art and technology that drives me as a developer to build
                   products that are both functional and visually appealing.
                 </p>

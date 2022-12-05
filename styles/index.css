@@ -41,3 +41,19 @@ main {
     gap: 4.5rem 1rem;
     justify-content: center;
 }
+
+@media screen and (min-width: 800px) {
+    .home-header__grid {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-header__grid h1 {
+        font-size: 4.5rem;
+    }
+
+    .home-about__col-2 {
+        column-count: 2;
+        text-align: left;
+    }
+}
