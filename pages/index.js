@@ -24,14 +24,14 @@ import wordpressIcon from "../public/wordpress.svg";
 import nextjsIcon from "../public/nextjs.svg";
 
 export default function Home() {
-  const [dimension, setDimension] = useState(100);
+  const [dimension, setDimension] = useState(80);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 450) {
-        setDimension(80);
+        setDimension(60);
       } else if(window.innerWidth > 450) {
-        setDimension(100);
+        setDimension(80);
       }
 
     }

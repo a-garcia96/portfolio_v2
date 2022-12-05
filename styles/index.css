@@ -56,4 +56,8 @@ main {
         column-count: 2;
         text-align: left;
     }
+
+    .home-skills__grid {
+        column-gap: 4rem;
+    }
 }
