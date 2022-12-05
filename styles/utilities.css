@@ -9,3 +9,7 @@
 .set-bold {
     font-weight: 700;
 }
+
+.highlight-text {
+    color: var(--color-secondary-dark);
+}

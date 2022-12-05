@@ -61,3 +61,9 @@ main {
         column-gap: 4rem;
     }
 }
+
+@media screen and (min-width: 1280px) {
+    .home-header__grid h1 {
+        font-size: 8rem;
+    }
+}

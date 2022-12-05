@@ -66,7 +66,7 @@ export default function Nav() {
         </div>
         <div className="nav__desktop">
           <div className="nav__desktop-heading">
-            <h1>Alex Garcia</h1>
+            <h1>Alex <span className="highlight-text">Garcia</span></h1>
           </div>
           <div className="nav__desktop-links">
             <ul>
