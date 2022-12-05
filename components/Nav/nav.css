@@ -55,21 +55,19 @@
 
 
 @media screen and (min-width: 500px) {
-    .nav__toggle {
-        display: none;
-    }
-    
-    .nav__desktop {
-        display: initial;
-    }
 
-    .nav__mobile {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 800px) {
     .nav__mobile-heading {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__mobile {
         display: none;
     }
 
@@ -79,9 +77,9 @@
         align-items: center;
     }
     
-    .nav__desktop > ul {
+    .nav__desktop-links > ul {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        column-gap: 5rem;
     }
 }
