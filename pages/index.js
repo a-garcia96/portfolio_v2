@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </section>
           <section className="home-skills">
-            <h2>Skills & Tools</h2>
+            <h2>My Tech-Stack</h2>
             <div className="home-skills__grid">
               <div className="home-skills__col">
                 <Image

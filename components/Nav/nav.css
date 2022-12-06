@@ -1,7 +1,3 @@
-.nav {
-    margin-bottom: 4rem;
-}
-
 .nav__mobile-heading {
     display: flex;
     justify-content: space-between;
@@ -41,8 +37,8 @@
 .nav__mobile ul {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding: min(30vh, 10rem) 2rem
+    gap: 2em;
+    padding: min(30vh, 10em) 2em
 }
 
 .nav__mobile ul li > a {
@@ -80,6 +76,6 @@
     .nav__desktop-links > ul {
         display: flex;
         flex-direction: row;
-        column-gap: 5rem;
+        column-gap: 2em;
     }
 }
