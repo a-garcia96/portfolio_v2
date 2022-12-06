@@ -16,9 +16,13 @@ main {
 }
 
 .home-header__image-wrapper > span {
-    border-radius: 1.5rem;
-    border: 1rem solid white !important;
+    border-radius: 1rem;
+    border: 0.8rem solid white !important;
     display: block !important;
+}
+
+.home-header__image-wrapper img {
+    border-radius: 1rem !important;
 }
 
 .home-about {
@@ -63,6 +67,10 @@ main {
 
 @media screen and (min-width: 1280px) {
     .home-header__grid h1 {
-        font-size: 8rem;
+        font-size: 9rem;
+    }
+
+    .home-header__image-wrapper {
+        max-width: 100%;
     }
 }
