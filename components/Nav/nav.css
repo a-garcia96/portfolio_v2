@@ -1,3 +1,7 @@
+.nav {
+    padding-top: 2em;
+}
+
 .nav__mobile-heading {
     display: flex;
     justify-content: space-between;

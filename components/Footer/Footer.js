@@ -5,8 +5,7 @@ const Footer = () => {
     <footer className='footer'>
         <div className='footer__wrapper container'>
           <div className='footer__heading'>
-            <h1>Alex Garcia</h1>
-            <h2>made with love</h2>
+            <h1><span className='highlight-text'>Alex</span> Garcia</h1>
             <p>alex.g9415@gmail.com</p>
           </div>
           <div className='footer__site-map'>
