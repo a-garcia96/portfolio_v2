@@ -55,7 +55,7 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <h1>Developer & <span className="highlight-text">Photographer</span>.</h1>
+              <h1>Developer & <span className="highlight-text">Photographer.</span></h1>
               <h2></h2>
             </section>
             <section className="home-header__col-1">
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </section>
           <section className="home-skills">
-            <h2 className="highlight-text">Skills & Tools</h2>
+            <h2>Skills & Tools</h2>
             <div className="home-skills__grid">
               <div className="home-skills__col">
                 <Image

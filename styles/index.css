@@ -13,13 +13,11 @@ main {
     max-width: 75%;
     margin: 0 auto;
     box-shadow: var(--shadow-elevation-medium)!important;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
 }
 
 .home-header__image-wrapper > span {
-    border-radius: 1rem;
-    border: 0.8rem solid white !important;
     display: block !important;
 }
 
@@ -37,14 +35,13 @@ main {
 
 .home-skills h2 {
     margin-bottom: 0.5em;
-    text-align: center;
 }
 
 .home-skills__grid {
     display: flex;
     flex-wrap: wrap;
     gap: 4.5em 1em;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 @media screen and (min-width: 800px) {

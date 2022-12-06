@@ -13,3 +13,11 @@
 .highlight-text {
     color: var(--color-secondary-dark);
 }
+
+.underline-text::after {
+    content: "";
+    display: block;
+    max-width: 100px;
+    height: 0.4rem;
+    background-color: var(--color-secondary-dark);
+}
