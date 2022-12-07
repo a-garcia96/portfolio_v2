@@ -56,9 +56,10 @@ export default function Home() {
           <div className="home-header__grid">
             <section className="home-header__col-1">
               <h1>Developer & <span className="highlight-text">Photographer.</span></h1>
-              <h2></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolor molestiae qui natus atque labore nam sapiente nobis repellat laborum, repellendus iusto animi sit adipisci autem eaque! Magnam, amet cupiditate.</p>
+              <Button>See my Resume</Button>
             </section>
-            <section className="home-header__col-1">
+            <section className="home-header__col-2">
               <div className="home-header__image-wrapper">
                 <Image
                   src={profilePic}

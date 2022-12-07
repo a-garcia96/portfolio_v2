@@ -11,7 +11,7 @@ main {
     max-width: 75%;
     margin: 0 auto;
     box-shadow: var(--shadow-elevation-medium)!important;
-    max-width: 700px;
+    max-width: 300px;
     width: 100%;
 }
 
@@ -63,6 +63,14 @@ main {
     .home-header__grid h1 {
         font-size: 4.5rem;
         margin-bottom: 0;
+    }
+
+    .home-header__col-1 {
+        width: 50%;
+    }
+
+    .home-header__col-2 {
+        width: 50%;
     }
 
     .home-about__col-2 {
