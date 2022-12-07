@@ -7,10 +7,6 @@ main {
     margin-bottom: 10em;
 }
 
-.home-header__col-1 h1 {
-    margin-bottom: 0.5em;
-}
-
 .home-header__image-wrapper {
     max-width: 75%;
     margin: 0 auto;
@@ -61,6 +57,7 @@ main {
     .home-header__grid {
         display: flex;
         align-items: center;
+        column-gap: 4em;
     }
 
     .home-header__grid h1 {
