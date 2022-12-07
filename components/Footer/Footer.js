@@ -16,7 +16,7 @@ const Footer = () => {
               <li>Resume</li>
             </ul>
           </div>
-          <div className='footer__copyright'>© 2023 Alex Garcia</div>
+          <div className='footer__copyright'>© 2023 | Alex Garcia</div>
         </div>
     </footer>
   )

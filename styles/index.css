@@ -57,7 +57,7 @@ main {
     }
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 800px) {
     .home-header__grid {
         display: flex;
         align-items: center;
@@ -78,7 +78,7 @@ main {
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
     .home-header__grid h1 {
         font-size: 9rem;
     }
