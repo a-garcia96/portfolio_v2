@@ -57,7 +57,7 @@ export default function Home() {
           <div className="home-header__grid">
             <section className="home-header__col-1">
               <h1><Typewriter cursor={true} typeSpeed={120} words={['developing','marketing','optimizing']} loop={0}/></h1>
-              <h2>for the web.</h2>
+              <h2 className="highlight-text">for the web.</h2>
               <Button>See my Resume</Button>
             </section>
             <section className="home-header__col-2">

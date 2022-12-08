@@ -102,6 +102,6 @@ main {
 
 @media (min-width: 1280px) {
     .home-header__grid h1 {
-        font-size: 9rem;
+        font-size: 6rem;
     }
 }
