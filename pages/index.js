@@ -7,6 +7,7 @@ import Image from "next/image";
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
+import {Typewriter} from 'react-simple-typewriter';
 
 // assets
 import profilePic from "../public/profilePic2.jpg";
@@ -55,8 +56,8 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <h1>Developer & <span className="highlight-text">Photographer.</span></h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolor molestiae qui natus atque labore nam sapiente nobis repellat laborum, repellendus iusto animi sit adipisci autem eaque! Magnam, amet cupiditate.</p>
+              <h1><Typewriter cursor={true} typeSpeed={120} words={['developing','marketing','optimizing']} loop={0}/></h1>
+              <h2>for the web.</h2>
               <Button>See my Resume</Button>
             </section>
             <section className="home-header__col-2">
@@ -76,7 +77,7 @@ export default function Home() {
           <section className="home-about">
             <div className="home-about__grid">
               <div className="home-about__col-1">
-                <h2> About Me</h2>
+                <h2>About Me</h2>
               </div>
               <div className="home-about__col-2">
                 <p>
