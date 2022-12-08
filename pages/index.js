@@ -56,8 +56,9 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <h1><Typewriter cursor={true} typeSpeed={120} words={['developing','marketing','optimizing']} loop={0}/></h1>
-              <h2 className="highlight-text">for the web.</h2>
+              <h1><Typewriter cursor={true} typeSpeed={120} words={['developing','marketing','optimizing']} loop={0}/> <br /><span className="highlight-text">for the web.</span></h1>
+              {/* <h2 className="highlight-text">for the web.</h2> */}
+              <p>Self-taught front-end developer based in San Diego, California with a background in IT cloud infrastructure engineering and administration.</p>
               <Button>See my Resume</Button>
             </section>
             <section className="home-header__col-2">
@@ -81,8 +82,7 @@ export default function Home() {
               </div>
               <div className="home-about__col-2">
                 <p>
-                  I am a self-taught front-end developer based in San Diego,
-                  California. For the last 4 years I have worked as a systems
+                  For the last 4 years I have worked as a systems
                   engineer and administrator managing IT infrastructure and
                   assets for businesses in a multitude of industries. Recently I
                   have transitioned into a developer role for one of San
