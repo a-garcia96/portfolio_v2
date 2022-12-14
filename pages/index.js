@@ -88,7 +88,7 @@ export default function Home() {
                   have transitioned into a developer role for one of San
                   Diego&#39;s top financial broker dealers. I have a passion for
                   art and technology that drives me as a developer to build
-                  products that are both functional and visually appealing.
+                  products that are equally functional as they are visually appealing.
                 </p>
               </div>
             </div>
