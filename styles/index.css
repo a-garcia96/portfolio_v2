@@ -97,6 +97,16 @@ main {
     .home-skills__grid {
         column-gap: 4em;
     }
+
+    .home-skills__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+    }
+
+    .home-skills__col {
+        justify-self: center;
+    }
 }
 
 @media (min-width: 1300px) {
