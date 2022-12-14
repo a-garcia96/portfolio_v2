@@ -39,7 +39,7 @@ h2 {
   font-weight: 600;
 }
 
-p {margin-bottom: 1em;}
+p {margin-bottom: 1em; line-height: 2.5em;}
 
 .container {
   width: 85%;
