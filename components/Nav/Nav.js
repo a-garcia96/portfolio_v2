@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/Link";
+import { useRouter } from "next/router";
 
 export default function Nav() {
+  
   const handleClick = () => {
     const mobileNav = document.querySelector(".nav__mobile");
     const navToggle = document.querySelector(".nav__toggle");
-
     const visibility = mobileNav.getAttribute("data-visible");
 
     if (visibility == "false") {
@@ -17,9 +18,12 @@ export default function Nav() {
       mobileNav.setAttribute("data-visible", false);
       document.body.style.overflowY = "visible";
     }
-
-    console.log(visibility);
   };
+
+
+  // get active link
+  const router = useRouter();
+
 
   return (
     <nav className="nav">
@@ -72,22 +76,22 @@ export default function Nav() {
             <ul>
               <li>
                 <Link href="/">
-                  <a>Home</a>
+                  <a style={{borderBottom: router.asPath === "/" ? '3px solid var(--color-primary-dark)': 'white'}}>Home</a>
                 </Link>
               </li>
               <li>
                 <Link href="/portfolio">
-                  <a>Portfolio</a>
+                  <a style={{borderBottom: router.asPath === "/portfolio" ? '3px solid var(--color-primary-dark)': 'white'}}>Portfolio</a>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <a>Blog</a>
+                  <a style={{borderBottom: router.asPath === "/blog" ? '3px solid var(--color-primary-dark)': 'white'}}>Blog</a>
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  <a>Contact</a>
+                  <a style={{borderBottom: router.asPath === "/contact" ? '3px solid var(--color-primary-dark)': 'white'}}>Contact</a>
                 </Link>
               </li>
             </ul>
