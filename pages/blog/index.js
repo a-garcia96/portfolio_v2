@@ -38,8 +38,6 @@ export async function getStaticProps(context) {
 const blog = ({ posts }) => {
   // console.log(JSON.stringify(entries.items[0].fields, null, 2))
 
-  
-
   return (
     <>
       <Nav />

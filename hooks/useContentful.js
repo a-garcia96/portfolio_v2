@@ -7,7 +7,7 @@ const useContentful = () => {
   });
 
   const getEntryById = async (entryId) => {
-    const entries = await client.getEntries({content_type: entryId})
+    const entries = await client.getEntries({content_type: entryId, order: "-sys.createdAt"});
 
     return entries
   };
