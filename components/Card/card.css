@@ -1,20 +1,41 @@
-.avatar {
+.card {
+    background: #040404;
+    padding: 1.5em;
+    border-radius: 5%;
+    box-shadow: var(--shadow-elevation-high);
+    max-width: 45rem;
+}
+
+.card > *:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+.blog__container > *:not(:last-child){
+    margin-bottom: 2em;
+}
+
+.blog__container > *:first-child {
+    margin-top: 2em;
+}
+
+.card__avatar {
     /* Rounded border */
     border-radius: 50%;
-
-    /* Center the content */
-    align-items: center;
-    display: flex;
-    justify-content: center;
 
     /* Size */
     width: 10rem;
 }
 
-.avatar__image {
+.card__avatar-image {
     /* Size */
     height: 50%;
     width: 50%;
 
     border-radius: 100%;
+}
+
+
+.card__link {
+    display: block;
+    text-align: right;
 }

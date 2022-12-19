@@ -43,13 +43,13 @@ const blog = ({ posts }) => {
   return (
     <>
       <Nav />
-      <header>
+      <header style={{margin: "2em 0"}}>
         <div className="container">
-          <h1>Read About my Progress!</h1>
+          <h1 style={{textAlign: "center"}}>Read About my Progress!</h1>
         </div>
       </header>
       <main>
-        <div className="container">
+        <div className="container blog__container">
           {posts.map((post) => {
             return (
               <Card key={post.slug} post={post} />
