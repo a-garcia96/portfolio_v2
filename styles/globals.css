@@ -7,6 +7,7 @@
 @import "../components/Nav/nav.css";
 @import "../components/Footer/footer.css";
 @import "../components/Button/button.css";
+@import "../components/Card/card.css";
 
 /* PAGE STYLES */
 @import "./index.css";
