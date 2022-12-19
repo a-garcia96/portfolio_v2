@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 // IMPORT COMPONENTS
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
+import Card from "../../components/Card/Card";
 
 
 // IMPORT HOOKS
@@ -51,11 +52,7 @@ const blog = ({ posts }) => {
         <div className="container">
           {posts.map((post) => {
             return (
-              <div key={post.slug}>
-                <h1>{post.title}</h1>
-                <h2>{post.author}</h2>
-                <p>{post.postContent.substring(0, 250) + '...'}</p>
-              </div>
+              <Card key={post.slug} post={post} />
             )
           })}
         </div>
