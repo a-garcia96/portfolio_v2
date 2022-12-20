@@ -3,7 +3,11 @@
     padding: 1.5em;
     border-radius: 5%;
     box-shadow: var(--shadow-elevation-high);
-    max-width: 45rem;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .card > *:not(:last-child) {
@@ -28,14 +32,27 @@
 
 .card__avatar-image {
     /* Size */
-    height: 50%;
     width: 50%;
 
     border-radius: 100%;
 }
 
-
 .card__link {
     display: block;
     text-align: right;
+}
+
+@media (min-width: 800px) {
+    .blog__container > *:not(:last-child){
+        margin-bottom: 0;
+    }
+    
+    .blog__container > *:first-child {
+        margin-top: 0;
+    }
+
+    .card__details {
+        margin-top: auto;
+    }
+
 }
