@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "next/Link";
+
 const Card = ({ post }) => {
   return (
     <article className="card">
@@ -17,9 +19,9 @@ const Card = ({ post }) => {
         <p className="card__post-preview">
           {post.postContent.substring(0, 100) + "..."}
         </p>
-        <a className="card__link" href="#">
+        <Link className="card__link" href={`/blog/${post.slug}`}>
           Read More &rarr;
-        </a>
+        </Link>
       </div>
     </article>
   );
