@@ -13,12 +13,14 @@ const Card = ({ post }) => {
         />
       </div>
       <h3 className="card__author">{post.author}</h3>
-      <p className="card__post-preview">
-        {post.postContent.substring(0, 100) + "..."}
-      </p>
-      <a className="card__link" href="#">
-        Read More &rarr;
-      </a>
+      <div className="card__details">
+        <p className="card__post-preview">
+          {post.postContent.substring(0, 100) + "..."}
+        </p>
+        <a className="card__link" href="#">
+          Read More &rarr;
+        </a>
+      </div>
     </article>
   );
 };
