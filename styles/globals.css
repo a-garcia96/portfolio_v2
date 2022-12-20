@@ -11,6 +11,8 @@
 
 /* PAGE STYLES */
 @import "./index.css";
+@import "./blog.css";
+
 html {
   font-size: 62.5%;
 }
