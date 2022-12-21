@@ -23,6 +23,7 @@ import firebaseIcon from "../public/firebase.svg";
 import contentfulIcon from "../public/contentful.svg";
 import wordpressIcon from "../public/wordpress.svg";
 import nextjsIcon from "../public/nextjs.svg";
+import Link from "next/Link";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
@@ -59,7 +60,7 @@ export default function Home() {
               <h1><Typewriter cursor={true} typeSpeed={120} words={['developing','marketing','optimizing']} loop={0}/> <br /><span className="highlight-text">for the web.</span></h1>
               {/* <h2 className="highlight-text">for the web.</h2> */}
               <p>Self-taught front-end developer based in San Diego, California with a background in IT cloud infrastructure engineering and administration.</p>
-              <Button>See my Resume</Button>
+              <Button><Link href="/resume">See My Resume</Link></Button>
             </section>
             <section className="home-header__col-2">
               <div className="home-header__image-wrapper">
