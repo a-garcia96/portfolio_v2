@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
   }
 }
 
-const blog = ({ posts }) => {
+const Blog = ({ posts }) => {
   // console.log(JSON.stringify(entries.items[0].fields, null, 2))
 
   return (
@@ -48,4 +48,4 @@ const blog = ({ posts }) => {
   );
 };
 
-export default blog;
+export default Blog;

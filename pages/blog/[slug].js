@@ -36,7 +36,7 @@ export const getStaticProps = async ({params}) => {
   };
 };
 
-const post = ({ post }) => {
+const Post = ({ post }) => {
 
   // console.log(post)
 
@@ -48,4 +48,4 @@ const post = ({ post }) => {
   );
 };
 
-export default post;
+export default Post;
