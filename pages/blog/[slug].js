@@ -1,6 +1,13 @@
 import React from "react";
 const contenful = require("contentful");
 
+import Head from "next/head";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+// COMPONENTS
+import Nav from "../../components/Nav/Nav";
+import Footer from "../../components/Footer/Footer";
+
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -59,16 +66,29 @@ export const getStaticProps = async ({ params }) => {
 
 const Post = ({ post }) => {
 
-  console.log(post)
-
   return (
-    <main>
-      <div className="container">
-        <h1>{post.title}</h1>
-        <h2>{post.author}</h2>
-      </div>
+    <>
+    <Head>
+        <title>{post.title}</title>
+        <meta name="description" content="Built with NextJs" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+    <Nav />
+      <header>
+        <div className="container">
+          <h1>{post.title}</h1>
+        </div>
+      </header>
+      <main>
+        <div className="container">
+          <p>
+            {documentToReactComponents(post.postContent)}
+          </p>
+        </div>
 
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
 
