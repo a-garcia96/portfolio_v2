@@ -1,16 +1,51 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React from "react";
+import { useRouter } from "next/router";
 
-const post = () => {
-  const router = useRouter()
-  const { slug } = router.query
+import { useContentful } from "../../hooks/useContentful";
 
+export const getStaticPaths = async () => {
+  const [getEntryByContentType] = useContentful();
 
+  const posts = await getEntryByContentType();
+
+  const paths = await posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+    };
+  });
+
+  // console.log(paths)
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({params}) => {
+  const slug = params.slug;
+
+  const [getPostBySlug] = useContentful();
+
+  const post = await getPostBySlug(slug);
+
+  return {
+    props: { post },
+  };
+};
+
+const post = ({ post }) => {
+
+  // console.log(post)
 
   return (
-    <p>Slug: {slug}</p>
+    <>
+      <h1>{post.title}</h1>
+      <h2>{post.author}</h2>
+    </>
+  );
+};
 
-  )
-}
-
-export default post
+export default post;

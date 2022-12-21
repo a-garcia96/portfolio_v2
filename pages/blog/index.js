@@ -11,21 +11,9 @@ import { useContentful } from "../../hooks/useContentful";
 
 export async function getStaticProps(context) {
 
-  const [ getEntryById ] = useContentful()
+  const [ getEntryByContentType ] = useContentful()
 
-  const entries =  await getEntryById('post');
-
-  const posts = entries.items.map((item) => {
-    return {
-      profilePhoto: item.fields.profilePhoto.fields.file.url,
-      title: item.fields.title,
-      author: item.fields.author.fields.displayName,
-      slug: item.fields.slug,
-      postDate: item.fields.postDate,
-      postContent: item.fields.postContent.content[0].content[0].value
-    }
-  })
-
+  const posts =  await getEntryByContentType()
   
 
   return {
