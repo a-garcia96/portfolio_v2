@@ -1,0 +1,19 @@
+.resume {
+    overflow: hidden;
+    aspect-ratio: 3/auto;
+}
+
+.react-pdf__Page__canvas { 
+    width: 80vw !important;
+    height: auto;
+}
+
+.react-pdf__Page__textContent {
+    width: 80vw !important;
+    height: auto;
+}
+
+.react-pdf__Page__annotations {
+    width: 80vw !important;
+    height: auto;
+}

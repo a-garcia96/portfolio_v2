@@ -12,6 +12,7 @@
 /* PAGE STYLES */
 @import "./index.css";
 @import "./blog.css";
+@import "./resume.css";
 
 html {
   font-size: 62.5%;
