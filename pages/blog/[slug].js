@@ -11,11 +11,13 @@ import Footer from "../../components/Footer/Footer";
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export const getStaticPaths = async () => {
-
-  const posts = await client.getEntries({ content_type: 'post', order: "-sys.createdAt" })
+  const posts = await client.getEntries({
+    content_type: "post",
+    order: "-sys.createdAt",
+  });
 
   const formattedPosts = posts.items.map((item) => {
     return {
@@ -24,9 +26,9 @@ export const getStaticPaths = async () => {
       author: item.fields.author.fields.displayName,
       slug: item.fields.slug,
       postDate: item.fields.postDate,
-      postContent: item.fields.postContent.content[0].content[0].value
-    }
-  })
+      postContent: item.fields.postContent.content[0].content[0].value,
+    };
+  });
 
   const paths = await formattedPosts.map((post) => {
     return {
@@ -35,7 +37,6 @@ export const getStaticPaths = async () => {
       },
     };
   });
-
 
   return {
     paths,
@@ -46,7 +47,11 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const slug = params.slug;
 
-  const post = await client.getEntries({ content_type: 'post', order: "-sys.createdAt", 'fields.slug[match]': slug })
+  const post = await client.getEntries({
+    content_type: "post",
+    order: "-sys.createdAt",
+    "fields.slug[match]": slug,
+  });
 
   const formattedPosts = post.items.map((item) => {
     return {
@@ -55,9 +60,9 @@ export const getStaticProps = async ({ params }) => {
       author: item.fields.author.fields.displayName,
       slug: item.fields.slug,
       postDate: item.fields.postDate,
-      postContent: item.fields.postContent.content[0].content[0].value
-    }
-  })
+      postContent: item.fields.postContent,
+    };
+  });
 
   return {
     props: { post: formattedPosts[0] },
@@ -65,15 +70,14 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Post = ({ post }) => {
-
   return (
     <>
-    <Head>
+      <Head>
         <title>{post.title}</title>
         <meta name="description" content="Built with NextJs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-    <Nav />
+      <Nav />
       <header>
         <div className="container">
           <h1>{post.title}</h1>
@@ -81,11 +85,8 @@ const Post = ({ post }) => {
       </header>
       <main>
         <div className="container">
-          <p>
-            {documentToReactComponents(post.postContent)}
-          </p>
+          {documentToReactComponents(post.postContent)}
         </div>
-
       </main>
       <Footer />
     </>

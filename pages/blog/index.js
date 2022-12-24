@@ -6,19 +6,13 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
 
-
-
-
+// CONTENTFUL CLIENT INIT
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 })
 
 export async function getStaticProps(context) {
-
-  // const [ getEntryByContentType ] = useContentful()
-
-  // const posts =  await getEntryByContentType()
 
   const posts = await client.getEntries({content_type: 'post' , order: "-sys.createdAt"})
 
