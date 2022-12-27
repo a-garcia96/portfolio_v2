@@ -1,19 +1,11 @@
 .resume {
-    overflow: hidden;
-    aspect-ratio: 3/auto;
+    padding: 10em 0;
 }
 
-.react-pdf__Page__canvas { 
-    width: 80vw !important;
-    height: auto;
+.resume__grid {
+
 }
 
-.react-pdf__Page__textContent {
-    width: 80vw !important;
-    height: auto;
-}
-
-.react-pdf__Page__annotations {
-    width: 80vw !important;
-    height: auto;
+.resume__column-1 > span {
+    max-width: 70rem !important;
 }
