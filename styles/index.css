@@ -24,7 +24,6 @@ main {
 .home-header__image-wrapper {
     margin: 0 auto;
     box-shadow: var(--shadow-elevation-medium)!important;
-    /* max-width: 350px; */
     width: 100%;
     margin-bottom: 4em;
 }
@@ -39,6 +38,9 @@ main {
 
 .home-about {
     margin-bottom: 12em;
+    background-color: var(--color-secondary-dark);
+    color: #404030;
+    padding: 30em 0;
 }
 
 .home-about h2 {
