@@ -1,5 +1,5 @@
 .btn {
-    background-color: #C2B8B2;
+    background-color: var(--color-primary-light);
     color: #070707;
     padding: 1em 1.5em;
     border-radius: 0.5rem;
