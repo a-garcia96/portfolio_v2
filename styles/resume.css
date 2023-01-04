@@ -1,11 +1,22 @@
 .resume {
-    padding: 10em 0;
+    padding: 5em 0;
 }
 
-.resume__grid {
+.resume__column-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.resume__heading {
+    margin-bottom: 2em;
 }
 
 .resume__column-1 > span {
     max-width: 70rem !important;
+}
+
+.resume__image {
+    margin-bottom: 2em !important;
 }
