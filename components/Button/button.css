@@ -1,7 +1,6 @@
 .btn {
-    background-color: var(--color-primary-light);
-    color: #070707;
+    background-color: var(--color-slate-gray);
     padding: 1em 1.5em;
     border-radius: 0.5rem;
-    box-shadow: var(--shadow-elevation-high);
+    color: var(--color-platinum-gray);
 }
