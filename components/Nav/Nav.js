@@ -29,7 +29,7 @@ export default function Nav() {
     <nav className="nav">
       <div className="container">
         <div className="nav__mobile-heading">
-          <h1 className="uppercase-text">Alex <span className="highlight-text">Garcia</span></h1>
+          <h1 className="uppercase-text nav__mobile-heading-text">AG</h1>
           <button
             onClick={handleClick}
             className="nav__toggle"
