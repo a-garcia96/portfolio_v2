@@ -57,10 +57,12 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <h1><Typewriter cursor={true} typeSpeed={120} words={['developing', 'marketing', 'optimizing']} loop={0} /> <br /><span className="highlight-text">for the web.</span></h1>
-              {/* <h2 className="highlight-text">for the web.</h2> */}
+              {/* <h1><Typewriter cursor={true} typeSpeed={120} words={['developing', 'marketing', 'optimizing']} loop={0} /> <br /><span className="highlight-text">for the web.</span></h1>
+              <h2 className="highlight-text">for the web.</h2>
               <p>Self-taught front-end developer based in San Diego, California with a background in IT cloud infrastructure engineering and administration.</p>
-              <Button><Link href="/resume">See My Resume</Link></Button>
+              <Button><Link href="/resume">See My Resume</Link></Button> */}
+              <h1>Hello, <br /> my name is Alex!</h1>
+              <p>I am a <Typewriter cursor={true} typeSpeed={120} words={['self-taught developer', 'digital marketer', 'Photographer']} loop={0}/></p>
             </section>
             <section className="home-header__col-2">
               <div className="home-header__image-wrapper">
