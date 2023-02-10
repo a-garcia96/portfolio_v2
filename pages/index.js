@@ -10,7 +10,7 @@ import Footer from "../components/Footer/Footer";
 import { Typewriter } from 'react-simple-typewriter';
 
 // assets
-import profilePic from "../public/profilePic2.jpg";
+import profilePic from "../public/profilePic2.png";
 import reactIcon from "../public/react.svg";
 import htmlIcon from "../public/html5.svg";
 import cssIcon from "../public/css3.svg";
