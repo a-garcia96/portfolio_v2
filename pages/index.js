@@ -7,10 +7,14 @@ import Image from "next/image";
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 
 // assets
 import profilePic from "../public/profilePic2.png";
+import githubIcon from "../public/github-icon.png";
+import linkedinIcon from "../public/linkedin-icon.png";
+import instagramIcon from "../public/instagram-icon.png";
+import emailIcon from "../public/email-icon.png";
 import reactIcon from "../public/react.svg";
 import htmlIcon from "../public/html5.svg";
 import cssIcon from "../public/css3.svg";
@@ -35,14 +39,13 @@ export default function Home() {
       } else if (window.innerWidth > 450) {
         setDimension(80);
       }
+    };
 
-    }
-
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
 
     console.log(dimension);
 
-    return () => window.removeEventListener('resize', handleResize)
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -57,25 +60,38 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              {/* <h1><Typewriter cursor={true} typeSpeed={120} words={['developing', 'marketing', 'optimizing']} loop={0} /> <br /><span className="highlight-text">for the web.</span></h1>
-              <h2 className="highlight-text">for the web.</h2>
-              <p>Self-taught front-end developer based in San Diego, California with a background in IT cloud infrastructure engineering and administration.</p>
-              <Button><Link href="/resume">See My Resume</Link></Button> */}
-              <h1>Hello, <br /> my name is Alex!</h1>
-              <p>I am a <Typewriter cursor={true} typeSpeed={120} words={['self-taught developer', 'digital marketer', 'Photographer']} loop={0}/></p>
+              <h1>
+                Hello, <br /> my name is Alex!
+              </h1>
+              <p>
+                I am a{" "}
+                <Typewriter
+                  cursor={true}
+                  typeSpeed={120}
+                  words={[
+                    "self-taught developer.",
+                    "digital marketer.",
+                    "photographer.",
+                  ]}
+                  loop={0}
+                />
+              </p>
+              <Button><Link href="/resume">Resume</Link></Button>
+              <div className="home-header__social-icons">
+                <Image src={githubIcon} alt="" />
+                <Image src={linkedinIcon} alt="" />
+                <Image src={instagramIcon} alt="" />
+                <Image src={emailIcon} alt="" />
+              </div>
             </section>
             <section className="home-header__col-2">
               <div className="home-header__image-wrapper">
-                <Image
-                  src={profilePic}
-                  className="home-header__profile-pic"
-                />
+                <Image src={profilePic} className="home-header__profile-pic" />
               </div>
             </section>
           </div>
         </div>
       </header>
-
       <main className="main-content">
         <section className="home-about">
           <div className="container">
@@ -85,13 +101,13 @@ export default function Home() {
               </div>
               <div className="home-about__col-2">
                 <p>
-                  For the last 4 years I have worked as a systems
-                  engineer and administrator managing IT infrastructure and
-                  assets for businesses in a multitude of industries. Recently I
-                  have transitioned to a developer role for one of San
-                  Diego&#39;s top financial broker dealers. I have a passion for
-                  art and technology that drives me as a developer to build
-                  products that are equally functional as they are visually appealing.
+                  For the last 4 years I have worked as a systems engineer and
+                  administrator managing IT infrastructure and assets for
+                  businesses in a multitude of industries. Recently I have
+                  transitioned to a developer role for one of San Diego&#39;s
+                  top financial broker dealers. I have a passion for art and
+                  technology that drives me as a developer to build products
+                  that are equally functional as they are visually appealing.
                 </p>
               </div>
             </div>
