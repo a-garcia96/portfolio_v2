@@ -23,7 +23,6 @@ main {
 
 .home-header__image-wrapper {
     margin: 0 auto;
-    box-shadow: var(--shadow-elevation-medium)!important;
     width: 100%;
     margin-bottom: 4em;
 }
