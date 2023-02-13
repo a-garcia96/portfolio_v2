@@ -45,8 +45,8 @@ h2 {
 p {margin-bottom: 1em; line-height: 2.5em; color: #42505C; font-family: 'Lora', serif;}
 
 .container {
-  width: 85%;
-  max-width: 1200px;
+  max-width: 1140px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -55,9 +55,6 @@ main {
 }
 
 @media (min-width: 1300px) {
-  .container {
-    max-width: 1500px;
-  }
 
   p {
     font-size: 2.4rem;
@@ -66,7 +63,7 @@ main {
   h1 {
     font-size: 4rem;
   }
-  
+
   h2 {
     font-size: 3.8rem;
     font-weight: 600;
