@@ -97,17 +97,17 @@ export default function Home() {
           <div className="container">
             <div className="home-about__grid">
               <div className="home-about__col-1">
-                <h2>About Me</h2>
+                <h2>The Story So Far...</h2>
               </div>
               <div className="home-about__col-2">
                 <p>
-                  For the last 4 years I have worked as a systems engineer and
-                  administrator managing IT infrastructure and assets for
-                  businesses in a multitude of industries. Recently I have
-                  transitioned to a developer role for one of San Diego&#39;s
-                  top financial broker dealers. I have a passion for art and
-                  technology that drives me as a developer to build products
-                  that are equally functional as they are visually appealing.
+                I started my career in technology 5 years ago as an employee of an information technology managed services company. My role was to provide hardware, software and network support to multiple clients in different industries. This experience gave me the ability to be highly adaptable, and it also taught me the skill sets needed to become a quick leaner and self-sufficient.
+                </p>
+                <p>
+                I quickly soaked up as much knowledge as  I could and worked my way up to working with complex infrastructure hosted both locally and in the cloud. Yet, there was something still missing. I have always had a creative side, so I began to look for a career where I could take my technical skills I had acquired and be a little creative as well.
+                </p>
+                <p>
+                Then I learned about front-end development and how it provides the ability to use my technical and creative skills. I was immediatly hooked! Recently, I was given the opportunity to put these skills to use and was promoted from being an infrastructure engineer to being the primary web developer for one of San Diego’s top financial broker-dealers.
                 </p>
               </div>
             </div>

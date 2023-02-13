@@ -39,7 +39,7 @@ main {
     margin: 2.4rem 0;
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 27.7rem;
 }
 
 .home-about {
@@ -50,6 +50,7 @@ main {
 
 .home-about h2 {
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .home-skills {
@@ -90,9 +91,14 @@ main {
         order: 2;
     }
 
+    .home-about__grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .home-about__col-2 {
-        column-count: 2;
-        text-align: left;
+        width: 55rem;
     }
 
     .home-skills__grid {
