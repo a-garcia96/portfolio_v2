@@ -8,6 +8,7 @@
 @import "../components/Footer/footer.css";
 @import "../components/Button/button.css";
 @import "../components/Card/card.css";
+@import "../components/InformationCard/InformationCard.css";
 
 /* PAGE STYLES */
 @import "./index.css";

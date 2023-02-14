@@ -1,0 +1,16 @@
+.information-card {
+    background-color: #F1F1F1;
+    border-radius: 14px;
+    padding: 2rem 1.4rem;
+}
+
+.information-card__heading {
+    color: #6D8699;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.information-card__text {
+    margin-top: auto;
+    display: block;
+}

@@ -8,6 +8,7 @@ import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 import { Typewriter } from "react-simple-typewriter";
+import InformationCard from "../components/InformationCard/InformationCard";
 
 // assets
 import profilePic from "../public/profilePic2.png";
@@ -15,6 +16,9 @@ import githubIcon from "../public/github-icon.png";
 import linkedinIcon from "../public/linkedin-icon.png";
 import instagramIcon from "../public/instagram-icon.png";
 import emailIcon from "../public/email-icon.png";
+import brushIcon from "../public/icon-brush.png";
+import terminalIcon from "../public/icon-terminal.png";
+import barChatIcon from "../public/icon-bar-chart.png";
 import reactIcon from "../public/react.svg";
 import htmlIcon from "../public/html5.svg";
 import cssIcon from "../public/css3.svg";
@@ -110,6 +114,28 @@ export default function Home() {
                 Then I learned about front-end development and how it provides the ability to use my technical and creative skills. I was immediatly hooked! Recently, I was given the opportunity to put these skills to use and was promoted from being an infrastructure engineer to being the primary web developer for one of San Diego’s top financial broker-dealers.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="home-services">
+          <div className="container">
+            <h2>What I Do</h2>
+            <div className="home-services__grid">
+              <InformationCard
+                imageSrc={brushIcon}
+                heading="UI/UX Design"
+                summaryText="I create user-centered digital products, emphasizing form & function for seamless user experiences. Experienced in wireframing, layout, color, typography, and more."
+              />
+              <InformationCard
+                imageSrc={terminalIcon}
+                heading="Web Development"
+                summaryText="Experienced in HTML, CSS, JavaScript & React, I provide custom web solutions for complex apps & simple websites."
+              />
+              <InformationCard
+                imageSrc={barChatIcon}
+                heading="Digital Marketing"
+                summaryText="I assist firms in connecting with target audience using data-driven tactics & strategies, incl. SEO, PPC, & social media."
+              />
             </div>
           </div>
         </section>
