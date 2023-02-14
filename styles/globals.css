@@ -32,13 +32,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 3.3rem;
+  font-size: 3.4rem;
   font-weight: 600;
 }
 
@@ -56,16 +56,12 @@ main {
 
 @media (min-width: 1300px) {
 
-  p {
-    font-size: 2.4rem;
-  }
-
   h1 {
-    font-size: 4rem;
+    /* font-size: 4rem; */
   }
 
   h2 {
-    font-size: 3.8rem;
+    /* font-size: 3.8rem; */
     font-weight: 600;
   }
 }
