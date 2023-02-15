@@ -53,6 +53,13 @@ main {
     text-align: center;
 }
 
+.home-services__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
 .home-skills {
     margin-bottom: 12em;
 }
