@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-xanadu-green);
   text-transform: capitalize;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 3.2rem;
 }
 
 h1 {

@@ -2,6 +2,10 @@ main {
     margin-bottom: 4em;
 }
 
+main > section {
+    padding: 2.4rem 0;
+}
+
 .home-header {
     padding: 4rem 0;
 }
@@ -15,11 +19,9 @@ main {
     order: 2;
 }
 
-
 .home-header__col-2 {
     order: 1;
 }
-
 
 .home-header__image-wrapper {
     margin: 0 auto;
@@ -36,7 +38,7 @@ main {
 }
 
 .home-header__social-icons {
-    margin: 2.4rem 0;
+    margin: 3.2rem 0;
     display: flex;
     justify-content: space-between;
     width: 27.7rem;
@@ -48,18 +50,12 @@ main {
 }
 
 .home-about h2 {
-    margin-bottom: 0.5em;
     text-align: center;
 }
 
 .home-services__grid {
     display: grid;
     grid-row-gap: 2rem;
-}
-
-.home-skills h2 {
-    margin-bottom: 0.5em;
-    text-align: center;
 }
 
 .home-skills__grid {
@@ -69,16 +65,12 @@ main {
     justify-content: center;
 }
 
+
 @media (min-width: 800px) {
     .home-header__grid {
         flex-direction: row;
         align-items: center;
         column-gap: 4em;
-    }
-
-    .home-header__grid h1 {
-        /* font-size: 5rem; */
-        margin-bottom: 0;
     }
 
     .home-header__col-1 {
@@ -122,9 +114,6 @@ main {
 }
 
 @media (min-width: 1300px) {
-    .home-header__grid h1 {
-        /* font-size: 7rem; */
-    }
 
     .home-header__grid p {
         width: 75%;
