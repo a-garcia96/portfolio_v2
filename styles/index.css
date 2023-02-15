@@ -53,6 +53,23 @@ main > section {
     text-align: center;
 }
 
+.home-services {
+    position: relative;
+}
+
+.home-services__blob1 {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.home-services__blob2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 .home-services__grid {
     display: grid;
     grid-row-gap: 2rem;
