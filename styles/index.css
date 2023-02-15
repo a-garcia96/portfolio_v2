@@ -43,7 +43,6 @@ main {
 }
 
 .home-about {
-    margin-bottom: 12em;
     background-color: var(--color-secondary-dark);
     color: #404030;
 }
@@ -54,14 +53,8 @@ main {
 }
 
 .home-services__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-
-.home-skills {
-    margin-bottom: 12em;
+    display: grid;
+    grid-row-gap: 2rem;
 }
 
 .home-skills h2 {
@@ -102,6 +95,11 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .home-services__grid {
+        grid-template-columns: repeat(3, 31%);
+        grid-column-gap: 2rem;
     }
 
     .home-about__col-2 {
