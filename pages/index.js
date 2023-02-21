@@ -21,18 +21,18 @@ import emailIcon from "../public/email-icon.png";
 import brushIcon from "../public/icon-brush.png";
 import terminalIcon from "../public/icon-terminal.png";
 import barChatIcon from "../public/icon-bar-chart.png";
-import reactIcon from "../public/react.svg";
-import htmlIcon from "../public/html5.svg";
-import cssIcon from "../public/css3.svg";
-import jsIcon from "../public/javascript.svg";
-import nodeIcon from "../public/nodejs.svg";
-import npmIcon from "../public/npm.svg";
-import sassIcon from "../public/sass.svg";
-import bootstrapIcon from "../public/bootstrap.svg";
-import firebaseIcon from "../public/firebase.svg";
-import contentfulIcon from "../public/contentful.svg";
-import wordpressIcon from "../public/wordpress.svg";
-import nextjsIcon from "../public/nextjs.svg";
+import reactIcon from "../public/react.png";
+import htmlIcon from "../public/html5.png";
+import cssIcon from "../public/css3.png";
+import jsIcon from "../public/javascript.png";
+import nodeIcon from "../public/nodejs.png";
+import sassIcon from "../public/sass.png";
+import bootstrapIcon from "../public/bootstrap.png";
+import firebaseIcon from "../public/firebase.png";
+import contentfulIcon from "../public/contentful.png";
+import wordpressIcon from "../public/wordpress.png";
+import nextjsIcon from "../public/nextjs.png";
+import gitIcon from "../public/git.png";
 import Link from "next/Link";
 
 export default function Home() {
@@ -198,15 +198,6 @@ export default function Home() {
               <div className="home-skills__col">
                 <Image
                   alt="icon"
-                  src={npmIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
                   src={sassIcon}
                   objectFit="contain"
                   width={dimension}
@@ -253,6 +244,15 @@ export default function Home() {
                 <Image
                   alt="icon"
                   src={nextjsIcon}
+                  objectFit="contain"
+                  width={dimension}
+                  height={dimension}
+                />
+              </div>
+              <div className="home-skills__col">
+                <Image
+                  alt="icon"
+                  src={gitIcon}
                   objectFit="contain"
                   width={dimension}
                   height={dimension}
