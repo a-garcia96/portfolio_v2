@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 // NEXTJS COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
+
+// IMPORT REACT HOOK FORM
+import { useForm } from "react-hook-form";
+
 // components
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
@@ -34,6 +38,7 @@ import wordpressIcon from "../public/wordpress.png";
 import nextjsIcon from "../public/nextjs.png";
 import gitIcon from "../public/git.png";
 import Link from "next/Link";
+import { userAgentFromString } from "next/server";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
@@ -53,6 +58,9 @@ export default function Home() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
 
   return (
     <>
@@ -259,6 +267,20 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+        <section className="home-contact">
+          <h2>Lets Chat</h2>
+          <div className="container">
+            <form className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
+              <label htmlFor="fullName">Full Name</label>
+              <input type="text" defaultValue="John Smith" {...register("fullName", { required: true, maxLength: 5 })} />
+              <label htmlFor="email">email</label>
+              <input type="email" defaultValue="email@domain.com" {...register("email", { required: true })} />
+              <label htmlFor="message">Your Message</label>
+              <textarea name="message" rows={10}></textarea>
+              <button>Submit</button>
+            </form>
           </div>
         </section>
       </main>
