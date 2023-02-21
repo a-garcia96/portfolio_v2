@@ -75,6 +75,10 @@ main > section {
     grid-row-gap: 2rem;
 }
 
+.home-skills h2 {
+    text-align: center;
+}
+
 .home-skills__grid {
     display: flex;
     flex-wrap: wrap;
