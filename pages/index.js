@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // NEXTJS COMPONENTS
 import Head from "next/head";
@@ -6,6 +6,7 @@ import Image from "next/image";
 
 // IMPORT REACT HOOK FORM
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 
 // components
 import Nav from "../components/Nav/Nav";
@@ -38,8 +39,6 @@ import wordpressIcon from "../public/wordpress.png";
 import nextjsIcon from "../public/nextjs.png";
 import gitIcon from "../public/git.png";
 import Link from "next/Link";
-import { userAgentFromString } from "next/server";
-import { Input } from "postcss";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
@@ -60,11 +59,27 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  const onSubmit = (e, data) => {
-    console.log(e.target)
-    console.log(data)
-    reset();
+  const form = useRef();
+  const { register, handleSubmit, watch, formState: {errors, isLoading, isSubmitSuccessful}, reset } = useForm();
+  const onSubmit = (data) => {
+
+    console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+
+    // SEND EMAIL TO ME WITH DETAILS OF FORM
+    emailjs.send('service_1466etl', 'template_gzrcsvg', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    .then((response) => {
+      console.log(response.status, response.text);
+    }, (error) => {
+      console.log(error);
+    });
+
+    // SEND EMAIL TO PERSON THAT FILLED OUT FORM FOR CONFIRMATION
+    emailjs.send('service_1466etl', 'template_3f138974', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    .then((response) => {
+      response.status == 200 ? reset() : console.log(response.status)
+    }, (error) => {
+      console.log(error)
+    })
   }
 
   return (
@@ -277,7 +292,7 @@ export default function Home() {
         <section className="home-contact">
           <h2>Lets Chat</h2>
           <div className="container">
-            <form className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
+            <form ref={form} className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
               <label htmlFor="fullName">Full Name</label>
               <input type="text" placeholder="John Smith" {...register("fullName", { required: true})} />
               <label htmlFor="email">email</label>
