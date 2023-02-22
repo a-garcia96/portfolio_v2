@@ -39,6 +39,7 @@ import nextjsIcon from "../public/nextjs.png";
 import gitIcon from "../public/git.png";
 import Link from "next/Link";
 import { userAgentFromString } from "next/server";
+import { Input } from "postcss";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
@@ -59,8 +60,12 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const onSubmit = (e, data) => {
+    console.log(e.target)
+    console.log(data)
+    reset();
+  }
 
   return (
     <>
@@ -274,12 +279,12 @@ export default function Home() {
           <div className="container">
             <form className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
               <label htmlFor="fullName">Full Name</label>
-              <input type="text" defaultValue="John Smith" {...register("fullName", { required: true, maxLength: 5 })} />
+              <input type="text" placeholder="John Smith" {...register("fullName", { required: true})} />
               <label htmlFor="email">email</label>
-              <input type="email" defaultValue="email@domain.com" {...register("email", { required: true })} />
+              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} />
               <label htmlFor="message">Your Message</label>
-              <textarea name="message" rows={10}></textarea>
-              <button>Submit</button>
+              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", {required: true})}></textarea>
+              <input type="submit" value="Submit" />
             </form>
           </div>
         </section>

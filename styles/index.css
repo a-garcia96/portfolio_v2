@@ -105,6 +105,14 @@ main > section {
     border-radius: 1rem;
 }
 
+.home-contact__form > input[type="submit"] {
+    background-color: #6E8599;
+    color: var(--color-platinum-gray);
+    width: 10rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .home-contact__form > button {
     width: 10rem;
     text-align: center;
