@@ -99,30 +99,34 @@ main > section {
     margin: 0 auto;
 }
 
-.home-contact__form > input, textarea, button {
+.home-contact__form-field {
     background-color: #D9D9D9;
     padding: 1rem 0.8rem;
     border-radius: 1rem;
 }
 
-.home-contact__form > input[type="submit"] {
+.home-contact__form-button--enabled {
     background-color: #6E8599;
     color: var(--color-platinum-gray);
     width: 10rem;
     text-align: center;
     margin: 0 auto;
+    padding: 1rem 0.8rem;
+    border-radius: 1rem;
 }
 
-.home-contact__form > input[type="submit"]:hover {
-    cursor: pointer;
-}
-
-.home-contact__form > button {
+.home-contact__form-button--disabled {
+    background-color: #D9D9D9;
+    padding: 1rem 0.8rem;
+    border-radius: 1rem;
     width: 10rem;
     text-align: center;
-    background-color: #6D8699;
-    color: var(--color-platinum-gray);
     margin: 0 auto;
+    color: var(--color-platinum-gray);
+}
+
+.home-contact__form-button--enabled {
+    cursor: pointer;
 }
 
 

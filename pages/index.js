@@ -42,6 +42,7 @@ import Link from "next/Link";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
+  const [isSent, setIsSent] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -60,13 +61,12 @@ export default function Home() {
   }, []);
 
   const form = useRef();
-  const { register, handleSubmit, watch, formState: {errors, isLoading, isSubmitSuccessful}, reset } = useForm();
-  const onSubmit = (data) => {
+  const { register, handleSubmit, watch, formState: {errors, isSubmitting}, reset } = useForm();
 
-    console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  const onSubmit = async (data) => {
 
     // SEND EMAIL TO ME WITH DETAILS OF FORM
-    emailjs.send('service_1466etl', 'template_gzrcsvg', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    await emailjs.send('service_1466etl', 'template_gzrcsvg', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
     .then((response) => {
       console.log(response.status, response.text);
     }, (error) => {
@@ -74,9 +74,11 @@ export default function Home() {
     });
 
     // SEND EMAIL TO PERSON THAT FILLED OUT FORM FOR CONFIRMATION
-    emailjs.send('service_1466etl', 'template_3f138974', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    await emailjs.send('service_1466etl', 'template_3f138974', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
     .then((response) => {
-      response.status == 200 ? reset() : console.log(response.status)
+      if(response.status == 200){
+        reset()
+      }
     }, (error) => {
       console.log(error)
     })
@@ -293,13 +295,14 @@ export default function Home() {
           <h2>Lets Chat</h2>
           <div className="container">
             <form ref={form} className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
-              <label htmlFor="fullName">Full Name</label>
-              <input type="text" placeholder="John Smith" {...register("fullName", { required: true})} />
-              <label htmlFor="email">email</label>
-              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} />
+              <label htmlFor="fullName">Full Name*</label>
+              <input type="text" placeholder="John Smith" {...register("fullName", { required: true})} className="home-contact__form-field" />
+              <label htmlFor="email">email*</label>
+              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} className="home-contact__form-field"/>
               <label htmlFor="message">Your Message</label>
-              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", {required: true})}></textarea>
-              <input type="submit" value="Submit" />
+              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", {required: true})} className="home-contact__form-field"></textarea>
+              {isSubmitting && <input type="submit" value="Sending" disabled="disabled" className="home-contact__form-button--disabled"/>}
+              {!isSubmitting && <input type="submit" value="Submit" className="home-contact__form-button--enabled"/>}
             </form>
           </div>
         </section>
