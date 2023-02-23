@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+//IMPORT FRAMER MOTION
+import { motion } from "framer-motion";
+
 // IMPORT REACT HOOK FORM
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
@@ -61,7 +64,7 @@ export default function Home() {
   }, []);
 
   const form = useRef();
-  const { register, handleSubmit, watch, formState: {errors, isSubmitting}, reset } = useForm();
+  const { register, handleSubmit, watch, formState: { errors, isSubmitting }, reset } = useForm();
 
   const onSubmit = async (data) => {
 
@@ -74,35 +77,35 @@ export default function Home() {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
-
-    // SEND EMAIL TO ME WITH DETAILS OF FORM
-    await emailjs.send('service_1466etl', 'template_gzrcsvg', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-    .then((response) => {
-      console.log(response.status, response.text);
-    }, (error) => {
-      console.log(error);
     });
 
+    // SEND EMAIL TO ME WITH DETAILS OF FORM
+    await emailjs.send('service_1466etl', 'template_gzrcsvg', { ...data }, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      .then((response) => {
+        console.log(response.status, response.text);
+      }, (error) => {
+        console.log(error);
+      });
+
     // SEND EMAIL TO PERSON THAT FILLED OUT FORM FOR CONFIRMATION
-    await emailjs.send('service_1466etl', 'template_3f138974', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-    .then((response) => {
-      if(response.status == 200){
-        reset()
-        toast.success('Email sent!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
+    await emailjs.send('service_1466etl', 'template_3f138974', { ...data }, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      .then((response) => {
+        if (response.status == 200) {
+          reset()
+          toast.success('Email sent!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
           });
-      }
-    }, (error) => {
-      console.log(error)
-    })
+        }
+      }, (error) => {
+        console.log(error)
+      })
   }
 
   return (
@@ -117,34 +120,80 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <h1>
+              <motion.h1
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+              >
                 Hello, <br /> my name is Alex!
-              </h1>
-              <p>
-                I am a{" "}
-                <Typewriter
-                  cursor={true}
-                  typeSpeed={120}
-                  words={[
-                    "self-taught developer.",
-                    "digital marketer.",
-                    "photographer.",
-                  ]}
-                  loop={0}
-                />
-              </p>
-              <Button><Link href="/resume">Resume</Link></Button>
+              </motion.h1>
+              <motion.div
+                initial={{ opacity: 0, x: -400 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.2, type: "spring", stiffness: 80 }}
+              >
+                <p>
+                  I am a{" "}
+                  <Typewriter
+                    cursor={true}
+                    typeSpeed={120}
+                    words={[
+                      "self-taught developer.",
+                      "digital marketer.",
+                      "photographer.",
+                    ]}
+                    loop={0}
+                  />
+                </p>
+                <Button><Link href="/resume">Resume</Link></Button>
+              </motion.div>
               <div className="home-header__social-icons">
-                <Image src={githubIcon} alt="" />
-                <Image src={linkedinIcon} alt="" />
-                <Image src={instagramIcon} alt="" />
-                <Image src={emailIcon} alt="" />
+                <motion.div
+                  initial={{ y: 400, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 60, delay: 1.6 }}
+                >
+                  <Image src={githubIcon} alt="" />
+                </motion.div>
+                <motion.div
+                  initial={{ y: 400, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 60, delay: 1.8 }}
+                >
+                  <Image src={linkedinIcon} alt="" />
+                </motion.div>
+                <motion.div
+                  initial={{ y: 400, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 60, delay: 2 }}
+                >
+                  <Image src={instagramIcon} alt="" />
+                </motion.div>
+                <motion.div
+                  initial={{ y: 400, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 60, delay: 2.2 }}
+                >
+                  <Image src={emailIcon} alt="" />
+                </motion.div>
               </div>
             </section>
             <section className="home-header__col-2">
-              <div className="home-header__image-wrapper">
+              <motion.div
+                className="home-header__image-wrapper"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 60, delay: 2.5}}
+              >
                 <Image src={profilePic} className="home-header__profile-pic" />
-              </div>
+              </motion.div>
             </section>
           </div>
         </div>
@@ -171,30 +220,63 @@ export default function Home() {
           </div>
         </section>
         <section className="home-services">
-          <div className="home-services__blob1">
+          <motion.div
+            className="home-services__blob1"
+            initial={{ x: -400, opacity: 0 }}
+            whileInView={{ x: -50, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1, type: "spring", stiffness: 100 }}
+          >
             <Image src={servicesBlob1} alt="" />
-          </div>
-          <div className="home-services__blob2">
+          </motion.div>
+          <motion.div
+            className="home-services__blob2"
+            initial={{ x: 400, opacity: 0 }}
+            whileInView={{ x: 50, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1, type: "spring", stiffness: 100 }}
+          >
             <Image className="home-services__blob2" src={servicesBlob2} alt="" />
-          </div>
+          </motion.div>
           <div className="container">
             <h2>What I Do</h2>
             <div className="home-services__grid">
-              <InformationCard
-                imageSrc={brushIcon}
-                heading="UI/UX Design"
-                summaryText="I create user-centered digital products, emphasizing form & function for seamless user experiences. Experienced in wireframing, layout, color, typography, and more."
-              />
-              <InformationCard
-                imageSrc={terminalIcon}
-                heading="Web Development"
-                summaryText="Experienced in HTML, CSS, JavaScript & React, I provide custom web solutions for complex apps & simple websites."
-              />
-              <InformationCard
-                imageSrc={barChatIcon}
-                heading="Digital Marketing"
-                summaryText="I assist firms in connecting with target audience using data-driven tactics & strategies, incl. SEO, PPC, & social media."
-              />
+              <motion.div
+                initial={{ y: 400, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                <InformationCard
+                  imageSrc={brushIcon}
+                  heading="UI/UX Design"
+                  summaryText="I create user-centered digital products, emphasizing form & function for seamless user experiences. Experienced in wireframing, layout, color, typography, and more."
+                />
+              </motion.div>
+              <motion.div
+                initial={{ y: 400, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+              >
+                <InformationCard
+                  imageSrc={terminalIcon}
+                  heading="Web Development"
+                  summaryText="Experienced in HTML, CSS, JavaScript & React, I provide custom web solutions for complex apps & simple websites."
+                />
+              </motion.div>
+              <motion.div
+                initial={{ y: 400, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100, delay: 0.8 }}
+              >
+                <InformationCard
+                  imageSrc={barChatIcon}
+                  heading="Digital Marketing"
+                  summaryText="I assist firms in connecting with target audience using data-driven tactics & strategies, incl. SEO, PPC, & social media."
+                />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -318,13 +400,13 @@ export default function Home() {
           <div className="container">
             <form ref={form} className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
               <label htmlFor="fullName">Full Name*</label>
-              <input type="text" placeholder="John Smith" {...register("fullName", { required: true})} className="home-contact__form-field" />
+              <input type="text" placeholder="John Smith" {...register("fullName", { required: true })} className="home-contact__form-field" />
               <label htmlFor="email">email*</label>
-              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} className="home-contact__form-field"/>
+              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} className="home-contact__form-field" />
               <label htmlFor="message">Your Message</label>
-              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", {required: true})} className="home-contact__form-field"></textarea>
-              {isSubmitting && <input type="submit" value="Sending" disabled="disabled" className="home-contact__form-button--disabled"/>}
-              {!isSubmitting && <input type="submit" value="Submit" className="home-contact__form-button--enabled"/>}
+              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", { required: true })} className="home-contact__form-field"></textarea>
+              {isSubmitting && <input type="submit" value="Sending" disabled="disabled" className="home-contact__form-button--disabled" />}
+              {!isSubmitting && <input type="submit" value="Submit" className="home-contact__form-button--enabled" />}
             </form>
           </div>
         </section>
