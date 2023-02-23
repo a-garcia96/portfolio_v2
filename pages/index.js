@@ -190,7 +190,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 60, delay: 2.5}}
+                transition={{ type: "spring", stiffness: 60, delay: 2.5 }}
               >
                 <Image src={profilePic} className="home-header__profile-pic" />
               </motion.div>
@@ -199,13 +199,19 @@ export default function Home() {
         </div>
       </header>
       <main className="main-content">
-        <section className="home-about">
+        <motion.section
+          className="home-about"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 3 }}
+        >
           <div className="container">
             <div className="home-about__grid">
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
               </div>
-              <div className="home-about__col-2">
+              <div>
                 <p>
                   I started my career in technology 5 years ago as an employee of an information technology managed services company. My role was to provide hardware, software and network support to multiple clients in different industries. This experience gave me the ability to be highly adaptable, and it also taught me the skill sets needed to become a quick leaner and self-sufficient.
                 </p>
@@ -218,7 +224,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
         <section className="home-services">
           <motion.div
             className="home-services__blob1"
