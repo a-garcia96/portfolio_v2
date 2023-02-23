@@ -7,6 +7,8 @@ import Image from "next/image";
 // IMPORT REACT HOOK FORM
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 // components
 import Nav from "../components/Nav/Nav";
@@ -65,6 +67,17 @@ export default function Home() {
 
   const onSubmit = async (data) => {
 
+    toast.info('Sending your email!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+
     // SEND EMAIL TO ME WITH DETAILS OF FORM
     await emailjs.send('service_1466etl', 'template_gzrcsvg', {...data}, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
     .then((response) => {
@@ -78,6 +91,16 @@ export default function Home() {
     .then((response) => {
       if(response.status == 200){
         reset()
+        toast.success('Email sent!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
     }, (error) => {
       console.log(error)
@@ -292,6 +315,7 @@ export default function Home() {
           </div>
         </section>
         <section className="home-contact">
+          <ToastContainer />
           <h2>Lets Chat</h2>
           <div className="container">
             <form ref={form} className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
