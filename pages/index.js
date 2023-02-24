@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 //IMPORT FRAMER MOTION
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // IMPORT REACT HOOK FORM
 import { useForm } from "react-hook-form";
@@ -108,6 +108,10 @@ export default function Home() {
       })
   }
 
+  // BLOB PARRALAX
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0,1], ["0%", "90%"]);
+
   return (
     <>
       <Head>
@@ -121,10 +125,10 @@ export default function Home() {
           <div className="home-header__grid">
             <section className="home-header__col-1">
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 500 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 2 }}
+                transition={{type:"spring", duration: 2 }}
               >
                 <h1>Hello, <br /> my name is Alex!</h1>
                 <p>
@@ -147,7 +151,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, duration: 2 }}
+                  transition={{ type: "spring", duration: 1.5 }}
                 >
                   <Image src={githubIcon} alt="" />
                 </motion.div>
@@ -155,7 +159,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, duration: 2}}
+                  transition={{ type: "spring", duration: 1.8}}
                 >
                   <Image src={linkedinIcon} alt="" />
                 </motion.div>
@@ -163,7 +167,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, duration: 2}}
+                  transition={{ type: "spring", duration: 2}}
                 >
                   <Image src={instagramIcon} alt="" />
                 </motion.div>
@@ -171,7 +175,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, duration: 2 }}
+                  transition={{ type: "spring", duration: 2.2 }}
                 >
                   <Image src={emailIcon} alt="" />
                 </motion.div>
@@ -180,10 +184,10 @@ export default function Home() {
             <section className="home-header__col-2">
               <motion.div
                 className="home-header__image-wrapper"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: -300 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 2 }}
+                transition={{type: "spring", duration: 1.5 }}
               >
                 <Image src={profilePic} className="home-header__profile-pic" />
               </motion.div>
@@ -197,7 +201,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 400 }}
           whileInView={{ opacity: 1, y: 0}}
           viewport={{ once: true }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         >
           <div className="container">
             <div className="home-about__grid">
@@ -221,19 +225,21 @@ export default function Home() {
         <section className="home-services">
           <motion.div
             className="home-services__blob1"
+            style={{y}}
             initial={{ x: -400, opacity: 0 }}
             whileInView={{ x: -50, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, type: "spring", stiffness: 100 }}
+            transition={{type: "spring", duration: 0.5, delay: 1.5 }}
           >
             <Image src={servicesBlob1} alt="" />
           </motion.div>
           <motion.div
             className="home-services__blob2"
+            style={{y}}
             initial={{ x: 400, opacity: 0 }}
             whileInView={{ x: 50, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, type: "spring", stiffness: 100 }}
+            transition={{type: "spring", duration: 0.5, delay: 1.5 }}
           >
             <Image className="home-services__blob2" src={servicesBlob2} alt="" />
           </motion.div>
@@ -244,7 +250,7 @@ export default function Home() {
                 initial={{ y: 400, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 100 }}
+                transition={{ type: "spring", duration: 1 }}
               >
                 <InformationCard
                   imageSrc={brushIcon}
@@ -256,7 +262,7 @@ export default function Home() {
                 initial={{ y: 400, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+                transition={{ type: "spring", duration: 1.4 }}
               >
                 <InformationCard
                   imageSrc={terminalIcon}
@@ -268,7 +274,7 @@ export default function Home() {
                 initial={{ y: 400, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 100, delay: 0.8 }}
+                transition={{ type: "spring", duration: 1.8}}
               >
                 <InformationCard
                   imageSrc={barChatIcon}
