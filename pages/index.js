@@ -9,9 +9,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // IMPORT REACT HOOK FORM
 import { useForm } from "react-hook-form";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Nav from "../components/Nav/Nav";
@@ -23,6 +23,13 @@ import InformationCard from "../components/InformationCard/InformationCard";
 // assets
 import servicesBlob1 from "../public/services-blob-shape-1.png";
 import servicesBlob2 from "../public/services-blob-shape-2.png";
+import randomBlob1 from "../public/blob-random-1.png";
+import randomBlob2 from "../public/blob-random-2.png";
+import randomBlob3 from "../public/blob-random-3.png";
+import randomBlob4 from "../public/blob-random-4.png";
+import randomBlob5 from "../public/blob-random-5.png";
+import randomBlob6 from "../public/blob-random-6.png";
+
 import profilePic from "../public/profilePic2.png";
 import githubIcon from "../public/github-icon.png";
 import linkedinIcon from "../public/linkedin-icon.png";
@@ -64,11 +71,16 @@ export default function Home() {
   }, []);
 
   const form = useRef();
-  const { register, handleSubmit, watch, formState: { errors, isSubmitting }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
 
   const onSubmit = async (data) => {
-
-    toast.info('Sending your email!', {
+    toast.info("Sending your email!", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: true,
@@ -80,37 +92,55 @@ export default function Home() {
     });
 
     // SEND EMAIL TO ME WITH DETAILS OF FORM
-    await emailjs.send('service_1466etl', 'template_gzrcsvg', { ...data }, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-      .then((response) => {
-        console.log(response.status, response.text);
-      }, (error) => {
-        console.log(error);
-      });
+    await emailjs
+      .send(
+        "service_1466etl",
+        "template_gzrcsvg",
+        { ...data },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log(response.status, response.text);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
 
     // SEND EMAIL TO PERSON THAT FILLED OUT FORM FOR CONFIRMATION
-    await emailjs.send('service_1466etl', 'template_3f138974', { ...data }, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-      .then((response) => {
-        if (response.status == 200) {
-          reset()
-          toast.success('Email sent!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+    await emailjs
+      .send(
+        "service_1466etl",
+        "template_3f138974",
+        { ...data },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          if (response.status == 200) {
+            reset();
+            toast.success("Email sent!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }
+        },
+        (error) => {
+          console.log(error);
         }
-      }, (error) => {
-        console.log(error)
-      })
-  }
+      );
+  };
 
   // BLOB PARRALAX
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0,1], ["0%", "90%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   return (
     <>
@@ -128,9 +158,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 500 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{type:"spring", duration: 2 }}
+                transition={{ type: "spring", duration: 2 }}
               >
-                <h1>Hello, <br /> my name is Alex!</h1>
+                <h1>
+                  Hello, <br /> my name is Alex!
+                </h1>
                 <p>
                   I am a{" "}
                   <Typewriter
@@ -144,7 +176,9 @@ export default function Home() {
                     loop={0}
                   />
                 </p>
-                <Button><Link href="/resume">Resume</Link></Button>
+                <Button>
+                  <Link href="/resume">Resume</Link>
+                </Button>
               </motion.div>
               <div className="home-header__social-icons">
                 <motion.div
@@ -159,7 +193,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 1.8}}
+                  transition={{ type: "spring", duration: 1.8 }}
                 >
                   <Image src={linkedinIcon} alt="" />
                 </motion.div>
@@ -167,7 +201,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 2}}
+                  transition={{ type: "spring", duration: 2 }}
                 >
                   <Image src={instagramIcon} alt="" />
                 </motion.div>
@@ -187,7 +221,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -300 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{type: "spring", duration: 1.5 }}
+                transition={{ type: "spring", duration: 1.5 }}
               >
                 <Image src={profilePic} className="home-header__profile-pic" />
               </motion.div>
@@ -199,49 +233,81 @@ export default function Home() {
         <motion.section
           className="home-about"
           initial={{ opacity: 0, y: 400 }}
-          whileInView={{ opacity: 1, y: 0}}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <div className="container">
+          <div className="blob" >
+                  <Image src={randomBlob1} alt="" />
+                </div>
+                <div className="blob">
+                  <Image src={randomBlob4} alt="" />
+                </div>
+                <div className="blob">
+                  <Image src={randomBlob3} alt="" />
+                </div>
+                <div className="blob">
+                  <Image src={randomBlob2} alt="" />
+                </div>
             <div className="home-about__grid">
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
               </div>
-              <div>
-                <p>
-                  I started my career in technology 5 years ago as an employee of an information technology managed services company. My role was to provide hardware, software and network support to multiple clients in different industries. This experience gave me the ability to be highly adaptable, and it also taught me the skill sets needed to become a quick leaner and self-sufficient.
-                </p>
-                <p>
-                  I quickly soaked up as much knowledge as  I could and worked my way up to working with complex infrastructure hosted both locally and in the cloud. Yet, there was something still missing. I have always had a creative side, so I began to look for a career where I could take my technical skills I had acquired and be a little creative as well.
-                </p>
-                <p>
-                  Then I learned about front-end development and how it provides the ability to use my technical and creative skills. I was immediatly hooked! Recently, I was given the opportunity to put these skills to use and was promoted from being an infrastructure engineer to being the primary web developer for one of San Diego’s top financial broker-dealers.
-                </p>
+              <div className="home-about__summary">
               </div>
+                <p>
+                  I started my career in technology 5 years ago as an employee
+                  of an information technology managed services company. My role
+                  was to provide hardware, software and network support to
+                  multiple clients in different industries. This experience gave
+                  me the ability to be highly adaptable, and it also taught me
+                  the skill sets needed to become a quick leaner and
+                  self-sufficient.
+                </p>
+                <p>
+                  I quickly soaked up as much knowledge as I could and worked my
+                  way up to working with complex infrastructure hosted both
+                  locally and in the cloud. Yet, there was something still
+                  missing. I have always had a creative side, so I began to look
+                  for a career where I could take my technical skills I had
+                  acquired and be a little creative as well.
+                </p>
+                <p>
+                  Then I learned about front-end development and how it provides
+                  the ability to use my technical and creative skills. I was
+                  immediatly hooked! Recently, I was given the opportunity to
+                  put these skills to use and was promoted from being an
+                  infrastructure engineer to being the primary web developer for
+                  one of San Diego top financial broker-dealers.
+                </p>
             </div>
           </div>
         </motion.section>
         <section className="home-services">
           <motion.div
             className="home-services__blob1"
-            style={{y}}
+            style={{ y }}
             initial={{ x: -400, opacity: 0 }}
             whileInView={{ x: -50, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{type: "spring", duration: 0.5, delay: 1.5 }}
+            transition={{ type: "spring", duration: 0.5, delay: 1.5 }}
           >
             <Image src={servicesBlob1} alt="" />
           </motion.div>
           <motion.div
             className="home-services__blob2"
-            style={{y}}
+            style={{ y }}
             initial={{ x: 400, opacity: 0 }}
             whileInView={{ x: 50, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{type: "spring", duration: 0.5, delay: 1.5 }}
+            transition={{ type: "spring", duration: 0.5, delay: 1.5 }}
           >
-            <Image className="home-services__blob2" src={servicesBlob2} alt="" />
+            <Image
+              className="home-services__blob2"
+              src={servicesBlob2}
+              alt=""
+            />
           </motion.div>
           <div className="container">
             <h2>What I Do</h2>
@@ -274,7 +340,7 @@ export default function Home() {
                 initial={{ y: 400, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1.8}}
+                transition={{ type: "spring", duration: 1.8 }}
               >
                 <InformationCard
                   imageSrc={barChatIcon}
@@ -403,15 +469,48 @@ export default function Home() {
           <ToastContainer />
           <h2>Lets Chat</h2>
           <div className="container">
-            <form ref={form} className="home-contact__form" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              ref={form}
+              className="home-contact__form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <label htmlFor="fullName">Full Name*</label>
-              <input type="text" placeholder="John Smith" {...register("fullName", { required: true })} className="home-contact__form-field" />
+              <input
+                type="text"
+                placeholder="John Smith"
+                {...register("fullName", { required: true })}
+                className="home-contact__form-field"
+              />
               <label htmlFor="email">email*</label>
-              <input type="email" placeholder="email@domain.com" {...register("email", { required: true })} className="home-contact__form-field" />
+              <input
+                type="email"
+                placeholder="email@domain.com"
+                {...register("email", { required: true })}
+                className="home-contact__form-field"
+              />
               <label htmlFor="message">Your Message</label>
-              <textarea name="message" rows={10} placeholder="Type your message here" {...register("message", { required: true })} className="home-contact__form-field"></textarea>
-              {isSubmitting && <input type="submit" value="Sending" disabled="disabled" className="home-contact__form-button--disabled" />}
-              {!isSubmitting && <input type="submit" value="Submit" className="home-contact__form-button--enabled" />}
+              <textarea
+                name="message"
+                rows={10}
+                placeholder="Type your message here"
+                {...register("message", { required: true })}
+                className="home-contact__form-field"
+              ></textarea>
+              {isSubmitting && (
+                <input
+                  type="submit"
+                  value="Sending"
+                  disabled="disabled"
+                  className="home-contact__form-button--disabled"
+                />
+              )}
+              {!isSubmitting && (
+                <input
+                  type="submit"
+                  value="Submit"
+                  className="home-contact__form-button--enabled"
+                />
+              )}
             </form>
           </div>
         </section>

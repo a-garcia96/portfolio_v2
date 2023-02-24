@@ -5,6 +5,7 @@ main {
 
 main > section {
     padding: 2.4rem 0;
+    z-index: 10;
 }
 
 .home-header {
@@ -48,6 +49,13 @@ main > section {
 .home-about {
     background-color: var(--color-secondary-dark);
     color: #404030;
+    z-index: 1;
+    position: relative;
+}
+
+.blob {
+    position: absolute;
+    z-index: -1;
 }
 
 .home-about__grid {
@@ -58,6 +66,10 @@ main > section {
 
 .home-about h2 {
     text-align: center;
+}
+
+.home-about__summary {
+    z-index: 10;
 }
 
 .home-services {
