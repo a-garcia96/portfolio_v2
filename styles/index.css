@@ -1,5 +1,6 @@
 main {
     margin-bottom: 4em;
+    overflow: hidden;
 }
 
 main > section {
@@ -47,6 +48,11 @@ main > section {
 .home-about {
     background-color: var(--color-secondary-dark);
     color: #404030;
+}
+
+.home-about__grid {
+    margin: 0 auto;
+    width: 60rem;
 }
 
 .home-about h2 {

@@ -120,20 +120,13 @@ export default function Home() {
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
-              <motion.h1
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 2 }}
               >
-                Hello, <br /> my name is Alex!
-              </motion.h1>
-              <motion.div
-                initial={{ opacity: 0, x: -400 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2, type: "spring", stiffness: 80 }}
-              >
+                <h1>Hello, <br /> my name is Alex!</h1>
                 <p>
                   I am a{" "}
                   <Typewriter
@@ -154,7 +147,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, delay: 1.6 }}
+                  transition={{ type: "spring", stiffness: 60, duration: 2 }}
                 >
                   <Image src={githubIcon} alt="" />
                 </motion.div>
@@ -162,7 +155,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, delay: 1.8 }}
+                  transition={{ type: "spring", stiffness: 60, duration: 2}}
                 >
                   <Image src={linkedinIcon} alt="" />
                 </motion.div>
@@ -170,7 +163,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, delay: 2 }}
+                  transition={{ type: "spring", stiffness: 60, duration: 2}}
                 >
                   <Image src={instagramIcon} alt="" />
                 </motion.div>
@@ -178,7 +171,7 @@ export default function Home() {
                   initial={{ y: 400, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 60, delay: 2.2 }}
+                  transition={{ type: "spring", stiffness: 60, duration: 2 }}
                 >
                   <Image src={emailIcon} alt="" />
                 </motion.div>
@@ -190,7 +183,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 60, delay: 2.5 }}
+                transition={{ duration: 2 }}
               >
                 <Image src={profilePic} className="home-header__profile-pic" />
               </motion.div>
@@ -201,10 +194,10 @@ export default function Home() {
       <main className="main-content">
         <motion.section
           className="home-about"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 400 }}
+          whileInView={{ opacity: 1, y: 0}}
           viewport={{ once: true }}
-          transition={{ delay: 3 }}
+          transition={{ duration: 2 }}
         >
           <div className="container">
             <div className="home-about__grid">
