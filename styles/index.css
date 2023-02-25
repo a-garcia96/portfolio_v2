@@ -1,15 +1,14 @@
 main {
     margin-bottom: 4em;
-    overflow: hidden;
 }
 
 main > section {
-    padding: 2.4rem 0;
+    padding: 8rem 0;
     z-index: 10;
 }
 
 .home-header {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 .home-header__grid {
@@ -49,13 +48,35 @@ main > section {
 .home-about {
     background-color: var(--color-secondary-dark);
     color: #404030;
-    z-index: 1;
+}
+
+.home-about > .container {
     position: relative;
 }
 
 .blob {
     position: absolute;
-    z-index: -1;
+    z-index: -5;
+}
+
+.blob[data-blob="1"] {
+    bottom: 10%;
+    right: -15%;
+}
+
+.blob[data-blob="2"] {
+    bottom: 30%;
+    left: -15%;
+}
+
+.blob[data-blob="3"] {
+    top: 30%;
+    right: -20%;
+}
+
+.blob[data-blob="4"] {
+    top: 10%;
+    left: -15%
 }
 
 .home-about__grid {
@@ -79,19 +100,25 @@ main > section {
 .home-services__blob1 {
     position: absolute;
     left: 0;
-    z-index: -1;
+    z-index: 0
 }
 
 .home-services__blob2 {
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
 .home-services__grid {
     display: grid;
     grid-row-gap: 2rem;
+}
+
+.home-skills {
+    padding: 6.4rem 0;
+    z-index: 15;
+    position: relative
 }
 
 .home-skills h2 {
@@ -170,6 +197,7 @@ main > section {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
     }
 
     .home-services__grid {

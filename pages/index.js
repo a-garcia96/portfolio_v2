@@ -139,11 +139,11 @@ export default function Home() {
   };
 
   // BLOB PARRALAX
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 2000], ["0%", "90%"]);
 
   return (
-    <>
+    <div>
       <Head>
         <title>Alex Garcia | Web Developer</title>
         <meta name="description" content="Built with NextJs" />
@@ -230,60 +230,86 @@ export default function Home() {
         </div>
       </header>
       <main className="main-content">
-        <motion.section
-          className="home-about"
-          initial={{ opacity: 0, y: 400 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
+        <section className="home-about">
           <div className="container">
-          <div className="blob" >
-                  <Image src={randomBlob1} alt="" />
-                </div>
-                <div className="blob">
-                  <Image src={randomBlob4} alt="" />
-                </div>
-                <div className="blob">
-                  <Image src={randomBlob3} alt="" />
-                </div>
-                <div className="blob">
-                  <Image src={randomBlob2} alt="" />
-                </div>
             <div className="home-about__grid">
+              <motion.div
+                className="blob"
+                data-blob="1"
+                style={{ y }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", duration: 0.5 }}
+              >
+                <Image src={randomBlob1} alt="" />
+              </motion.div>
+              <motion.div
+                className="blob"
+                data-blob="2"
+                style={{ y }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", duration: 0.5 }}
+              >
+                <Image src={randomBlob4} alt="" />
+              </motion.div>
+              <motion.div
+                className="blob"
+                data-blob="3"
+                style={{ y }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", duration: 0.5 }}
+              >
+                <Image src={randomBlob3} alt="" />
+              </motion.div>
+              <motion.div
+                className="blob"
+                data-blob="4"
+                style={{ y }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", duration: 0.5 }}
+              >
+                <Image src={randomBlob2} alt="" />
+              </motion.div>
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
               </div>
               <div className="home-about__summary">
               </div>
-                <p>
-                  I started my career in technology 5 years ago as an employee
-                  of an information technology managed services company. My role
-                  was to provide hardware, software and network support to
-                  multiple clients in different industries. This experience gave
-                  me the ability to be highly adaptable, and it also taught me
-                  the skill sets needed to become a quick leaner and
-                  self-sufficient.
-                </p>
-                <p>
-                  I quickly soaked up as much knowledge as I could and worked my
-                  way up to working with complex infrastructure hosted both
-                  locally and in the cloud. Yet, there was something still
-                  missing. I have always had a creative side, so I began to look
-                  for a career where I could take my technical skills I had
-                  acquired and be a little creative as well.
-                </p>
-                <p>
-                  Then I learned about front-end development and how it provides
-                  the ability to use my technical and creative skills. I was
-                  immediatly hooked! Recently, I was given the opportunity to
-                  put these skills to use and was promoted from being an
-                  infrastructure engineer to being the primary web developer for
-                  one of San Diego top financial broker-dealers.
-                </p>
+              <p>
+                I started my career in technology 5 years ago as an employee
+                of an information technology managed services company. My role
+                was to provide hardware, software and network support to
+                multiple clients in different industries. This experience gave
+                me the ability to be highly adaptable, and it also taught me
+                the skill sets needed to become a quick leaner and
+                self-sufficient.
+              </p>
+              <p>
+                I quickly soaked up as much knowledge as I could and worked my
+                way up to working with complex infrastructure hosted both
+                locally and in the cloud. Yet, there was something still
+                missing. I have always had a creative side, so I began to look
+                for a career where I could take my technical skills I had
+                acquired and be a little creative as well.
+              </p>
+              <p>
+                Then I learned about front-end development and how it provides
+                the ability to use my technical and creative skills. I was
+                immediatly hooked! Recently, I was given the opportunity to
+                put these skills to use and was promoted from being an
+                infrastructure engineer to being the primary web developer for
+                one of San Diego top financial broker-dealers.
+              </p>
             </div>
           </div>
-        </motion.section>
+        </section>
         <section className="home-services">
           <motion.div
             className="home-services__blob1"
@@ -516,6 +542,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

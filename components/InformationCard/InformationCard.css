@@ -2,6 +2,8 @@
     background-color: #F1F1F1;
     border-radius: 14px;
     padding: 2rem 1.4rem;
+    z-index: 15;
+    position: relative;
 }
 
 .information-card__heading {
