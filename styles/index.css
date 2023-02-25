@@ -200,11 +200,6 @@ main > section {
         position: relative;
     }
 
-    .home-services__grid {
-        grid-template-columns: repeat(3, 31%);
-        grid-column-gap: 2rem;
-    }
-
     .home-about__col-2 {
         width: 55rem;
     }
@@ -221,6 +216,21 @@ main > section {
 
     .home-skills__col {
         justify-self: center;
+    }
+}
+
+@media (min-width: 1000px) {
+    .home-services__grid {
+        grid-template-columns: repeat(auto-fit, 31%);
+        grid-column-gap: 2rem;
+        grid-template-rows: 1fr;
+        grid-auto-rows: 1fr;
+
+    }
+
+    /* THIS SELECTOR IS SPECIFICALLY FOR MAKING SURE THAT THE CARDS ARE EQUAL HEIGHT DUE TO USING A FRAMER MOTION ANIMATION DIV */
+    .home-services__grid > div > .information-card {
+        height: 100%;
     }
 }
 
