@@ -101,14 +101,14 @@ main > section {
 .home-services__blob1 {
   position: absolute;
   left: 0;
-  top: -50%;
+  top: -25%;
   z-index: 0;
 }
 
 .home-services__blob2 {
   position: absolute;
   right: 0;
-  top: -50%;
+  bottom: -15%;
   z-index: 0;
 }
 

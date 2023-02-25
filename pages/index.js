@@ -317,7 +317,7 @@ export default function Home() {
             />
           </motion.div>
           <div className="container">
-            <h2 style={{textAlign: "center", textTransform: "uppercase"}}>What I Do</h2>
+            <h2 style={{textAlign: "center", textTransform: "uppercase", zIndex: 15, position: "relative"}}>What I Do</h2>
             <div className="home-services__grid">
               <motion.div
                 initial={{ y: 400, opacity: 0 }}

@@ -1,7 +1,9 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component className='box-border' {...pageProps} />
+  return (
+      <Component className="box-border" {...pageProps} />
+  );
 }
 
-export default MyApp
+export default MyApp;
