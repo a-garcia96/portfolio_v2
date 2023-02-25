@@ -138,6 +138,18 @@ export default function Home() {
       );
   };
 
+
+  let aboutRef = useRef(null);
+  let {scrollYProgress: scrollAboutY} = useScroll({
+    target: aboutRef
+  })
+  const y = useTransform(scrollAboutY, [0,1], ["0%", "200%"])
+
+  let servicesRef = useRef(null);
+  let {scrollYProgress: scrollServicesY} = useScroll({
+    target: servicesRef
+  })
+  const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "100%"]);
   return (
     <>
       <Head>
@@ -227,6 +239,7 @@ export default function Home() {
       </header>
       <main className="main-content">
         <motion.section
+          ref={aboutRef}
           className="home-about"
           initial={{ opacity: 0, y: 400 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -234,18 +247,18 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <div className="container">
-            <div className="blob" data-blob="1">
+            <motion.div className="blob" data-blob="1" style={{y}}>
               <Image src={randomBlob1} alt="" />
-            </div>
-            <div className="blob" data-blob="2">
+            </motion.div>
+            <motion.div className="blob" data-blob="2" style={{y}}>
               <Image src={randomBlob2} alt="" />
-            </div>
-            <div className="blob" data-blob="3">
+            </motion.div>
+            <motion.div className="blob" data-blob="3" style={{y}}>
               <Image src={randomBlob3} alt="" />
-            </div>
-            <div className="blob" data-blob="4">
+            </motion.div>
+            <motion.div className="blob" data-blob="4" style={{y}}>
               <Image src={randomBlob4} alt="" />
-            </div>
+            </motion.div>
             <div className="home-about__grid">
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
@@ -278,22 +291,24 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-        <section className="home-services">
+        <section ref={servicesRef} className="home-services">
           <motion.div
             className="home-services__blob1"
             initial={{ x: -400, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ type: "spring", duration: 0.5}}
+            transition={{ type: "spring", duration: 1.5}}
+            style={{y: y2}}
           >
             <Image src={servicesBlob1} alt="" />
           </motion.div>
           <motion.div
             className="home-services__blob2"
+            style={{y: y2}}
             initial={{ x: 400, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1}}
             viewport={{ once: true }}
-            transition={{ type: "spring", duration: 0.5}}
+            transition={{ type: "spring", duration: 1.5}}
           >
             <Image
               className="home-services__blob2"
@@ -302,7 +317,7 @@ export default function Home() {
             />
           </motion.div>
           <div className="container">
-            <h2>What I Do</h2>
+            <h2 style={{textAlign: "center", textTransform: "uppercase"}}>What I Do</h2>
             <div className="home-services__grid">
               <motion.div
                 initial={{ y: 400, opacity: 0 }}

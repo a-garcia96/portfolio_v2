@@ -101,13 +101,14 @@ main > section {
 .home-services__blob1 {
   position: absolute;
   left: 0;
+  top: -50%;
   z-index: 0;
 }
 
 .home-services__blob2 {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: -50%;
   z-index: 0;
 }
 
@@ -225,23 +226,23 @@ main > section {
 
 @media (min-width: 1000px) {
   .blob[data-blob="1"] {
-    bottom: 10%;
-    right: 25%;
+    bottom: 20%;
+    right: 0;
   }
 
   .blob[data-blob="2"] {
-    bottom: 30%;
-    left: 25%;
+    bottom: 50%;
+    left: 0;
   }
 
   .blob[data-blob="3"] {
-    top: 30%;
-    right: 25%;
+    top: 0%;
+    right: 0;
   }
 
   .blob[data-blob="4"] {
-    top: 10%;
-    left: 25%;
+    top: -25%;
+    left: 0;
   }
 
   .home-services__grid {
