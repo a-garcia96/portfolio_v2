@@ -185,7 +185,7 @@ export default function Home() {
                   />
                 </p>
                 <Button>
-                  <Link href="/resume">Resume</Link>
+                  <a href="https://drive.google.com/file/d/1Ye7c0GpkskZ_53lTyYhCPhMpEK0d7c9o/view?usp=sharing" target="_blank">Resume</a>
                 </Button>
               </motion.div>
               <div className="home-header__social-icons">
@@ -195,7 +195,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.5 }}
                 >
-                  <Image src={githubIcon} alt="" />
+                  <a href="https://github.com/a-garcia96" target="_blank"><Image src={githubIcon} alt="Link to my LinkedIn Profile" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -203,7 +203,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.8 }}
                 >
-                  <Image src={linkedinIcon} alt="" />
+                  <a href="https://www.linkedin.com/in/agarcia96/"><Image src={linkedinIcon} alt="" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -211,7 +211,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2 }}
                 >
-                  <Image src={instagramIcon} alt="" />
+                  <a href="https://www.instagram.com/alex_gaarciaa/"><Image src={instagramIcon} alt="" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -219,7 +219,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2.2 }}
                 >
-                  <Image src={emailIcon} alt="" />
+                  <a href="mailto:alex.g9415@gmail.com?subject=email from your portfolio"><Image src={emailIcon} alt="" /></a>
                 </motion.div>
               </div>
             </section>
@@ -339,7 +339,7 @@ export default function Home() {
               >
                 <InformationCard
                   imageSrc={terminalIcon}
-                  heading="Web Development"
+                  heading="Web Dev"
                   summaryText="Experienced in HTML, CSS, JavaScript & React, I provide custom web solutions for complex apps & simple websites."
                 />
               </motion.div>

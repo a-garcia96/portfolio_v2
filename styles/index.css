@@ -21,6 +21,10 @@ main > section {
   order: 2;
 }
 
+.home-header .btn a {
+  display: block;
+}
+
 .home-header__col-2 {
   order: 1;
 }
