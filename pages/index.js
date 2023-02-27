@@ -149,7 +149,7 @@ export default function Home() {
   let {scrollYProgress: scrollServicesY} = useScroll({
     target: servicesRef
   })
-  const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "100%"]);
+  const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "200%"]);
   return (
     <>
       <Head>
