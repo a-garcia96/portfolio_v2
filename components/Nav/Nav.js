@@ -60,9 +60,9 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href="/contact">
+              <Link href="/about">
                 <a>
-                  <span className="set-bold highlight-text">03</span> Contact
+                  <span className="set-bold highlight-text">03</span> About
                 </a>
               </Link>
             </li>
@@ -90,8 +90,8 @@ export default function Nav() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a style={{borderBottom: router.asPath === "/contact" ? '3px solid var(--color-primary-dark)': 'white'}}>Contact</a>
+                <Link href="/about">
+                  <a style={{borderBottom: router.asPath === "/about" ? '3px solid var(--color-primary-dark)': 'white'}}>About</a>
                 </Link>
               </li>
             </ul>
