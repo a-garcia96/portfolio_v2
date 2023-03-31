@@ -8,6 +8,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 
+// CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
+
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
