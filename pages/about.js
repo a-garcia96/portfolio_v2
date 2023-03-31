@@ -3,6 +3,14 @@ import React from 'react'
 // IMPORT COMPONENT
 import Nav from "../components/Nav/Nav"
 import Footer from "../components/Footer/Footer"
+import Image from 'next/image'
+
+// IMPORT ASSETS
+import aboutMe1 from "../public/about-me-1.png"
+import aboutMe2 from "../public/about-me-2.png"
+import aboutMe3 from "../public/about-me-3.png"
+import aboutMe4 from "../public/about-me-4.png"
+import aboutMe5 from "../public/about-me-5.png"
 
 const about = () => {
     return (
@@ -18,17 +26,21 @@ const about = () => {
                     <div className="about-grid">
                         <div className="about-col-1">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc eget lorem dolor. In egestas erat imperdiet sed euismod. Feugiat nisl pretium fusce id velit ut. Aenean pharetra magna ac placerat vestibulum lectus. Eu non diam phasellus vestibulum lorem. Egestas integer eget aliquet nibh praesent tristique magna. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Et netus et malesuada fames ac. Quam quisque id diam vel. Feugiat scelerisque varius morbi enim nunc.
-
-                                Lobortis mattis aliquam faucibus purus in massa tempor. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Donec pretium vulputate sapien nec sagittis. Tellus cras adipiscing enim eu turpis egestas. Sit amet luctus venenatis lectus magna. Enim nulla aliquet porttitor lacus. Magna sit amet purus gravida. Volutpat diam ut venenatis tellus in metus vulputate. Ante metus dictum at tempor commodo ullamcorper a. Sit amet consectetur adipiscing elit ut. Augue interdum velit euismod in pellentesque massa placerat duis.
+                                Hi my name is Alejandro Garcia, but I prefer going by my short name Alex. I am a San Diego native. Most would say I am lucky to live in such a perfect city, but personally having grown up here I have a crave to explore new places. I enjoy traveling the world and seeing more than just the beach.
                             </p>
-                            <img src="https://place-hold.it/562x421" alt="placeholder" />
-                            <img src="https://place-hold.it/562x449" alt="placeholder" />
+                            <p>
+                                I grew up loving art in any form it comes in. Cinema, photography, painting, graphic design, music, etc. If it requires being creative I am all for it. I myself do photography as a hobby. I have been doing it for 10 years now. It goes hand in hand with my love for traveling. I love to capture life and landscapes that we normally do not get to see in San Diego. The pictures shown here are just some of the thousands of photos I have taken over the course of my career.
+                            </p>
+                            <p>
+                                I am also a very techincal and logically minded person. I love technology and being challenged by it. I grew up building computers with my father, learning how to spin up my own private game servers to play with friends and of course building websites.
+                            </p>
+                            <Image src={aboutMe1} alt="placeholder" />
+                            <Image src={aboutMe2} alt="placeholder" />
                         </div>
                         <div className="about-col-2">
-                            <img src="https://place-hold.it/563x317" alt="placeholder" />
-                            <img src="https://place-hold.it/561x421" alt="placeholder" />
-                            <img src="https://place-hold.it/562x703" alt="placeholder" />
+                            <Image src={aboutMe3} />
+                            <Image src={aboutMe4} />
+                            <Image src={aboutMe5} />
                         </div>
                     </div>
                 </div>

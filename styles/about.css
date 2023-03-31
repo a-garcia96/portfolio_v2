@@ -16,6 +16,7 @@
 
     .about-col-1 img {
         max-width: 600px;
+        object-fit: cover;
     }
 
     .about-col-2{
@@ -26,5 +27,6 @@
 
     .about-col-2 img {
         max-width: 600px;
+        object-fit: cover;
     }
 }
