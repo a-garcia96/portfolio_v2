@@ -40,7 +40,7 @@ const Blog = ({ formattedPosts }) => {
   return (
     <>
       <Nav />
-      <header style={{margin: "2em 0"}}>
+      <header className="blog__header" style={{margin: "2em 0"}}>
         <div className="container">
           <h1 style={{textAlign: "center"}}>The Blog</h1>
           <p>Really, just my inner monologue...</p>
