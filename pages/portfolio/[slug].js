@@ -7,6 +7,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // COMPONENTS
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
+import Tag from "../../components/Tag/Tag"
 
 // CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
 
@@ -55,7 +56,8 @@ export const getStaticProps = async ({ params }) => {
         name: item.fields.projectName,
         slug: item.fields.slug,
         summary: item.fields.summary,
-        technology: [...item.fields.technologyUsed]
+        technology: [...item.fields.technologyUsed],
+        link: item.fields.link
     };
   });
 
@@ -78,6 +80,10 @@ const Post = ({ project }) => {
       <header>
         <div className="container">
           <h1>{project.name}</h1>
+          <ul className="portfolio__tag-wrapper">
+            {project.technology.map(tag => <Tag tag={tag} />)}
+          </ul>
+          <a href={project.link}>Link to Repository</a>
         </div>
       </header>
       <main>
