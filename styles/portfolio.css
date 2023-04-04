@@ -1,7 +1,7 @@
 .portfolio__card {
     width: 100%;
     max-width: 550px;
-    margin: 0 auto;
+    margin: 4rem auto;
 }
 
 .portfolio__card div:first-child {
@@ -22,6 +22,7 @@
 .portfolio__card-summary {
     color: #42505C;
     text-align: justify;
+    line-height: 2;
 }
 
 .portfolio__card-link--int {
@@ -40,6 +41,7 @@
     display: inline-block;
     padding: 1.6rem;
     font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
 .portfolio__card-tag:not(:last-child) {
