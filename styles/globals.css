@@ -9,6 +9,7 @@
 @import "../components/Button/button.css";
 @import "../components/Card/card.css";
 @import "../components/InformationCard/InformationCard.css";
+@import "../components/Tag/tag.css";
 
 /* PAGE STYLES */
 @import "./index.css";

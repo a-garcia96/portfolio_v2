@@ -32,6 +32,11 @@
     color: #585858;
 }
 
+.portfolio__tag-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
 .portfolio__card-tag {
     background-color: #D9D9D9;
     color: #42505C;

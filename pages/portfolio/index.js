@@ -3,7 +3,8 @@ const contenful = require("contentful");
 
 import Nav from '../../components/Nav/Nav'
 import Footer from '../../components/Footer/Footer'
-import Image from 'next/image';
+import Tag from '../../components/Tag/tag'
+import Image from 'next/image'
 
 import externalLink from "../../public/icon-external-link.png"
 
@@ -53,8 +54,8 @@ const portfolio = ({ formattedProjects }) => {
                     <a className="portfolio__card-link--int" href={`/portfolio/${project.slug}`}>Read More</a>
                 </div>
                 <div>
-                    <ul>
-                        {project.technology.map(tag => <li className='portfolio__card-tag' key={tag}>{tag}</li>)}
+                    <ul className='portfolio__tag-wrapper'>
+                        {project.technology.map(tag => <Tag tag={tag} />)}
                     </ul>
                 </div>
             </div>
