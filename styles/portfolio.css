@@ -1,3 +1,14 @@
+.portfolio__header-single {
+    margin-bottom: 10rem;
+    padding: 2rem 0;
+
+}
+
+.portfolio__header-single .container > * {
+    margin: 20px 0;
+}
+
+
 .portfolio__card {
     width: 100%;
     max-width: 550px;

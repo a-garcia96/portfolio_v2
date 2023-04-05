@@ -8,6 +8,10 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import Tag from "../../components/Tag/Tag"
+import Image from "next/image";
+
+// IMPORT ASSETS
+import externalLink from "../../public/icon-external-link.png"
 
 // CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
 
@@ -77,13 +81,13 @@ const Post = ({ project }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header>
+      <header className="portfolio__header-single">
         <div className="container">
           <h1>{project.name}</h1>
           <ul className="portfolio__tag-wrapper">
             {project.technology.map(tag => <Tag tag={tag} />)}
           </ul>
-          <a href={project.link}>Link to Repository</a>
+          <a href={project.link} className="portfolio__card-link--ext">Link to Repository <Image src={externalLink} /></a>
         </div>
       </header>
       <main>
