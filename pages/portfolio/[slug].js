@@ -95,7 +95,6 @@ const Post = ({ project }) => {
         <div className="container">
           {documentToReactComponents(project.summary)}
           <div>
-            <h2>{project.mockups[0].fields.title}</h2>
             <Image src={`https:${project.mockups[0].fields.file.url}`} width={project.mockups[0].fields.file.details.image.width} height={project.mockups[0].fields.file.details.image.height} />
           </div>
         </div>
