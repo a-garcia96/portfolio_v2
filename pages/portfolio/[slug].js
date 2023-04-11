@@ -61,7 +61,8 @@ export const getStaticProps = async ({ params }) => {
         slug: item.fields.slug,
         summary: item.fields.summary,
         technology: [...item.fields.technologyUsed],
-        link: item.fields.link
+        link: item.fields.link,
+        mockups: item.fields.mockups
     };
   });
 
@@ -85,7 +86,7 @@ const Post = ({ project }) => {
         <div className="container">
           <h1>{project.name}</h1>
           <ul className="portfolio__tag-wrapper">
-            {project.technology.map(tag => <Tag tag={tag} />)}
+            {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
           </ul>
           <a href={project.link} className="portfolio__card-link--ext">Link to Repository <Image src={externalLink} /></a>
         </div>
@@ -93,6 +94,10 @@ const Post = ({ project }) => {
       <main>
         <div className="container">
           {documentToReactComponents(project.summary)}
+          <div>
+            <h2>{project.mockups[0].fields.title}</h2>
+            <Image src={`https:${project.mockups[0].fields.file.url}`} width={project.mockups[0].fields.file.details.image.width} height={project.mockups[0].fields.file.details.image.height} />
+          </div>
         </div>
       </main>
       <Footer />

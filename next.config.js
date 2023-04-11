@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'place-hold.it',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net'
+      }
     ]
   }
 }
