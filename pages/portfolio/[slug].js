@@ -61,7 +61,8 @@ export const getStaticProps = async ({ params }) => {
       slug: item.fields.slug,
       summary: item.fields.summary,
       technology: [...item.fields.technologyUsed],
-      link: item.fields.link,
+      repoLink: item.fields.repoLink,
+      liveLink: item.fields.liveLink,
       mockups: item.fields.mockups
     };
   });
@@ -88,7 +89,10 @@ const Post = ({ project }) => {
           <ul className="portfolio__tag-wrapper">
             {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
           </ul>
-          <a href={project.link} className="portfolio__card-link--ext">Link to Repository <Image className="linkIcon" src={externalLink} /></a>
+          <div className='portfolio__card-linkWrapper'>
+            <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image src={externalLink} /></a>
+            <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image className="linkIcon" src={externalLink} /></a>
+          </div>
         </div>
       </header>
       <main>
@@ -97,7 +101,7 @@ const Post = ({ project }) => {
             {documentToReactComponents(project.summary)}
           </article>
           <aside className="portfolio__gallery">
-            {project.mockups.map((image) => <Image src={`https:${image.fields.file.url}`} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} />)}
+            {project.mockups.map((image) => <Image key={image.fields.title} src={`https:${image.fields.file.url}`} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} />)}
           </aside>
         </div>
       </main>
