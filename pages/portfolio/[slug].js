@@ -92,11 +92,11 @@ const Post = ({ project }) => {
         </div>
       </header>
       <main>
-        <div className="container">
-          <article>
+        <div className="container portfolio__single-project">
+          <article className="portfolio__summary">
             {documentToReactComponents(project.summary)}
           </article>
-          <aside>
+          <aside className="portfolio__gallery">
             {project.mockups.map((image) => <Image src={`https:${image.fields.file.url}`} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} />)}
           </aside>
         </div>

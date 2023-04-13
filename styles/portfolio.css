@@ -1,74 +1,88 @@
 .portfolio__header-single {
-    margin-bottom: 5rem;
-    padding: 4rem 0;
-    background-color: #6D8699;
-
+  margin-bottom: 5rem;
+  padding: 4rem 0;
+  background-color: #6d8699;
 }
 
 .portfolio__header-single h1 {
-    color: #EAE9E6;
+  color: #eae9e6;
 }
 
 .portfolio__header-single .portfolio__card-link--ext {
-    color: #EAE9E6;
+  color: #eae9e6;
 }
 
 .portfolio__header-single .container > * {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
-
 .portfolio__card {
-    width: 100%;
-    max-width: 550px;
-    margin: 4rem auto;
+  width: 100%;
+  max-width: 550px;
+  margin: 4rem auto;
 }
 
 .portfolio__card div:first-child {
-    margin-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .portfolio__card-title {
-    color: #6D8699;
-    font-weight: 700;
+  color: #6d8699;
+  font-weight: 700;
 }
 
 .portfolio__card-link--ext {
-    text-decoration: underline;
-    font-family: 'Poppins', sans-serif;
-    color: #585858;
+  text-decoration: underline;
+  font-family: "Poppins", sans-serif;
+  color: #585858;
 }
 
 .portfolio__card-summary {
-    color: #42505C;
-    text-align: justify;
-    line-height: 2;
+  color: #42505c;
+  text-align: justify;
+  line-height: 2;
 }
 
 .portfolio__card-link--int {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: underline;
-    color: #585858;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #585858;
 }
 
 .portfolio__tag-wrapper {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .portfolio__card-tag {
-    background-color: #D9D9D9;
-    color: #42505C;
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 1.6rem;
-    font-size: 1.2rem;
-    margin: 1rem 0;
+  background-color: #d9d9d9;
+  color: #42505c;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1.6rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 
 .portfolio__card-tag:not(:last-child) {
-    margin-right: 1.6rem;
+  margin-right: 1.6rem;
+}
+
+.portfolio__single-project {
+  display: flex;
+  gap: 20px;
+}
+
+.portfolio__single-project > * {
+    flex-basis: calc(50% - 20px);
+}
+
+.portfolio__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px 20px;
 }
