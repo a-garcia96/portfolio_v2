@@ -1,7 +1,16 @@
 .portfolio__header-single {
-    margin-bottom: 10rem;
-    padding: 2rem 0;
+    margin-bottom: 5rem;
+    padding: 4rem 0;
+    background-color: #6D8699;
 
+}
+
+.portfolio__header-single h1 {
+    color: #EAE9E6;
+}
+
+.portfolio__header-single .portfolio__card-link--ext {
+    color: #EAE9E6;
 }
 
 .portfolio__header-single .container > * {

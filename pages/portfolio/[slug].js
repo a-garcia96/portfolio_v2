@@ -57,12 +57,12 @@ export const getStaticProps = async ({ params }) => {
 
   const formattedProjects = project.items.map((item) => {
     return {
-        name: item.fields.projectName,
-        slug: item.fields.slug,
-        summary: item.fields.summary,
-        technology: [...item.fields.technologyUsed],
-        link: item.fields.link,
-        mockups: item.fields.mockups
+      name: item.fields.projectName,
+      slug: item.fields.slug,
+      summary: item.fields.summary,
+      technology: [...item.fields.technologyUsed],
+      link: item.fields.link,
+      mockups: item.fields.mockups
     };
   });
 
@@ -72,7 +72,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Post = ({ project }) => {
-    console.log(project)
+  console.log(project)
 
   return (
     <>
@@ -88,15 +88,17 @@ const Post = ({ project }) => {
           <ul className="portfolio__tag-wrapper">
             {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
           </ul>
-          <a href={project.link} className="portfolio__card-link--ext">Link to Repository <Image src={externalLink} /></a>
+          <a href={project.link} className="portfolio__card-link--ext">Link to Repository <Image className="linkIcon" src={externalLink} /></a>
         </div>
       </header>
       <main>
         <div className="container">
-          {documentToReactComponents(project.summary)}
-          <div>
-            <Image src={`https:${project.mockups[0].fields.file.url}`} width={project.mockups[0].fields.file.details.image.width} height={project.mockups[0].fields.file.details.image.height} />
-          </div>
+          <article>
+            {documentToReactComponents(project.summary)}
+          </article>
+          <aside>
+            {project.mockups.map((image) => <Image src={`https:${image.fields.file.url}`} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} />)}
+          </aside>
         </div>
       </main>
       <Footer />
