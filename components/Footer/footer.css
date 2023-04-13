@@ -1,6 +1,7 @@
 .footer {
-    background-color: #C9CECA;
+    background-color: #6D8799;
     padding: 3.2rem 0;
+    color: #EAE9E6;
 }
 
 
@@ -27,7 +28,6 @@
         display: flex;
         flex-wrap: wrap;
         row-gap: 5em;
-        padding: 4em 0;
     }
 
     .footer__heading {
