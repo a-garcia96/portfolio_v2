@@ -50,7 +50,6 @@ import contentfulIcon from "../public/contentful.png";
 import wordpressIcon from "../public/wordpress.png";
 import nextjsIcon from "../public/nextjs.png";
 import gitIcon from "../public/git.png";
-import Link from "next/Link";
 
 export default function Home() {
   const [dimension, setDimension] = useState(80);
