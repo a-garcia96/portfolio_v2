@@ -185,7 +185,7 @@ export default function Home() {
                   />
                 </p>
                 <Button>
-                  <a href="https://drive.google.com/file/d/1Ye7c0GpkskZ_53lTyYhCPhMpEK0d7c9o/view?usp=sharing" target="_blank">Resume</a>
+                  <a href="https://drive.google.com/file/d/1Ye7c0GpkskZ_53lTyYhCPhMpEK0d7c9o/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
                 </Button>
               </motion.div>
               <div className="home-header__social-icons">
@@ -195,7 +195,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.5 }}
                 >
-                  <a href="https://github.com/a-garcia96" target="_blank"><Image src={githubIcon} alt="Link to my LinkedIn Profile" /></a>
+                  <a href="https://github.com/a-garcia96" target="_blank" rel="noreferrer"><Image src={githubIcon} alt="Link to my LinkedIn Profile" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -203,7 +203,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.8 }}
                 >
-                  <a href="https://www.linkedin.com/in/agarcia96/"><Image src={linkedinIcon} alt="" /></a>
+                  <a href="https://www.linkedin.com/in/agarcia96/"><Image src={linkedinIcon} alt="LinkedIn Icon" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -211,7 +211,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2 }}
                 >
-                  <a href="https://www.instagram.com/alex_gaarciaa/"><Image src={instagramIcon} alt="" /></a>
+                  <a href="https://www.instagram.com/alex_gaarciaa/"><Image src={instagramIcon} alt="IG Icon" /></a>
                 </motion.div>
                 <motion.div
                   initial={{ y: 400, opacity: 0 }}
@@ -219,7 +219,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2.2 }}
                 >
-                  <a href="mailto:alex.g9415@gmail.com?subject=email from your portfolio"><Image src={emailIcon} alt="" /></a>
+                  <a href="mailto:alex.g9415@gmail.com?subject=email from your portfolio"><Image src={emailIcon} alt="email icon" /></a>
                 </motion.div>
               </div>
             </section>
@@ -231,7 +231,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 1.5 }}
               >
-                <Image src={profilePic} className="home-header__profile-pic" />
+                <Image src={profilePic} className="home-header__profile-pic" alt="profile picture of alex garcia" />
               </motion.div>
             </section>
           </div>
@@ -313,7 +313,7 @@ export default function Home() {
             <Image
               className="home-services__blob2"
               src={servicesBlob2}
-              alt=""
+              alt="blob"
             />
           </motion.div>
           <div className="container">
