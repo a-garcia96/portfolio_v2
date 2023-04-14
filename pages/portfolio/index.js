@@ -49,8 +49,8 @@ const portfolio = ({ formattedProjects }) => {
                 <div>
                     <h2 className='portfolio__card-title'>{project.name}</h2>
                     <div className='portfolio__card-linkWrapper'>
-                        <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image src={externalLink} /></a>
-                        <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image className="linkIcon" src={externalLink} /></a>
+                        <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link" src={externalLink} /></a>
+                        <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link" className="linkIcon" src={externalLink} /></a>
                     </div>
 
                     <p className='portfolio__card-summary'>{project.summary}</p>
