@@ -90,8 +90,8 @@ const Post = ({ project }) => {
             {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
           </ul>
           <div className='portfolio__card-linkWrapper'>
-            <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link" src={externalLink} /></a>
-            <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link" className="linkIcon" src={externalLink} /></a>
+            <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link to website" src={externalLink} /></a>
+            <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
           </div>
         </div>
       </header>
