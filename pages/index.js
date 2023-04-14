@@ -261,7 +261,7 @@ export default function Home() {
             </motion.div>
             <div className="home-about__grid">
               <div className="home-about__col-1">
-                <h2>The Story So Far...</h2>
+                <h2>The Story So Far...</h2> 
               </div>
               <div className="home-about__summary"></div>
               <p>
