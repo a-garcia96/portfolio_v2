@@ -7,21 +7,19 @@
     margin-bottom: 4rem;
 }
 
-/* @media (min-width: 800px) {
-    .blog__container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 2em;
-        grid-row-gap: 2em;
-        justify-items: center;
-        margin: 0;
-        padding: 0;
-        grid-auto-rows: 1fr;
-    }
-} */
+.post__header {
+    margin-bottom: 5rem;
+    padding: 4rem 0;
+    background-color: #6d8699;
+    text-align: center;
+}
 
-/* @media (min-width: 1200px) {
-    .blog__container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-} */
+.post__header h1 {
+    color: #eae9e6;
+}
+
+.post__content {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}

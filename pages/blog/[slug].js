@@ -80,15 +80,17 @@ const Post = ({ post }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header>
+      <header className="post__header">
         <div className="container">
           <h1>{post.title}</h1>
         </div>
       </header>
       <main>
-        <div className="container">
-          {documentToReactComponents(post.postContent)}
-        </div>
+        <article className="container">
+          <div className="post__content">
+            {documentToReactComponents(post.postContent)}
+          </div>
+        </article>
       </main>
       <Footer />
     </>
