@@ -1,22 +1,19 @@
 import React from 'react'
+import Link from "next/link"
 
 const Footer = () => {
   return (
     <footer className='footer'>
         <div className='footer__wrapper container'>
-          <div className='footer__heading'>
-            <h1><span className='highlight-text'>Alex</span> Garcia</h1>
-            <p>alex.g9415@gmail.com</p>
-          </div>
           <div className='footer__site-map'>
             <ul>
-                <li>Home</li>
-              <li>Portfolio</li>
-              <li>Blog</li>
-              <li>Resume</li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/about">About</Link></li>
             </ul>
           </div>
-          <div className='footer__copyright'>© 2023 | Alex Garcia</div>
+          <div className='footer__copyright'>©{new Date().getFullYear()} | Alex Garcia</div>
         </div>
     </footer>
   )
