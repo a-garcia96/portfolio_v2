@@ -54,7 +54,7 @@ const portfolio = ({ formattedProjects }) => {
                     </div>
 
                     <p className='portfolio__card-summary'>{project.summary}</p>
-                    <a className="portfolio__card-link--int" href={`/portfolio/${project.slug}`}>Read More</a>
+                    <a className="portfolio__card-link--int" href={`/portfolio/${project.slug}`}>Read More &rarr;</a>
                 </div>
                 <div>
                     <ul className='portfolio__tag-wrapper'>
