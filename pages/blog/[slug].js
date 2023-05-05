@@ -42,7 +42,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -73,6 +73,8 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Post = ({ post }) => {
+  if(!post) return <div>Loading...</div>
+
   return (
     <>
       <Head>
