@@ -67,6 +67,15 @@ export const getStaticProps = async ({ params }) => {
     };
   });
 
+  if(!formattedProjects.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: { project: formattedProjects[0] },
     revalidate: 10
