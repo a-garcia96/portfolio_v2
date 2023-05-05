@@ -68,6 +68,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { post: formattedPosts[0] },
+    revalidate: 10
   };
 };
 

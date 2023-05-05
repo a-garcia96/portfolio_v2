@@ -26,12 +26,13 @@ export async function getStaticProps(context) {
         postContent: item.fields.postContent.content[0].content[0].value
       }
     })
-  
+
 
   return {
     props: {
       formattedPosts
-    }
+    },
+    revalidate: 10
   }
 }
 
