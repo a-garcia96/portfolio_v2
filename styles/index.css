@@ -3,10 +3,7 @@ main {
   overflow: hidden;
 }
 
-main > section {
-  padding: 8rem 0;
-  z-index: 10;
-}
+
 
 .home-header {
   padding: 5rem 0;
@@ -267,6 +264,11 @@ main > section {
 }
 
 @media (min-width: 1300px) {
+  main > section {
+    padding: 8rem 0;
+    z-index: 10;
+  }
+  
   .home-header__grid p {
     width: 75%;
   }

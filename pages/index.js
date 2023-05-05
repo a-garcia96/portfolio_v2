@@ -162,7 +162,7 @@ export default function Home() {
           <div className="home-header__grid">
             <section className="home-header__col-1">
               <motion.div
-                initial={{ opacity: 0, y: 500 }}
+                initial={{ opacity: 0, y: 200 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 2 }}
@@ -189,7 +189,7 @@ export default function Home() {
               </motion.div>
               <div className="home-header__social-icons">
                 <motion.div
-                  initial={{ y: 400, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.5 }}
@@ -197,7 +197,7 @@ export default function Home() {
                   <a href="https://github.com/a-garcia96" target="_blank" rel="noreferrer"><Image src={githubIcon} alt="Link to my LinkedIn Profile" /></a>
                 </motion.div>
                 <motion.div
-                  initial={{ y: 400, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 1.8 }}
@@ -205,7 +205,7 @@ export default function Home() {
                   <a href="https://www.linkedin.com/in/agarcia96/"><Image src={linkedinIcon} alt="LinkedIn Icon" /></a>
                 </motion.div>
                 <motion.div
-                  initial={{ y: 400, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2 }}
@@ -213,7 +213,7 @@ export default function Home() {
                   <a href="https://www.instagram.com/alex_gaarciaa/"><Image src={instagramIcon} alt="IG Icon" /></a>
                 </motion.div>
                 <motion.div
-                  initial={{ y: 400, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", duration: 2.2 }}
@@ -225,7 +225,7 @@ export default function Home() {
             <section className="home-header__col-2">
               <motion.div
                 className="home-header__image-wrapper"
-                initial={{ opacity: 0, y: -300 }}
+                initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 1.5 }}
@@ -240,24 +240,24 @@ export default function Home() {
         <motion.section
           ref={aboutRef}
           className="home-about"
-          initial={{ opacity: 0, y: 400 }}
+          initial={{ opacity: 0, y: 200 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <div className="container">
-            <motion.div className="blob" data-blob="1" style={{y}}>
+            <div className="blob" data-blob="1" style={{y}}>
               <Image src={randomBlob1} alt="" />
-            </motion.div>
-            <motion.div className="blob" data-blob="2" style={{y}}>
+            </div>
+            <div className="blob" data-blob="2" style={{y}}>
               <Image src={randomBlob2} alt="" />
-            </motion.div>
-            <motion.div className="blob" data-blob="3" style={{y}}>
+            </div>
+            <div className="blob" data-blob="3" style={{y}}>
               <Image src={randomBlob3} alt="" />
-            </motion.div>
-            <motion.div className="blob" data-blob="4" style={{y}}>
+            </div>
+            <div className="blob" data-blob="4" style={{y}}>
               <Image src={randomBlob4} alt="" />
-            </motion.div>
+            </div>
             <div className="home-about__grid">
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2> 
