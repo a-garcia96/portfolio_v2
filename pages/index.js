@@ -263,31 +263,39 @@ export default function Home() {
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
               </div>
-              <div className="home-about__summary"></div>
-              <p>
-                I started my career in technology 5 years ago as an employee of
-                an information technology managed services company. My role was
-                to provide hardware, software and network support to multiple
-                clients in different industries. This experience gave me the
-                ability to be highly adaptable, and it also taught me the skill
-                sets needed to become a quick leaner and self-sufficient.
-              </p>
-              <p>
-                I quickly soaked up as much knowledge as I could and worked my
-                way up to working with complex infrastructure hosted both
-                locally and in the cloud. Yet, there was something still
-                missing. I have always had a creative side, so I began to look
-                for a career where I could take my technical skills I had
-                acquired and be a little creative as well.
-              </p>
-              <p>
-                Then I learned about front-end development and how it provides
-                the ability to use my technical and creative skills. I was
-                immediatly hooked! Recently, I was given the opportunity to put
-                these skills to use and was promoted from being an
-                infrastructure engineer to being the primary web developer for
-                one of San Diego top financial broker-dealers.
-              </p>
+              <motion.div
+              initial={{opacity: 0, y:100}}
+              whileInView={{opacity: 1, y:0}}
+              viewport={{once: true}}
+              transition={{duration: 3}}
+              className="home-about__summary">
+                <p>
+                  I started my career in technology 5 years ago as an employee of
+                  an information technology managed services company. My role was
+                  to provide hardware, software and network support to multiple
+                  clients in different industries. This experience gave me the
+                  ability to be highly adaptable, and it also taught me the skill
+                  sets needed to become a quick leaner and self-sufficient.
+                </p>
+                <p>
+                  I quickly soaked up as much knowledge as I could and worked my
+                  way up to working with complex infrastructure hosted both
+                  locally and in the cloud. Yet, there was something still
+                  missing. I have always had a creative side, so I began to look
+                  for a career where I could take my technical skills I had
+                  acquired and be a little creative as well.
+                </p>
+                <p>
+                  Then I learned about front-end development and how it provides
+                  the ability to use my technical and creative skills. I was
+                  immediatly hooked! Recently, I was given the opportunity to put
+                  these skills to use and was promoted from being an
+                  infrastructure engineer to being the primary web developer for
+                  one of San Diego top financial broker-dealers.
+                </p>
+
+              </motion.div>
+
             </div>
           </div>
         </motion.section>
@@ -310,7 +318,7 @@ export default function Home() {
             <h2 style={{ textAlign: "center", textTransform: "uppercase", zIndex: 15, position: "relative" }}>What I Do</h2>
             <div className="home-services__grid">
               <motion.div
-                initial={{ y: 400, opacity: 0 }}
+                initial={{ y: 200, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 1 }}
@@ -322,7 +330,7 @@ export default function Home() {
                 />
               </motion.div>
               <motion.div
-                initial={{ y: 400, opacity: 0 }}
+                initial={{ y: 200, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 1.4 }}
@@ -334,7 +342,7 @@ export default function Home() {
                 />
               </motion.div>
               <motion.div
-                initial={{ y: 400, opacity: 0 }}
+                initial={{ y: 200, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", duration: 1.8 }}
