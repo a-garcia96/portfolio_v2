@@ -85,6 +85,8 @@ export const getStaticProps = async ({ params }) => {
 const Post = ({ project }) => {
 if(!project ) return <div>Loading...</div>
 
+console.log(project)
+
   return (
     <>
       <Head>
@@ -111,7 +113,7 @@ if(!project ) return <div>Loading...</div>
             {documentToReactComponents(project.summary)}
           </article>
           <aside className="portfolio__gallery">
-            {project.mockups.map((image) => <Image key={image.fields.title} alt={image.fields.title} src={`https:${image.fields.file.url}`} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} />)}
+            {project.mockups.map((image) => <img className="portfolio__gallery-img" key={image.fields.title} alt={image.fields.title} src={`https:${image.fields.file.url}`} />)}
           </aside>
         </div>
       </main>
