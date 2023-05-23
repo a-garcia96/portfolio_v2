@@ -82,23 +82,11 @@
 }
 
 @media (min-width: 1000px) {
-  .portfolio__single-project {
+
+  .portfolio__header-grid {
     display: flex;
-    gap: 20px;
   }
-
-  .portfolio__single-project > * {
+  /* .portfolio__single-project > * {
     flex-basis: calc(50% - 20px);
-  }
-
-  .portfolio__gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px
-  }
-  .portfolio__gallery-img {
-    height: 100%;
-    object-fit: cover;
-  }
+  } */
 }

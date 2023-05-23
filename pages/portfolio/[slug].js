@@ -67,7 +67,7 @@ export const getStaticProps = async ({ params }) => {
     };
   });
 
-  if(!formattedProjects.length) {
+  if (!formattedProjects.length) {
     return {
       redirect: {
         destination: '/',
@@ -83,9 +83,9 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Post = ({ project }) => {
-if(!project ) return <div>Loading...</div>
+  if (!project) return <div>Loading...</div>
 
-console.log(project)
+  console.log(project)
 
   return (
     <>
@@ -96,14 +96,19 @@ console.log(project)
       </Head>
       <Nav />
       <header className="portfolio__header-single">
-        <div className="container">
-          <h1>{project.name}</h1>
-          <ul className="portfolio__tag-wrapper">
-            {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
-          </ul>
-          <div className='portfolio__card-linkWrapper'>
-            <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link to website" src={externalLink} /></a>
-            <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
+        <div className="container portfolio__header-grid">
+          <div>
+            <h1>{project.name}</h1>
+            <ul className="portfolio__tag-wrapper">
+              {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
+            </ul>
+            <div className='portfolio__card-linkWrapper'>
+              <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link to website" src={externalLink} /></a>
+              <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
+            </div>
+          </div>
+          <div>
+            {project.mockups.map((image) => <img className="portfolio__gallery-img" key={image.fields.title} alt={image.fields.title} src={`https:${image.fields.file.url}`} />)}
           </div>
         </div>
       </header>
@@ -112,9 +117,6 @@ console.log(project)
           <article className="portfolio__summary">
             {documentToReactComponents(project.summary)}
           </article>
-          <aside className="portfolio__gallery">
-            {project.mockups.map((image) => <img className="portfolio__gallery-img" key={image.fields.title} alt={image.fields.title} src={`https:${image.fields.file.url}`} />)}
-          </aside>
         </div>
       </main>
       <Footer />
