@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
+import nameLogo from "../../public/name_logo.png"
 
 export default function Nav() {
-  
   const handleClick = () => {
     const mobileNav = document.querySelector(".nav__mobile");
     const navToggle = document.querySelector(".nav__toggle");
@@ -20,10 +21,8 @@ export default function Nav() {
     }
   };
 
-
   // get active link
   const router = useRouter();
-
 
   return (
     <nav className="nav">
@@ -70,28 +69,64 @@ export default function Nav() {
         </div>
         <div className="nav__desktop">
           <div className="nav__desktop-heading">
-            <h1>Alex <span className="highlight-text">Garcia</span></h1>
+            <Image src={nameLogo} width={125} height={71} alt="Logo for Alex Garcia" />
           </div>
           <div className="nav__desktop-links">
             <ul>
               <li>
                 <Link href="/">
-                  <a style={{borderBottom: router.asPath === "/" ? '3px solid var(--color-primary-dark)': 'white'}}>Home</a>
+                  <a
+                    style={{
+                      borderBottom:
+                        router.asPath === "/"
+                          ? "3px solid var(--color-primary-dark)"
+                          : "white",
+                    }}
+                  >
+                    Home
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="/portfolio">
-                  <a style={{borderBottom: router.asPath === "/portfolio" ? '3px solid var(--color-primary-dark)': 'white'}}>Portfolio</a>
+                  <a
+                    style={{
+                      borderBottom:
+                        router.asPath === "/portfolio"
+                          ? "3px solid var(--color-primary-dark)"
+                          : "white",
+                    }}
+                  >
+                    Portfolio
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <a style={{borderBottom: router.asPath === "/blog" ? '3px solid var(--color-primary-dark)': 'white'}}>Blog</a>
+                  <a
+                    style={{
+                      borderBottom:
+                        router.asPath === "/blog"
+                          ? "3px solid var(--color-primary-dark)"
+                          : "white",
+                    }}
+                  >
+                    Blog
+                  </a>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <a style={{borderBottom: router.asPath === "/about" ? '3px solid var(--color-primary-dark)': 'white'}}>About</a>
+                  <a
+                    style={{
+                      borderBottom:
+                        router.asPath === "/about"
+                          ? "3px solid var(--color-primary-dark)"
+                          : "white",
+                    }}
+                  >
+                    About
+                  </a>
                 </Link>
               </li>
             </ul>
