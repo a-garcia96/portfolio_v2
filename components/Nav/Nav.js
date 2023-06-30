@@ -28,7 +28,7 @@ export default function Nav() {
     <nav className="nav">
       <div className="container">
         <div className="nav__mobile-heading">
-          <h1 className="uppercase-text nav__mobile-heading-text">AG</h1>
+          <Image src={nameLogo} width={125} height={75} alt="Logo for Alex Garcia" />
           <button
             onClick={handleClick}
             className="nav__toggle"
