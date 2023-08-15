@@ -30,7 +30,7 @@ import randomBlob4 from "../public/blob-random-4.png";
 import randomBlob5 from "../public/blob-random-5.png";
 import randomBlob6 from "../public/blob-random-6.png";
 
-import profilePic from "../public/profilePic2.png";
+import profilePic from "../public/profilePicture.png";
 import githubIcon from "../public/github-icon.png";
 import linkedinIcon from "../public/linkedin-icon.png";
 import instagramIcon from "../public/instagram-icon.png";
