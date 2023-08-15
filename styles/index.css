@@ -192,16 +192,19 @@ main {
     flex-direction: row;
     align-items: center;
     column-gap: 4em;
+
   }
 
   .home-header__col-1 {
-    width: 60%;
+    width: 50%;
     order: 1;
+
   }
 
   .home-header__col-2 {
-    width: 40%;
+    width: 50%;
     order: 2;
+
   }
 
   .home-about__grid {
@@ -285,8 +288,13 @@ main {
     padding: 8rem 0;
     z-index: 10;
   }
+
+  .home-header h1 {
+    font-size: 6rem;
+  }
   
   .home-header__grid p {
     width: 75%;
+    font-size: 2rem;
   }
 }
