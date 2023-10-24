@@ -14,6 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // components
+import Container from "../components/Container/Container";
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
@@ -149,6 +150,7 @@ export default function Home() {
     target: servicesRef
   })
   const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "200%"]);
+
   return (
     <>
       <Head>
@@ -157,7 +159,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header className="home-header">
+      {/* <header className="home-header">
         <div className="container">
           <div className="home-header__grid">
             <section className="home-header__col-1">
@@ -235,6 +237,11 @@ export default function Home() {
             </section>
           </div>
         </div>
+      </header> */}
+      <header>
+        <Container>
+          <h1 className="text-6xl text-blue-500">TESTING</h1>
+        </Container>
       </header>
       <main className="main-content">
 
