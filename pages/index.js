@@ -138,17 +138,16 @@ export default function Home() {
       );
   };
 
-
   let aboutRef = useRef(null);
   let { scrollYProgress: scrollAboutY } = useScroll({
-    target: aboutRef
-  })
-  const y = useTransform(scrollAboutY, [0, 1], ["0%", "200%"])
+    target: aboutRef,
+  });
+  const y = useTransform(scrollAboutY, [0, 1], ["0%", "200%"]);
 
   let servicesRef = useRef(null);
   let { scrollYProgress: scrollServicesY } = useScroll({
-    target: servicesRef
-  })
+    target: servicesRef,
+  });
   const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "200%"]);
 
   return (
@@ -240,11 +239,31 @@ export default function Home() {
       </header> */}
       <header>
         <Container>
-          <h1 className="text-6xl text-blue-500">TESTING</h1>
+          <h1 className="py-2 px-4 font-bold">About</h1>
+          <div className="md:grid md:grid-cols-3 md:gap-5 my-4">
+            <div className="bg-white shadow-sm rounded-lg py-2 px-4 md:col-span-2">
+              <div className="flex gap-5">
+                <div>
+                  <h3 className="text-neutral-500 text-sm">Front End Developer</h3>
+                  <h2 className="font-bold text-blue-500 text-xl">Hi, I'm Alex!</h2>
+                  <p className="max-w-prose">A creative and analytical developer with a passion for designing modern, minimal user interfaces</p>
+                  <button className="bg-blue-500 rounded-full px-4 py-2 text-white text-sm">Get to know me</button>
+                </div>
+                <div className="align-self-center">
+                  <img src="/alexPicture.jpg"  className="rounded-full w-36"/>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white shadow-sm rounded-lg py-2 px-4 md:col-span-1 grid grid-cols-4 md:grid-cols-2 md:grid-rows-2">
+              <p>test</p>
+              <p>test</p>
+              <p>test</p>
+              <p>test</p>
+            </div>
+          </div>
         </Container>
       </header>
       <main className="main-content">
-
         <motion.section
           ref={aboutRef}
           className="home-about"
@@ -254,35 +273,25 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <div className="container">
-            <div className="blob" data-blob="1" >
-              <Image src={randomBlob1} alt="" />
-            </div>
-            <div className="blob" data-blob="2">
-              <Image src={randomBlob2} alt="" />
-            </div>
-            <div className="blob" data-blob="3">
-              <Image src={randomBlob3} alt="" />
-            </div>
-            <div className="blob" data-blob="4">
-              <Image src={randomBlob4} alt="" />
-            </div>
             <div className="home-about__grid">
               <div className="home-about__col-1">
                 <h2>The Story So Far...</h2>
               </div>
               <motion.div
-              initial={{opacity: 0, y:100}}
-              whileInView={{opacity: 1, y:0}}
-              viewport={{once: true}}
-              transition={{duration: 3}}
-              className="home-about__summary">
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 3 }}
+                className="home-about__summary"
+              >
                 <p>
-                  I started my career in technology 5 years ago as an employee of
-                  an information technology managed services company. My role was
-                  to provide hardware, software and network support to multiple
-                  clients in different industries. This experience gave me the
-                  ability to be highly adaptable, and it also taught me the skill
-                  sets needed to become a quick leaner and self-sufficient.
+                  I started my career in technology 5 years ago as an employee
+                  of an information technology managed services company. My role
+                  was to provide hardware, software and network support to
+                  multiple clients in different industries. This experience gave
+                  me the ability to be highly adaptable, and it also taught me
+                  the skill sets needed to become a quick leaner and
+                  self-sufficient.
                 </p>
                 <p>
                   I quickly soaked up as much knowledge as I could and worked my
@@ -295,34 +304,24 @@ export default function Home() {
                 <p>
                   Then I learned about front-end development and how it provides
                   the ability to use my technical and creative skills. I was
-                  immediatly hooked! Recently, I was given the opportunity to put
-                  these skills to use and was promoted from being an
+                  immediatly hooked! Recently, I was given the opportunity to
+                  put these skills to use and was promoted from being an
                   infrastructure engineer to being the primary web developer for
                   one of San Diego top financial broker-dealers.
                 </p>
-
               </motion.div>
-
             </div>
           </div>
         </motion.section>
         <section ref={servicesRef} className="home-services">
-          <div
-            className="home-services__blob1"
-          >
-            <Image src={servicesBlob1} alt="" />
-          </div>
-          <div
-            className="home-services__blob2"
-          >
-            <Image
-              className="home-services__blob2"
-              src={servicesBlob2}
-              alt="blob"
-            />
-          </div>
+          <div className="home-services__blob1"></div>
+          <div className="home-services__blob2"></div>
           <div className="container">
-            <h2 style={{ textAlign: "center", zIndex: 15, position: "relative" }}>What I Do</h2>
+            <h2
+              style={{ textAlign: "center", zIndex: 15, position: "relative" }}
+            >
+              What I Do
+            </h2>
             <div className="home-services__grid">
               <motion.div
                 initial={{ y: 200, opacity: 0 }}
