@@ -3,6 +3,10 @@
 @import "./variables.css";
 @import "./utilities.css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* COMPONENT STYLES*/
 @import "../components/Nav/nav.css";
 @import "../components/Footer/footer.css";
