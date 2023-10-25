@@ -146,7 +146,7 @@ export default function Home() {
                       Front End Developer
                     </h3>
                     <h1 className="font-bold text-blue-500 text-xl mb-2">
-                      Hi, I'm Alex!
+                      Hi, I&apos;m Alex!
                     </h1>
                     <p className="max-w-prose">
                       A creative and analytical developer with a passion for
@@ -179,10 +179,10 @@ export default function Home() {
                   Links
                 </h3>
                 <div className="md:col-span-1 grid grid-cols-4 md:grid-cols-2 md:grid-rows-2 gap-5">
-                  <Image src={linkedinLogo} alt="Instagram Logo" />
-                  <Image src={githubLogo} alt="Instagram Logo" />
+                  <Image src={linkedinLogo} alt="LinkedIn Logo" />
+                  <Image src={githubLogo} alt="Github Logo" />
                   <Image src={instagramLogo} alt="Instagram Logo" />
-                  <Image src={gmailLogo} alt="Instagram Logo" />
+                  <Image src={gmailLogo} alt="GMail Logo" />
                 </div>
               </div>
             </div>
