@@ -10,9 +10,6 @@ import Footer from "../../components/Footer/Footer";
 import Tag from "../../components/Tag/Tag"
 import Image from "next/image";
 
-// IMPORT ASSETS
-import externalLink from "../../public/icon-external-link.png"
-
 // CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
 
 const client = contenful.createClient({
@@ -103,7 +100,7 @@ const Post = ({ project }) => {
               {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
             </ul>
             <div className='portfolio__card-linkWrapper'>
-              <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link to website" src={externalLink} /></a>
+              <a className='portfolio__card-link--ext' href={project.repoLink}>code</a>
               <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
             </div>
           </div>
