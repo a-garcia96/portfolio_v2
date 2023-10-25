@@ -29,13 +29,8 @@ const about = () => {
                             <p>
                                 I am also a very techincal and logically minded person. I love technology and being challenged by it. I grew up building computers with my father, learning how to spin up my own private game servers to play with friends and of course building websites.
                             </p>
-                            <Image src={aboutMe1} alt="personal picture"/>
-                            <Image src={aboutMe2} alt="personal picture" />
                         </div>
                         <div className="about-col-2">
-                            <Image src={aboutMe3} alt="personal picture" />
-                            <Image src={aboutMe4} alt="personal picture"/>
-                            <Image src={aboutMe5} alt="personal picture"/>
                         </div>
                     </div>
                 </div>
