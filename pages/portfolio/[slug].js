@@ -101,7 +101,7 @@ const Post = ({ project }) => {
             </ul>
             <div className='portfolio__card-linkWrapper'>
               <a className='portfolio__card-link--ext' href={project.repoLink}>code</a>
-              <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
+              <a href={project.liveLink} className="portfolio__card-link--ext">Live Site</a>
             </div>
           </div>
           <div>
