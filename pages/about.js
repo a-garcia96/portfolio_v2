@@ -6,11 +6,6 @@ import Footer from "../components/Footer/Footer"
 import Image from 'next/image'
 
 // IMPORT ASSETS
-import aboutMe1 from "../public/about-me-1.png"
-import aboutMe2 from "../public/about-me-2.png"
-import aboutMe3 from "../public/about-me-3.png"
-import aboutMe4 from "../public/about-me-4.png"
-import aboutMe5 from "../public/about-me-5.png"
 
 const about = () => {
     return (
