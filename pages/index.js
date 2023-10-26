@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 // NEXTJS COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
-
+import Link from "next/link";
 //IMPORT FRAMER MOTION
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -18,7 +18,7 @@ import Container from "../components/Container/Container";
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
-// import { Typewriter } from "react-simple-typewriter";
+import Tag from "../components/Tag/Tag";
 import InformationCard from "../components/InformationCard/InformationCard";
 
 // assets
@@ -31,20 +31,6 @@ import gmailLogo from "../public/home/gmail-logo.png";
 export default function Home() {
   const [dimension, setDimension] = useState(80);
   const [isSent, setIsSent] = useState(null);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 450) {
-  //       setDimension(60);
-  //     } else if (window.innerWidth > 450) {
-  //       setDimension(80);
-  //     }
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
 
   const form = useRef();
   const {
@@ -148,13 +134,15 @@ export default function Home() {
                     <h1 className="font-bold text-blue-500 text-xl mb-2">
                       Hi, I&apos;m Alex!
                     </h1>
-                    <p className="max-w-prose">
+                    <p className="max-w-prose mb-5">
                       A creative and analytical developer with a passion for
                       designing modern, minimal user interfaces
                     </p>
-                    <button className="bg-blue-500 rounded-full p-3 text-white text-sm">
-                      Get to know me &rarr;
-                    </button>
+                    <Link href="/about" passHref>
+                      <button className="bg-blue-500 rounded-full p-3 text-white text-sm">
+                        Get to know me &rarr;
+                      </button>
+                    </Link>
                   </div>
                   <div className="self-center col-span-1">
                     <Image src={profilePicture} className="rounded-full" />
@@ -179,10 +167,26 @@ export default function Home() {
                   Links
                 </h3>
                 <div className="md:col-span-1 grid grid-cols-4 md:grid-cols-2 md:grid-rows-2 gap-5">
-                  <Image src={linkedinLogo} alt="LinkedIn Logo" />
-                  <Image src={githubLogo} alt="Github Logo" />
-                  <Image src={instagramLogo} alt="Instagram Logo" />
-                  <Image src={gmailLogo} alt="GMail Logo" />
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://linkedin.com/in/agarcia96" passHref>
+                      <Image src={linkedinLogo} alt="LinkedIn Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://github.com/a-garcia96" passHref>
+                      <Image src={githubLogo} alt="Github Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://instagram.com/alex_gaarciaa" passHref>
+                      <Image src={instagramLogo} alt="Instagram Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://github.com/a-garcia96" passHref>
+                      <Image src={gmailLogo} alt="email" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,7 +195,7 @@ export default function Home() {
         <section>
           <Container>
             <h2 className="py-2 px-4 font-bold text-blue-500">Work</h2>
-            <div className="bg-white shadow-sm rounded-lg p-6 md:col-span-2">
+            <div className="bg-white shadow-sm rounded-lg p-6">
               <h3 className="text-neutral-500 text-sm uppercase mb-2 flex gap-2">
                 <svg
                   viewBox="0 0 24 24"
@@ -208,6 +212,59 @@ export default function Home() {
                 </svg>{" "}
                 Projects
               </h3>
+              <article>
+                <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
+                  <div className="flex gap-5">
+                    <img
+                      src="https://placehold.co/100"
+                      className="rounded-lg"
+                      alt="project icon"
+                    />
+                    <div>
+                      <h4 className="font-medium text-2xl text-blue-500">
+                        Test
+                      </h4>
+                      <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Laborum ex dicta ullam nobis, expedita corrupti
+                        recusandae facilis sunt cum a.
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="flex gap-2 mt-3 list-none">
+                    <Tag tag={"Test"} />
+                    <Tag tag={"Test"} />
+                  </ul>
+                </div>
+              </article>
+              <article>
+                <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
+                  <div className="flex gap-5">
+                    <img
+                      src="https://placehold.co/100"
+                      className="rounded-lg"
+                      alt="project icon"
+                    />
+                    <div>
+                      <h4 className="font-medium text-2xl text-blue-500">
+                        Test
+                      </h4>
+                      <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Laborum ex dicta ullam nobis, expedita corrupti
+                        recusandae facilis sunt cum a.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <div className="flex justify-end">
+                <Link href="/portfolio" passHref>
+                  <button className="bg-blue-500 rounded-full text-white py-2 px-4">
+                    View All &rarr;
+                  </button>
+                </Link>
+              </div>
             </div>
           </Container>
         </section>
