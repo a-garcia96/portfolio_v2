@@ -26,7 +26,7 @@ const about = () => {
                   height={300}
                 />
                 <h2 className="text-xl font-bold text-blue-500">
-                  Hi, I'm Alex!
+                  Hi, I&apos;m Alex!
                 </h2>
                 <p className="text-3xl font-bold">
                   Passionate about designing and building{" "}
