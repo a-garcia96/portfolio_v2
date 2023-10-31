@@ -120,7 +120,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <main className="main-content">
+      <main>
         <section>
           <Container>
             <h2 className="py-2 px-4 font-bold text-blue-500">About</h2>
