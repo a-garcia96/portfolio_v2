@@ -30,10 +30,26 @@ export default function Nav() {
     <Container classes={"my-8"}>
       <nav className="bg-white rounded-full py-1 px-2 shadow-sm">
         <ul className="flex gap-1 text-neutral-700">
-        <Link href="/" passHref><li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">Home</li></Link>
-        <Link href="/about" passHref><li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">About</li></Link>
-        <Link href="/portfolio" passHref><li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">Work</li></Link>
-        <Link href="/blog" passHref><li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">Blog</li></Link>
+          <Link href="/" passHref>
+            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+              Home
+            </li>
+          </Link>
+          <Link href="/about" passHref>
+            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+              About
+            </li>
+          </Link>
+          <Link href="/portfolio" passHref>
+            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+              Portfolio
+            </li>
+          </Link>
+          <Link href="/blog" passHref>
+            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+              Blog
+            </li>
+          </Link>
         </ul>
       </nav>
     </Container>

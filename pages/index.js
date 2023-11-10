@@ -29,7 +29,6 @@ import linkedinLogo from "../public/home/linkedin-logo.png";
 import gmailLogo from "../public/home/gmail-logo.png";
 
 export default function Home() {
-  const [dimension, setDimension] = useState(80);
   const [isSent, setIsSent] = useState(null);
 
   const form = useRef();
@@ -210,7 +209,7 @@ export default function Home() {
                     fill="currentColor"
                   ></path>
                 </svg>{" "}
-                Projects
+                Portfolio
               </h3>
               <article>
                 <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
