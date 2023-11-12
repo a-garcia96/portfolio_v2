@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-const contenful = require("contentful");
 import Link from "next/link";
 
 // IMPORT COMPONENTS
@@ -9,6 +8,7 @@ import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
 
 // CONTENTFUL CLIENT INIT
+const contenful = require("contentful");
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
