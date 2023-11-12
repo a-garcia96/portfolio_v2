@@ -28,7 +28,31 @@ import githubLogo from "../public/home/github-logo.png";
 import linkedinLogo from "../public/home/linkedin-logo.png";
 import gmailLogo from "../public/home/gmail-logo.png";
 
-export default function Home() {
+// CONTENTFUL CLIENT INIT
+const contenful = require("contentful");
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const featuredProjects = await client.getEntries({
+    content_type: "project",
+    order: "-sys.createdAt",
+    "metadata.tags.sys.id[in]": "featured",
+  });
+
+  return {
+    props: {
+      featuredProjects: [...featuredProjects.items],
+    },
+    revalidate: 10,
+  };
+}
+
+export default function Home({ featuredProjects }) {
+  console.log(featuredProjects);
+
   const [isSent, setIsSent] = useState(null);
 
   const form = useRef();
@@ -211,52 +235,36 @@ export default function Home() {
                 </svg>{" "}
                 Portfolio
               </h3>
-              <article>
-                <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
-                  <div className="flex gap-5">
-                    <img
-                      src="https://placehold.co/100"
-                      className="rounded-lg"
-                      alt="project icon"
-                    />
-                    <div>
-                      <h4 className="font-medium text-2xl text-blue-500">
-                        Test
-                      </h4>
-                      <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Laborum ex dicta ullam nobis, expedita corrupti
-                        recusandae facilis sunt cum a.
-                      </p>
+              {featuredProjects.map((project) => {
+                return (
+                  <article key={project.sys.id}>
+                    <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
+                      <div className="flex gap-5">
+                        <img
+                          src="https://placehold.co/100"
+                          className="rounded-lg"
+                          alt="project icon"
+                        />
+                        <div>
+                          <h4 className="font-medium text-2xl text-blue-500">
+                            {project.fields.projectName}
+                          </h4>
+                          <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Laborum ex dicta ullam nobis, expedita
+                            corrupti recusandae facilis sunt cum a.
+                          </p>
+                        </div>
+                      </div>
+                      <ul className="flex gap-2 mt-3 list-none">
+                        {project.fields.technologyUsed.map((tag) => (
+                          <Tag tag={tag} key={tag} />
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  <ul className="flex gap-2 mt-3 list-none">
-                    <Tag tag={"Test"} />
-                    <Tag tag={"Test"} />
-                  </ul>
-                </div>
-              </article>
-              <article>
-                <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
-                  <div className="flex gap-5">
-                    <img
-                      src="https://placehold.co/100"
-                      className="rounded-lg"
-                      alt="project icon"
-                    />
-                    <div>
-                      <h4 className="font-medium text-2xl text-blue-500">
-                        Test
-                      </h4>
-                      <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Laborum ex dicta ullam nobis, expedita corrupti
-                        recusandae facilis sunt cum a.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
+                  </article>
+                );
+              })}
               <div className="flex justify-end">
                 <Link href="/portfolio" passHref>
                   <button className="bg-blue-500 rounded-full text-white py-2 px-4">
