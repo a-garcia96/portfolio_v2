@@ -103,10 +103,15 @@ const Post = ({ post }) => {
         return <p className="text-base">{children}</p>;
       },
       [BLOCKS.OL_LIST]: (node, children) => {
-        return <ol className="flex flex-col gap-5 outline">{children}</ol>;
+        return <ol className="list-decimal">{children}</ol>;
       },
+      // [BLOCKS.LIST_ITEM]: (node, children) => {
+      //   return <li>{children}</li>;
+      // },
     },
   };
+
+  console.log(post.postContent);
 
   return (
     <>
