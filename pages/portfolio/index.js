@@ -63,7 +63,7 @@ const portfolio = ({ formattedProjects }) => {
               </Link>
               <p>
                 {project.summary}{" "}
-                <Link passHref href={`./${project.slug}`}>
+                <Link passHref href={`/portfolio/${project.slug}`}>
                   <span className="font-bold hover:cursor-pointer hover:text-blue-500 transition-all">
                     Read More &rarr;
                   </span>

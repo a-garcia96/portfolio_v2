@@ -22,7 +22,6 @@ export async function getStaticProps(context) {
 
   const formattedPosts = posts.items.map((item) => {
     return {
-      profilePhoto: item.fields.profilePhoto.fields.file.url,
       title: item.fields.title,
       author: item.fields.author.fields.displayName,
       slug: item.fields.slug,
@@ -44,13 +43,6 @@ const Blog = ({ formattedPosts }) => {
     <>
       <Nav />
       <main>
-        {/* <div className="container blog__container">
-          {formattedPosts.map((post) => {
-            return (
-              <Card key={post.slug} post={post} />
-            )
-          })}
-        </div> */}
         <section className="my-8">
           <Container>
             <div className="bg-white shadow-sm rounded-lg p-6">
