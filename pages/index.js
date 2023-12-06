@@ -51,8 +51,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ featuredProjects }) {
-  console.log(featuredProjects);
-
   const [isSent, setIsSent] = useState(null);
 
   const form = useRef();

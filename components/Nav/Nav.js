@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 // COMPONENTS
 import Container from "../Container/Container";
@@ -28,7 +29,7 @@ export default function Nav() {
 
   return (
     <Container classes={"my-8"}>
-      <nav className="bg-white rounded-full py-1 px-2 shadow-sm">
+      <nav className="bg-white rounded-full py-1 px-2 shadow-sm grid grid-cols-2 items-center">
         <ul className="flex gap-1 text-neutral-700">
           <Link href="/" passHref>
             <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
@@ -51,6 +52,7 @@ export default function Nav() {
             </li>
           </Link>
         </ul>
+        <ThemeToggle />
       </nav>
     </Container>
   );

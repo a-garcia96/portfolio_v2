@@ -5,15 +5,18 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'place-hold.it',
+        protocol: "https",
+        hostname: "place-hold.it",
       },
       {
-        protocol: 'https',
-        hostname: 'images.ctfassets.net'
-      }
-    ]
-  }
-}
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+      },
+    ],
+  },
+  // experimental: {
+  //   swcPlugins: [["@swc-jotai/react-refresh", {}]],
+  // },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
