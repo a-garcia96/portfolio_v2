@@ -1,5 +1,5 @@
 import { atom } from "jotai";
 
-const themeAtom = atom("light");
+const isDarkModeAtom = atom(false);
 
-export { themeAtom };
+export { isDarkModeAtom };

@@ -1,12 +1,11 @@
 import "../styles/globals.css";
-import { useAtom } from "jotai";
-import { themeAtom } from "../atoms";
+import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useAtom(themeAtom);
-
   return (
-    <Component className={`box-border bg-blue-500 ${theme}`} {...pageProps} />
+    <ThemeProvider attribute="class">
+      <Component className={`box-border`} {...pageProps} />;
+    </ThemeProvider>
   );
 }
 
