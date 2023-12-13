@@ -146,7 +146,7 @@ export default function Home({ featuredProjects }) {
           <Container>
             <h2 className="py-2 px-4 font-bold text-blue-500">About</h2>
             <div className="md:grid md:grid-cols-3 md:gap-5 my-4">
-              <div className="bg-white shadow-sm rounded-lg p-6 md:col-span-2 mb-3 md:mb-0">
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 md:col-span-2 mb-3 md:mb-0">
                 <div className="grid grid-cols-3 gap-5">
                   <div className="col-span-2">
                     <h3 className="text-neutral-500 text-sm uppercase mb-2">
@@ -170,7 +170,7 @@ export default function Home({ featuredProjects }) {
                   </div>
                 </div>
               </div>
-              <div className="bg-white shadow-sm rounded-lg p-6 md:col-span-1">
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 md:col-span-1">
                 <h3 className="text-neutral-500 text-sm uppercase mb-2 flex gap-2">
                   <svg
                     fill="none"
@@ -216,8 +216,8 @@ export default function Home({ featuredProjects }) {
         <section>
           <Container>
             <h2 className="py-2 px-4 font-bold text-blue-500">Work</h2>
-            <div className="bg-white shadow-sm rounded-lg p-6">
-              <h3 className="text-neutral-500 text-sm uppercase mb-2 flex gap-2">
+            <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
+              <h3 className="text-neutral-500 dark:text-neutral-300 text-sm uppercase mb-2 flex gap-2">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

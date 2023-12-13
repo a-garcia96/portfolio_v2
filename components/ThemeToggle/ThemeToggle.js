@@ -19,6 +19,7 @@ const ThemeToggle = () => {
         type="checkbox"
         id="AcceptConditions"
         className="peer sr-only"
+        checked={theme == "dark" ? true : false}
       />
 
       <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-blue-900"></span>

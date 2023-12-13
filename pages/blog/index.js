@@ -45,7 +45,7 @@ const Blog = ({ formattedPosts }) => {
       <main>
         <section className="my-8">
           <Container>
-            <div className="bg-white shadow-sm rounded-lg p-6">
+            <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
               <h3 className="text-neutral-500 text-sm uppercase mb-2 flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

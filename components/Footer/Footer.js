@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <Container classes={"my-8"}>
-      <footer className="bg-white rounded-full py-1 px-2 shadow-sm">
+      <footer className="bg-white dark:bg-neutral-900 rounded-full py-1 px-2 shadow-sm">
         <div className="py-2 px-4 grid grid-cols-3 text-sm">
           <div className="col-span-2 flex gap-1">
             <p>Developed by Alex Garcia</p>

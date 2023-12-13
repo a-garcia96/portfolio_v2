@@ -29,25 +29,25 @@ export default function Nav() {
 
   return (
     <Container classes={"my-8"}>
-      <nav className="bg-white rounded-full py-1 px-2 shadow-sm grid grid-cols-2 items-center">
-        <ul className="flex gap-1 text-neutral-700">
+      <nav className="bg-white dark:bg-neutral-900 rounded-full py-1 px-2 shadow-sm grid grid-cols-2 items-center">
+        <ul className="flex gap-1 text-neutral-700 dark:text-neutral-300">
           <Link href="/" passHref>
-            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+            <li className="hover:bg-[#F2F2F2] dark:hover:dark:bg-neutral-950 hover:cursor-pointer py-2 px-4 rounded-full">
               Home
             </li>
           </Link>
           <Link href="/about" passHref>
-            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+            <li className="hover:bg-[#F2F2F2] dark:hover:dark:bg-neutral-950 hover:cursor-pointer py-2 px-4 rounded-full">
               About
             </li>
           </Link>
           <Link href="/portfolio" passHref>
-            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+            <li className="hover:bg-[#F2F2F2] dark:hover:dark:bg-neutral-950 hover:cursor-pointer py-2 px-4 rounded-full">
               Portfolio
             </li>
           </Link>
           <Link href="/blog" passHref>
-            <li className="hover:bg-[#F2F2F2] hover:cursor-pointer py-2 px-4 rounded-full">
+            <li className="hover:bg-[#F2F2F2] dark:hover:dark:bg-neutral-950 hover:cursor-pointer py-2 px-4 rounded-full">
               Blog
             </li>
           </Link>

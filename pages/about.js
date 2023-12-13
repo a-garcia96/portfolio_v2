@@ -45,7 +45,7 @@ const about = ({ experience, skills }) => {
       <main>
         <section className="my-8">
           <Container>
-            <div className="bg-white shadow-sm rounded-lg p-6">
+            <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
               <div className="text-center">
                 <Image
                   src={profilePicture}
@@ -80,7 +80,7 @@ const about = ({ experience, skills }) => {
         <section className="my-8">
           <Container>
             <div className="md:grid md:grid-cols-3 md:gap-5">
-              <div className="bg-white shadow-sm rounded-lg p-6 col-span-2">
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 col-span-2">
                 <h2 className="font-bold text-blue-500 text-xl">
                   Work Experience
                 </h2>
@@ -90,7 +90,7 @@ const about = ({ experience, skills }) => {
                       <li key={role.sys.id} className="grid grid-cols-4">
                         <div className="col-span-2">
                           <h3 className="font-semibold">{role.fields.title}</h3>
-                          <p className="text-sm text-gray-800">
+                          <p className="text-sm text-gray-800 dark:text-neutral-500">
                             {role.fields.company}
                           </p>
                         </div>
@@ -238,14 +238,14 @@ const about = ({ experience, skills }) => {
                   </li> */}
                 </ul>
               </div>
-              <div className="mt-5 lg:mt-0 bg-white shadow-sm rounded-lg p-6 col-span-1">
+              <div className="mt-5 lg:mt-0 bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 col-span-1">
                 <h2 className="font-bold text-blue-500 text-xl">Skills</h2>
                 <ul className="flex flex-wrap gap-3 mt-5">
                   {skills.map((skill) => {
                     return (
                       <li
                         key={skill.sys.id}
-                        className="bg-gray-100 rounded-full px-3 py-2 text-blue-800 text-xs hover:scale-105 hover:cursor-pointer"
+                        className="bg-gray-100 dark:bg-neutral-950 rounded-full px-3 py-2 text-blue-800 text-xs hover:scale-105 hover:cursor-pointer"
                       >
                         {skill.fields.skillName}
                       </li>
