@@ -47,11 +47,11 @@ const portfolio = ({ formattedProjects }) => {
     return (
       <li className="portfolio__card" key={project.slug}>
         <div className="my-5 border-b-2 border-b-gray-100 pb-7">
-          <div className="flex gap-5">
+          <div className="md:flex md:gap-5">
             <Link passHref href={`./${project.slug}`}>
               <img
                 src="https://placehold.co/100"
-                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all"
+                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all mb-5 md:mb-0"
                 alt="project icon"
               />
             </Link>
@@ -71,7 +71,7 @@ const portfolio = ({ formattedProjects }) => {
               </p>
             </div>
           </div>
-          <ul className="flex gap-2 mt-3 list-none">
+          <ul className="flex flex-wrap gap-2 mt-3 list-none">
             {project.technology.map((tag) => {
               return <Tag tag={tag} key={tag} />;
             })}

@@ -254,7 +254,7 @@ export default function Home({ featuredProjects }) {
                           </p>
                         </div>
                       </div>
-                      <ul className="flex gap-2 mt-3 list-none">
+                      <ul className="flex flex-wrap gap-2 mt-3 list-none">
                         {project.fields.technologyUsed.map((tag) => (
                           <Tag tag={tag} key={tag} />
                         ))}
