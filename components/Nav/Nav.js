@@ -19,6 +19,8 @@ const MyLink = forwardRef((props, ref) => {
   );
 });
 
+MyLink.displayName = "MyLink";
+
 export default function Nav() {
   const navigation = [
     { name: "Home", href: "/" },
