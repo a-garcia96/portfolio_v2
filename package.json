@@ -11,6 +11,8 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.16.2",
     "@emailjs/browser": "^3.10.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "contentful": "^9.2.14",
     "framer-motion": "^9.1.6",
     "jotai": "^2.6.0",
