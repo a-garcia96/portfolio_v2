@@ -123,7 +123,7 @@ const Post = ({ post }) => {
       <Nav />
       <main>
         <Container>
-          <article className="bg-white shadow-sm rounded-lg p-6">
+          <article className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
             <div>
               <div>
                 {post.postImage.fields.file.url && (
