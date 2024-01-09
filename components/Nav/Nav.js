@@ -1,138 +1,119 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment, forwardRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import nameLogo from "../../public/name_logo.png"
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import { Menu, Transition } from "@headlessui/react";
+
+// COMPONENTS
+import Container from "../Container/Container";
+
+const MyLink = forwardRef((props, ref) => {
+  let { href, children, ...rest } = props;
+  return (
+    <Link href={href}>
+      <a ref={ref} {...rest}>
+        {children}
+      </a>
+    </Link>
+  );
+});
+
+MyLink.displayName = "MyLink";
 
 export default function Nav() {
-  const handleClick = () => {
-    const mobileNav = document.querySelector(".nav__mobile");
-    const navToggle = document.querySelector(".nav__toggle");
-    const visibility = mobileNav.getAttribute("data-visible");
-
-    if (visibility == "false") {
-      mobileNav.setAttribute("data-visible", true);
-      navToggle.setAttribute("data-toggled", true);
-      document.body.style.overflowY = "hidden";
-    } else if (visibility == "true") {
-      navToggle.setAttribute("data-toggled", false);
-      mobileNav.setAttribute("data-visible", false);
-      document.body.style.overflowY = "visible";
-    }
-  };
-
-  // get active link
-  const router = useRouter();
+  const navigation = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
+  ];
 
   return (
-    <nav className="nav">
-      <div className="container">
-        <div className="nav__mobile-heading">
-          <Image src={nameLogo} width={125} height={75} alt="Logo for Alex Garcia" />
-          <button
-            onClick={handleClick}
-            className="nav__toggle"
-            data-toggles="false"
-          ></button>
-        </div>
-        <div data-visible="false" className="nav__mobile">
-          <ul>
-            <li>
-              <Link href="/">
-                <a>
-                  <span className="set-bold highlight-text">00</span> Home
-                </a>
+    <Container classes={"my-8 relative"}>
+      <nav className="bg-white dark:bg-neutral-900 rounded-full py-1 px-2 shadow-sm grid grid-cols-2 items-center">
+        <ul className="hidden md:flex gap-1 text-neutral-700 dark:text-neutral-300">
+          {navigation.map((item) => {
+            return (
+              <Link href={item.href} passHref key={item.name}>
+                <li className="hover:bg-[#F2F2F2] dark:hover:dark:bg-neutral-950 hover:cursor-pointer py-2 px-4 rounded-full">
+                  {item.name}
+                </li>
               </Link>
-            </li>
-            <li>
-              <Link href="/portfolio">
-                <a>
-                  <span className="set-bold highlight-text">01</span> Portfolio
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a>
-                  <span className="set-bold highlight-text">02</span> Blog
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>
-                  <span className="set-bold highlight-text">03</span> About
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="nav__desktop">
-          <div className="nav__desktop-heading">
-            <Image src={nameLogo} width={125} height={71} alt="Logo for Alex Garcia" />
-          </div>
-          <div className="nav__desktop-links">
-            <ul>
-              <li>
-                <Link href="/">
-                  <a
-                    style={{
-                      borderBottom:
-                        router.asPath === "/"
-                          ? "3px solid var(--color-primary-dark)"
-                          : "white",
-                    }}
-                  >
-                    Home
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio">
-                  <a
-                    style={{
-                      borderBottom:
-                        router.asPath === "/portfolio"
-                          ? "3px solid var(--color-primary-dark)"
-                          : "white",
-                    }}
-                  >
-                    Portfolio
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <a
-                    style={{
-                      borderBottom:
-                        router.asPath === "/blog"
-                          ? "3px solid var(--color-primary-dark)"
-                          : "white",
-                    }}
-                  >
-                    Blog
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a
-                    style={{
-                      borderBottom:
-                        router.asPath === "/about"
-                          ? "3px solid var(--color-primary-dark)"
-                          : "white",
-                    }}
-                  >
-                    About
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+            );
+          })}
+        </ul>
+        <Menu as={"ul"} className="md:hidden">
+          {({ open }) => {
+            return (
+              <>
+                {!open ? (
+                  <Menu.Button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                      />
+                    </svg>
+                  </Menu.Button>
+                ) : (
+                  <Menu.Button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </Menu.Button>
+                )}
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute top-[120%] inset-x-4 drop-shadow-lg flex flex-col gap-y-5 bg-white rounded-lg px-5 py-4 font-bold text-gray-500 z-20 dark:bg-neutral-800 dark:text-neutral-200">
+                    {navigation.map((item) => {
+                      return (
+                        <Menu.Item key={item.name}>
+                          {({ active }) => (
+                            <MyLink
+                              className="hover:bg-neutral-100 hover:dark:bg-neutral-700 hover:text-blue-500 px-4 py-2 rounded-full"
+                              href={item.href}
+                            >
+                              {item.name}
+                            </MyLink>
+                          )}
+                        </Menu.Item>
+                      );
+                    })}
+                  </Menu.Items>
+                </Transition>
+              </>
+            );
+          }}
+        </Menu>
+        <ThemeToggle />
+      </nav>
+    </Container>
   );
 }

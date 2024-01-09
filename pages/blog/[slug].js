@@ -1,15 +1,18 @@
 import React from "react";
-const contenful = require("contentful");
-
+// IMPORT NEXTJS
 import Head from "next/head";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/image";
 
 // COMPONENTS
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
+import Container from "../../components/Container/Container";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
-// CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
+// CONTENTFUL
 
+const contenful = require("contentful");
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -23,7 +26,6 @@ export const getStaticPaths = async () => {
 
   const formattedPosts = posts.items.map((item) => {
     return {
-      profilePhoto: item.fields.profilePhoto.fields.file.url,
       title: item.fields.title,
       author: item.fields.author.fields.displayName,
       slug: item.fields.slug,
@@ -57,7 +59,7 @@ export const getStaticProps = async ({ params }) => {
 
   const formattedPosts = post.items.map((item) => {
     return {
-      profilePhoto: item.fields.profilePhoto.fields.file.url,
+      postImage: item.fields.postImage,
       title: item.fields.title,
       author: item.fields.author.fields.displayName,
       slug: item.fields.slug,
@@ -66,23 +68,50 @@ export const getStaticProps = async ({ params }) => {
     };
   });
 
-  if(!formattedPosts.length) {
+  if (!formattedPosts.length) {
     return {
       redirect: {
-        destination: '/',
-        permanent: false
-      }
-    }
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
 
   return {
     props: { post: formattedPosts[0] },
-    revalidate: 10
+    revalidate: 10,
   };
 };
 
 const Post = ({ post }) => {
-  if(!post) return <div>Loading...</div>
+  if (!post) return <div>Loading...</div>;
+
+  const options = {
+    preserveWhitespace: true,
+    renderText: (text) => {
+      return text.split("\n").reduce((children, textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment];
+      }, []);
+    },
+    renderNode: {
+      [BLOCKS.HEADING_2]: (node, children) => {
+        return (
+          <h2 className="text-3xl text-blue-500 font-bold my-5">{children}</h2>
+        );
+      },
+      [BLOCKS.PARAGRAPH]: (node, children) => {
+        return <p className="text-base">{children}</p>;
+      },
+      [BLOCKS.OL_LIST]: (node, children) => {
+        return <ol className="list-decimal">{children}</ol>;
+      },
+      // [BLOCKS.LIST_ITEM]: (node, children) => {
+      //   return <li>{children}</li>;
+      // },
+    },
+  };
+
+  console.log(post.postContent);
 
   return (
     <>
@@ -92,17 +121,26 @@ const Post = ({ post }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header className="post__header">
-        <div className="container">
-          <h1>{post.title}</h1>
-        </div>
-      </header>
       <main>
-        <article className="container">
-          <div className="post__content">
-            {documentToReactComponents(post.postContent)}
-          </div>
-        </article>
+        <Container>
+          <article className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
+            <div>
+              <div>
+                {post.postImage.fields.file.url && (
+                  <Image
+                    src={`https:${post.postImage.fields.file.url}`}
+                    height={post.postImage.fields.file.details.image.height}
+                    width={post.postImage.fields.file.details.image.width}
+                  />
+                )}
+                <h1 className="text-5xl text-blue-500 font-bold my-5">
+                  {post.title}
+                </h1>
+              </div>
+              <div>{documentToReactComponents(post.postContent, options)}</div>
+            </div>
+          </article>
+        </Container>
       </main>
       <Footer />
     </>

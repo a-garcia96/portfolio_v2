@@ -7,11 +7,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // COMPONENTS
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
-import Tag from "../../components/Tag/Tag"
+import Tag from "../../components/Tag/Tag";
 import Image from "next/image";
+import Container from "../../components/Container/Container";
 
-// IMPORT ASSETS
-import externalLink from "../../public/icon-external-link.png"
+import { LinkIcon, GlobeAltIcon } from "@heroicons/react/24/solid";
 
 // CREATE THE CLIENT FOR FETCHING DATA FROM CONTENTFUL
 
@@ -63,29 +63,29 @@ export const getStaticProps = async ({ params }) => {
       technology: [...item.fields.technologyUsed],
       repoLink: item.fields.repoLink,
       liveLink: item.fields.liveLink,
-      mockups: item.fields.mockups
+      mockups: item.fields.mockups,
     };
   });
 
   if (!formattedProjects.length) {
     return {
       redirect: {
-        destination: '/',
-        permanent: false
-      }
-    }
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
 
   return {
     props: { project: formattedProjects[0] },
-    revalidate: 10
+    revalidate: 10,
   };
 };
 
 const Post = ({ project }) => {
-  if (!project) return <div>Loading...</div>
+  if (!project) return <div>Loading...</div>;
 
-  console.log(project)
+  console.log(project);
 
   return (
     <>
@@ -95,29 +95,50 @@ const Post = ({ project }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header className="portfolio__header-single">
-        <div className="container portfolio__header-grid">
-          <div>
-            <h1>{project.name}</h1>
-            <ul className="portfolio__tag-wrapper">
-              {project.technology.map(tag => <Tag key={tag} tag={tag} />)}
-            </ul>
-            <div className='portfolio__card-linkWrapper'>
-              <a className='portfolio__card-link--ext' href={project.repoLink}>code <Image alt="external link to website" src={externalLink} /></a>
-              <a href={project.liveLink} className="portfolio__card-link--ext">Live Site <Image alt="external link to website" className="linkIcon" src={externalLink} /></a>
+      <header className="mb-10">
+        <Container>
+          <div className="bg-white shadow-sm p-6 dark:bg-neutral-900 rounded-lg">
+            <div className="grid grid-cols-2 w-full gap-5">
+              <div>
+                <h1 className="font-bold text-xl text-blue-500 leading-6 mb-5">
+                  {project.name}
+                </h1>
+                <div className="flex gap-5">
+                  <a className="flex gap-2" href={project.repoLink}>
+                    <LinkIcon className="h-5 w-auto" />
+                    Github Repo
+                  </a>
+                  <a href={project.liveLink} className="flex gap-3">
+                    <GlobeAltIcon className="h-5 w-auto" />
+                    Live Site
+                  </a>
+                </div>
+              </div>
+              <div className="place-self-center">
+                {project.mockups.map((image) => (
+                  <img
+                    className="w-[300px]"
+                    key={image.fields.title}
+                    alt={image.fields.title}
+                    src={`https:${image.fields.file.url}`}
+                  />
+                ))}
+              </div>
             </div>
+            <ul className="flex gap-5 mt-5">
+              {project.technology.map((tag) => (
+                <Tag key={tag} tag={tag} />
+              ))}
+            </ul>
           </div>
-          <div>
-            {project.mockups.map((image) => <img className="portfolio__gallery-img" key={image.fields.title} alt={image.fields.title} src={`https:${image.fields.file.url}`} />)}
-          </div>
-        </div>
+        </Container>
       </header>
       <main>
-        <div className="container portfolio__single-project">
-          <article className="portfolio__summary">
+        <Container className="container portfolio__single-project">
+          <article className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 leading-7">
             {documentToReactComponents(project.summary)}
           </article>
-        </div>
+        </Container>
       </main>
       <Footer />
     </>

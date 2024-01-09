@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 // NEXTJS COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
-
+import Link from "next/link";
 //IMPORT FRAMER MOTION
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -14,60 +14,44 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // components
+import Container from "../components/Container/Container";
 import Nav from "../components/Nav/Nav";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
-import { Typewriter } from "react-simple-typewriter";
+import Tag from "../components/Tag/Tag";
 import InformationCard from "../components/InformationCard/InformationCard";
 
 // assets
-import servicesBlob1 from "../public/services-blob-shape-1.png";
-import servicesBlob2 from "../public/services-blob-shape-2.png";
-import randomBlob1 from "../public/blob-random-1.png";
-import randomBlob2 from "../public/blob-random-2.png";
-import randomBlob3 from "../public/blob-random-3.png";
-import randomBlob4 from "../public/blob-random-4.png";
-import randomBlob5 from "../public/blob-random-5.png";
-import randomBlob6 from "../public/blob-random-6.png";
+import profilePicture from "../public/home/profile-picture.jpg";
+import instagramLogo from "../public/home/instagram-logo.png";
+import githubLogo from "../public/home/github-logo.png";
+import linkedinLogo from "../public/home/linkedin-logo.png";
+import gmailLogo from "../public/home/gmail-logo.png";
 
-import profilePic from "../public/profilePicture.png";
-import githubIcon from "../public/github-icon.png";
-import linkedinIcon from "../public/linkedin-icon.png";
-import instagramIcon from "../public/instagram-icon.png";
-import emailIcon from "../public/email-icon.png";
-import brushIcon from "../public/icon-brush.png";
-import terminalIcon from "../public/icon-terminal.png";
-import barChatIcon from "../public/icon-bar-chart.png";
-import reactIcon from "../public/react.png";
-import htmlIcon from "../public/html5.png";
-import cssIcon from "../public/css3.png";
-import jsIcon from "../public/javascript.png";
-import nodeIcon from "../public/nodejs.png";
-import sassIcon from "../public/sass.png";
-import bootstrapIcon from "../public/bootstrap.png";
-import firebaseIcon from "../public/firebase.png";
-import contentfulIcon from "../public/contentful.png";
-import wordpressIcon from "../public/wordpress.png";
-import nextjsIcon from "../public/nextjs.png";
-import gitIcon from "../public/git.png";
+// CONTENTFUL CLIENT INIT
+const contenful = require("contentful");
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
 
-export default function Home() {
-  const [dimension, setDimension] = useState(80);
+export async function getStaticProps() {
+  const featuredProjects = await client.getEntries({
+    content_type: "project",
+    order: "-sys.createdAt",
+    "metadata.tags.sys.id[in]": "featured",
+  });
+
+  return {
+    props: {
+      featuredProjects: [...featuredProjects.items],
+    },
+    revalidate: 10,
+  };
+}
+
+export default function Home({ featuredProjects }) {
   const [isSent, setIsSent] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 450) {
-        setDimension(60);
-      } else if (window.innerWidth > 450) {
-        setDimension(80);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const form = useRef();
   const {
@@ -137,18 +121,18 @@ export default function Home() {
       );
   };
 
-
   let aboutRef = useRef(null);
   let { scrollYProgress: scrollAboutY } = useScroll({
-    target: aboutRef
-  })
-  const y = useTransform(scrollAboutY, [0, 1], ["0%", "200%"])
+    target: aboutRef,
+  });
+  const y = useTransform(scrollAboutY, [0, 1], ["0%", "200%"]);
 
   let servicesRef = useRef(null);
   let { scrollYProgress: scrollServicesY } = useScroll({
-    target: servicesRef
-  })
+    target: servicesRef,
+  });
   const y2 = useTransform(scrollServicesY, [0, 1], ["0%", "200%"]);
+
   return (
     <>
       <Head>
@@ -157,367 +141,137 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <header className="home-header">
-        <div className="container">
-          <div className="home-header__grid">
-            <section className="home-header__col-1">
-              <motion.div
-                initial={{ opacity: 0, y: 200 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 2 }}
-              >
-                <h1>
-                  Hello, <br /> my name is Alex!
-                </h1>
-                <p>
-                  I am a{" "}
-                  <Typewriter
-                    cursor={true}
-                    typeSpeed={120}
-                    words={[
-                      "self-taught developer.",
-                      "digital marketer.",
-                      "photographer.",
-                    ]}
-                    loop={0}
-                  />
-                </p>
-                <Button>
-                  <a href="https://drive.google.com/file/d/1Ye7c0GpkskZ_53lTyYhCPhMpEK0d7c9o/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
-                </Button>
-              </motion.div>
-              <div className="home-header__social-icons">
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 1.5 }}
-                >
-                  <a href="https://github.com/a-garcia96" target="_blank" rel="noreferrer"><Image src={githubIcon} alt="Link to my LinkedIn Profile" /></a>
-                </motion.div>
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 1.8 }}
-                >
-                  <a href="https://www.linkedin.com/in/agarcia96/"><Image src={linkedinIcon} alt="LinkedIn Icon" /></a>
-                </motion.div>
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 2 }}
-                >
-                  <a href="https://www.instagram.com/alex_gaarciaa/"><Image src={instagramIcon} alt="IG Icon" /></a>
-                </motion.div>
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 2.2 }}
-                >
-                  <a href="mailto:alex.g9415@gmail.com?subject=email from your portfolio"><Image src={emailIcon} alt="email icon" /></a>
-                </motion.div>
+      <main>
+        <section>
+          <Container>
+            <h2 className="py-2 px-4 font-bold text-blue-500">About</h2>
+            <div className="md:grid md:grid-cols-3 md:gap-5 my-4">
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 md:col-span-2 mb-3 md:mb-0">
+                <div className="grid grid-cols-3 gap-5">
+                  <div className="col-span-2">
+                    <h3 className="text-neutral-500 text-sm uppercase mb-2">
+                      Front End Developer
+                    </h3>
+                    <h1 className="font-bold text-blue-500 text-xl mb-2">
+                      Hi, I&apos;m Alex!
+                    </h1>
+                    <p className="max-w-prose mb-5">
+                      A creative and analytical developer with a passion for
+                      designing modern, minimal user interfaces
+                    </p>
+                    <Link href="/about" passHref>
+                      <button className="bg-blue-500 rounded-full p-3 text-white text-sm">
+                        Get to know me &rarr;
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="self-center col-span-1">
+                    <Image src={profilePicture} className="rounded-full" />
+                  </div>
+                </div>
               </div>
-            </section>
-            <section className="home-header__col-2">
-              <motion.div
-                className="home-header__image-wrapper"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1.5 }}
-              >
-                <Image src={profilePic} className="home-header__profile-pic" alt="profile picture of alex garcia" />
-              </motion.div>
-            </section>
-          </div>
-        </div>
-      </header>
-      <main className="main-content">
-
-        <motion.section
-          ref={aboutRef}
-          className="home-about"
-          initial={{ opacity: 0, y: 200 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <div className="container">
-            <div className="blob" data-blob="1" >
-              <Image src={randomBlob1} alt="" />
-            </div>
-            <div className="blob" data-blob="2">
-              <Image src={randomBlob2} alt="" />
-            </div>
-            <div className="blob" data-blob="3">
-              <Image src={randomBlob3} alt="" />
-            </div>
-            <div className="blob" data-blob="4">
-              <Image src={randomBlob4} alt="" />
-            </div>
-            <div className="home-about__grid">
-              <div className="home-about__col-1">
-                <h2>The Story So Far...</h2>
+              <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 md:col-span-1">
+                <h3 className="text-neutral-500 text-sm uppercase mb-2 flex gap-2">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                    ></path>
+                  </svg>{" "}
+                  Links
+                </h3>
+                <div className="md:col-span-1 grid grid-cols-4 md:grid-cols-2 md:grid-rows-2 gap-5">
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://linkedin.com/in/agarcia96" passHref>
+                      <Image src={linkedinLogo} alt="LinkedIn Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://github.com/a-garcia96" passHref>
+                      <Image src={githubLogo} alt="Github Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://instagram.com/alex_gaarciaa" passHref>
+                      <Image src={instagramLogo} alt="Instagram Link" />
+                    </Link>
+                  </div>
+                  <div className="hover:cursor-pointer group">
+                    <Link href="https://github.com/a-garcia96" passHref>
+                      <Image src={gmailLogo} alt="email" />
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <motion.div
-              initial={{opacity: 0, y:100}}
-              whileInView={{opacity: 1, y:0}}
-              viewport={{once: true}}
-              transition={{duration: 3}}
-              className="home-about__summary">
-                <p>
-                  I started my career in technology 5 years ago as an employee of
-                  an information technology managed services company. My role was
-                  to provide hardware, software and network support to multiple
-                  clients in different industries. This experience gave me the
-                  ability to be highly adaptable, and it also taught me the skill
-                  sets needed to become a quick leaner and self-sufficient.
-                </p>
-                <p>
-                  I quickly soaked up as much knowledge as I could and worked my
-                  way up to working with complex infrastructure hosted both
-                  locally and in the cloud. Yet, there was something still
-                  missing. I have always had a creative side, so I began to look
-                  for a career where I could take my technical skills I had
-                  acquired and be a little creative as well.
-                </p>
-                <p>
-                  Then I learned about front-end development and how it provides
-                  the ability to use my technical and creative skills. I was
-                  immediatly hooked! Recently, I was given the opportunity to put
-                  these skills to use and was promoted from being an
-                  infrastructure engineer to being the primary web developer for
-                  one of San Diego top financial broker-dealers.
-                </p>
-
-              </motion.div>
-
             </div>
-          </div>
-        </motion.section>
-        <section ref={servicesRef} className="home-services">
-          <div
-            className="home-services__blob1"
-          >
-            <Image src={servicesBlob1} alt="" />
-          </div>
-          <div
-            className="home-services__blob2"
-          >
-            <Image
-              className="home-services__blob2"
-              src={servicesBlob2}
-              alt="blob"
-            />
-          </div>
-          <div className="container">
-            <h2 style={{ textAlign: "center", zIndex: 15, position: "relative" }}>What I Do</h2>
-            <div className="home-services__grid">
-              <motion.div
-                initial={{ y: 200, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1 }}
-              >
-                <InformationCard
-                  imageSrc={brushIcon}
-                  heading="UI/UX Design"
-                  summaryText="I create user-centered digital products, emphasizing form & function for seamless user experiences. Experienced in wireframing, layout, color, typography, and more."
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 200, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1.4 }}
-              >
-                <InformationCard
-                  imageSrc={terminalIcon}
-                  heading="Web Dev"
-                  summaryText="Experienced in HTML, CSS, JavaScript & React, I provide custom web solutions for complex apps & simple websites."
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 200, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1.8 }}
-              >
-                <InformationCard
-                  imageSrc={barChatIcon}
-                  heading="Digital Marketing"
-                  summaryText="I assist firms in connecting with target audience using data-driven tactics & strategies, incl. SEO, PPC, & social media."
-                />
-              </motion.div>
-            </div>
-          </div>
+          </Container>
         </section>
-        <section className="home-skills">
-          <div className="container">
-            <h2>Tech Stack</h2>
-            <div className="home-skills__grid">
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={htmlIcon}
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={cssIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={jsIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={reactIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={nodeIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={sassIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={bootstrapIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={firebaseIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={contentfulIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={wordpressIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={nextjsIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
-              </div>
-              <div className="home-skills__col">
-                <Image
-                  alt="icon"
-                  src={gitIcon}
-                  objectFit="contain"
-                  width={dimension}
-                  height={dimension}
-                />
+        <section>
+          <Container>
+            <h2 className="py-2 px-4 font-bold text-blue-500">Work</h2>
+            <div className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6">
+              <h3 className="text-neutral-500 dark:text-neutral-300 text-sm uppercase mb-2 flex gap-2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="w-5 h-5"
+                  k="[object Object]"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.9437 1.25H14.0565C15.8943 1.24998 17.3499 1.24997 18.4891 1.40314C19.6615 1.56076 20.6105 1.89288 21.3589 2.64124C22.1072 3.38961 22.4393 4.33856 22.597 5.51098C22.7501 6.65019 22.7501 8.10583 22.7501 9.94359V14.0564C22.7501 15.8942 22.7501 17.3498 22.597 18.489C22.4393 19.6614 22.1072 20.6104 21.3589 21.3588C20.6105 22.1071 19.6615 22.4392 18.4891 22.5969C17.3499 22.75 15.8943 22.75 14.0565 22.75H12C11.5858 22.75 11.25 22.4142 11.25 22C11.25 21.5858 11.5858 21.25 12 21.25H14.0001C15.9069 21.25 17.2616 21.2484 18.2893 21.1102C19.2953 20.975 19.875 20.7213 20.2982 20.2981C20.7214 19.8749 20.9751 19.2952 21.1103 18.2892C21.2485 17.2615 21.2501 15.9068 21.2501 14V10C21.2501 8.09318 21.2485 6.73851 21.1103 5.71085C20.9751 4.70476 20.7214 4.12511 20.2982 3.7019C19.875 3.27869 19.2953 3.02502 18.2893 2.88976C17.2616 2.75159 15.9069 2.75 14.0001 2.75C12.0933 2.75 10.7386 2.75159 9.71095 2.88976C8.70486 3.02502 8.12521 3.27869 7.702 3.7019C7.00606 4.39784 6.79534 5.47918 6.75871 8.01085C6.75272 8.42502 6.41211 8.75591 5.99794 8.74992C5.58377 8.74393 5.25288 8.40332 5.25887 7.98915C5.29399 5.56168 5.45111 3.83147 6.64134 2.64124C7.38971 1.89288 8.33865 1.56076 9.51108 1.40314C10.6503 1.24997 12.1059 1.24998 13.9437 1.25ZM5.46164 10.25H5.53836C6.20793 10.25 6.76665 10.25 7.21898 10.296C7.69245 10.3441 8.13182 10.4489 8.52782 10.7135C8.82809 10.9141 9.08591 11.1719 9.28654 11.4722C9.55114 11.8682 9.65585 12.3075 9.70402 12.781C9.75003 13.2334 9.75002 13.7921 9.75 14.4617V18.5383C9.75002 19.2079 9.75003 19.7666 9.70402 20.219C9.65585 20.6925 9.55114 21.1318 9.28654 21.5278C9.08591 21.8281 8.82809 22.0859 8.52782 22.2865C8.13182 22.5511 7.69245 22.6559 7.21898 22.704C6.76664 22.75 6.20791 22.75 5.53832 22.75H5.46168C4.79209 22.75 4.23336 22.75 3.78102 22.704C3.30755 22.6559 2.86818 22.5511 2.47218 22.2865C2.17191 22.0859 1.9141 21.8281 1.71346 21.5278C1.44886 21.1318 1.34415 20.6925 1.29598 20.219C1.24997 19.7666 1.24998 19.2079 1.25 18.5383V14.4617C1.24998 13.7921 1.24997 13.2334 1.29598 12.781C1.34415 12.3075 1.44886 11.8682 1.71346 11.4722C1.9141 11.1719 2.17191 10.9141 2.47218 10.7135C2.86818 10.4489 3.30755 10.3441 3.78102 10.296C4.23335 10.25 4.79207 10.25 5.46164 10.25ZM3.93283 11.7883C3.57796 11.8244 3.41399 11.8882 3.30554 11.9607C3.16905 12.0519 3.05186 12.1691 2.96066 12.3055C2.8882 12.414 2.82438 12.578 2.78828 12.9328C2.75091 13.3002 2.75 13.7822 2.75 14.5V18.5C2.75 19.2178 2.75091 19.6998 2.78828 20.0672C2.82438 20.422 2.8882 20.586 2.96066 20.6945C3.05186 20.8309 3.16905 20.9481 3.30554 21.0393C3.41399 21.1118 3.57796 21.1756 3.93283 21.2117C4.30023 21.2491 4.78216 21.25 5.5 21.25C6.21784 21.25 6.69977 21.2491 7.06717 21.2117C7.42204 21.1756 7.58601 21.1118 7.69446 21.0393C7.83095 20.9481 7.94814 20.8309 8.03934 20.6945C8.1118 20.586 8.17562 20.422 8.21172 20.0672C8.24909 19.6998 8.25 19.2178 8.25 18.5V14.5C8.25 13.7822 8.24909 13.3002 8.21172 12.9328C8.17562 12.578 8.1118 12.414 8.03934 12.3055C7.94814 12.1691 7.83095 12.0519 7.69446 11.9607C7.58601 11.8882 7.42204 11.8244 7.06717 11.7883C6.69977 11.7509 6.21784 11.75 5.5 11.75C4.78216 11.75 4.30023 11.7509 3.93283 11.7883ZM11.25 19C11.25 18.5858 11.5858"
+                    fill="currentColor"
+                  ></path>
+                </svg>{" "}
+                Portfolio
+              </h3>
+              {featuredProjects.map((project) => {
+                return (
+                  <article key={project.sys.id}>
+                    <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
+                      <div className="flex gap-5">
+                        <img
+                          src="https://placehold.co/100"
+                          className="rounded-lg"
+                          alt="project icon"
+                        />
+                        <div>
+                          <h4 className="font-medium text-2xl text-blue-500">
+                            {project.fields.projectName}
+                          </h4>
+                          <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Laborum ex dicta ullam nobis, expedita
+                            corrupti recusandae facilis sunt cum a.
+                          </p>
+                        </div>
+                      </div>
+                      <ul className="flex flex-wrap gap-2 mt-3 list-none">
+                        {project.fields.technologyUsed.map((tag) => (
+                          <Tag tag={tag} key={tag} />
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                );
+              })}
+              <div className="flex justify-end">
+                <Link href="/portfolio" passHref>
+                  <button className="bg-blue-500 rounded-full text-white py-2 px-4">
+                    View All &rarr;
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="home-contact">
-          <ToastContainer />
-          <h2>Lets Chat</h2>
-          <div className="container">
-            <form
-              ref={form}
-              className="home-contact__form"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <label htmlFor="fullName">Full Name*</label>
-              <input
-                type="text"
-                placeholder="John Smith"
-                {...register("fullName", { required: true })}
-                className="home-contact__form-field"
-              />
-              <label htmlFor="email">email*</label>
-              <input
-                type="email"
-                placeholder="email@domain.com"
-                {...register("email", { required: true })}
-                className="home-contact__form-field"
-              />
-              <label htmlFor="message">Your Message</label>
-              <textarea
-                name="message"
-                rows={10}
-                placeholder="Type your message here"
-                {...register("message", { required: true })}
-                className="home-contact__form-field"
-              ></textarea>
-              {isSubmitting && (
-                <input
-                  type="submit"
-                  value="Sending"
-                  disabled="disabled"
-                  className="home-contact__form-button--disabled"
-                />
-              )}
-              {!isSubmitting && (
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="home-contact__form-button--enabled"
-                />
-              )}
-            </form>
-          </div>
+          </Container>
         </section>
       </main>
       <Footer />
