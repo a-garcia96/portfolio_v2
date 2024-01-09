@@ -60,7 +60,7 @@ const portfolio = ({ formattedProjects }) => {
                     ? `https:${project.projectIcon.url}`
                     : "https://placehold.co/100"
                 }
-                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all mb-5 md:mb-0 object-contain"
+                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all mb-5 md:mb-0 object-contain w-[100px] h-[100px]"
                 alt="project icon"
               />
             </Link>

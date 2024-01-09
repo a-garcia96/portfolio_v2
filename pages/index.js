@@ -239,14 +239,23 @@ export default function Home({ featuredProjects }) {
                     <div className="my-5 border-b-2 border-b-neutral-200 pb-7">
                       <div className="flex gap-5">
                         <img
-                          src="https://placehold.co/100"
-                          className="rounded-lg"
+                          src={
+                            project.fields.projectIcon
+                              ? project.fields.projectIcon.fields.file.url
+                              : "https://placehold.co/100"
+                          }
+                          className="rounded-lg w-[100px] h-[100px]"
                           alt="project icon"
                         />
                         <div>
-                          <h4 className="font-medium text-2xl text-blue-500">
-                            {project.fields.projectName}
-                          </h4>
+                          <Link
+                            passHref
+                            href={`/portfolio/${project.fields.slug}`}
+                          >
+                            <h4 className="font-medium text-2xl text-blue-500 hover:scale-105 cursor-pointer transition-all">
+                              {project.fields.projectName}
+                            </h4>
+                          </Link>
                           <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Laborum ex dicta ullam nobis, expedita
