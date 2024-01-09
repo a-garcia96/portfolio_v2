@@ -25,6 +25,9 @@ export async function getStaticProps(context) {
   const formattedProjects = projects.items.map((item) => {
     return {
       allData: item,
+      projectIcon: item.fields.projectIcon
+        ? item.fields.projectIcon.fields.file
+        : null,
       name: item.fields.projectName,
       slug: item.fields.slug,
       summary: item.fields.summary.content[0].content[0].value,
@@ -43,6 +46,8 @@ export async function getStaticProps(context) {
 }
 
 const portfolio = ({ formattedProjects }) => {
+  console.log(formattedProjects);
+
   const projectTemplate = formattedProjects.map((project) => {
     return (
       <li className="portfolio__card" key={project.slug}>
@@ -50,8 +55,12 @@ const portfolio = ({ formattedProjects }) => {
           <div className="md:flex md:gap-5">
             <Link passHref href={`./${project.slug}`}>
               <img
-                src="https://placehold.co/100"
-                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all mb-5 md:mb-0"
+                src={
+                  project.projectIcon
+                    ? `https:${project.projectIcon.url}`
+                    : "https://placehold.co/100"
+                }
+                className="hover:cursor-pointer rounded-lg hover:scale-105 transition-all mb-5 md:mb-0 object-contain"
                 alt="project icon"
               />
             </Link>

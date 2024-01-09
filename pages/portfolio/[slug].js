@@ -3,6 +3,7 @@ const contenful = require("contentful");
 
 import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 // COMPONENTS
 import Nav from "../../components/Nav/Nav";
@@ -85,7 +86,29 @@ export const getStaticProps = async ({ params }) => {
 const Post = ({ project }) => {
   if (!project) return <div>Loading...</div>;
 
-  console.log(project);
+  const options = {
+    renderNode: {
+      [BLOCKS.HEADING_1]: (node, text) => (
+        <h1 className="font-semibold text-xl">{text}</h1>
+      ),
+      [BLOCKS.HEADING_2]: (node, text) => (
+        <h2 className="font-semibold text-xl text-blue-500">{text}</h2>
+      ),
+      [BLOCKS.PARAGRAPH]: (node, text) => <p className="leading-7">{text}</p>,
+      [BLOCKS.UL_LIST]: (node, text) => (
+        <ul className="list-disc list-inside flex flex-col gap-3">{text}</ul>
+      ),
+      [BLOCKS.LIST_ITEM]: (node, text) => (
+        <li className="[&>p]:inline">{text}</li>
+      ),
+    },
+    preserveWhitespace: true,
+    renderText: (text) => {
+      return text.split("\n").reduce((children, textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment];
+      }, []);
+    },
+  };
 
   return (
     <>
@@ -104,10 +127,13 @@ const Post = ({ project }) => {
                   {project.name}
                 </h1>
                 <div className="flex gap-5">
-                  <a className="flex gap-2" href={project.repoLink}>
-                    <LinkIcon className="h-5 w-auto" />
-                    Github Repo
-                  </a>
+                  {project.repoLink !== "N/A" ? (
+                    <a className="flex gap-2" href={project.repoLink}>
+                      <LinkIcon className="h-5 w-auto" />
+                      Github Repo
+                    </a>
+                  ) : null}
+
                   <a href={project.liveLink} className="flex gap-3">
                     <GlobeAltIcon className="h-5 w-auto" />
                     Live Site
@@ -136,7 +162,7 @@ const Post = ({ project }) => {
       <main>
         <Container className="container portfolio__single-project">
           <article className="bg-white dark:bg-neutral-900 shadow-sm rounded-lg p-6 leading-7">
-            {documentToReactComponents(project.summary)}
+            {documentToReactComponents(project.summary, options)}
           </article>
         </Container>
       </main>
