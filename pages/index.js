@@ -257,9 +257,15 @@ export default function Home({ featuredProjects }) {
                             </h4>
                           </Link>
                           <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Laborum ex dicta ullam nobis, expedita
-                            corrupti recusandae facilis sunt cum a.
+                            {project.fields.summary.content[0].content[0].value}{" "}
+                            <Link
+                              passHref
+                              href={`/portfolio/${project.fields.slug}`}
+                            >
+                              <span className="font-bold hover:cursor-pointer hover:text-blue-500 transition-all">
+                                Read More &rarr;
+                              </span>
+                            </Link>
                           </p>
                         </div>
                       </div>
