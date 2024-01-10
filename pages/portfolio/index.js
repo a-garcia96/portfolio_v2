@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
       slug: item.fields.slug,
       summary: item.fields.summary.content[0].content[0].value,
       repoLink: item.fields.repoLink,
-      liveLink: item.fields.liveLink,
+      liveLink: item.fields.liveLink ? item.fields.liveLink : null,
       technology: [...item.fields.technologyUsed],
     };
   });
@@ -65,11 +65,13 @@ const portfolio = ({ formattedProjects }) => {
               />
             </Link>
             <div>
-              <Link passHref href={project.liveLink}>
-                <h4 className="font-medium text-2xl text-blue-500 hover:cursor-pointer w-fit hover:underline transition-all">
-                  {project.name}
-                </h4>
-              </Link>
+              {project.liveLink && (
+                <Link passHref href={project.liveLink}>
+                  <h4 className="font-medium text-2xl text-blue-500 hover:cursor-pointer w-fit hover:underline transition-all">
+                    {project.name}
+                  </h4>
+                </Link>
+              )}
               <p>
                 {project.summary}{" "}
                 <Link passHref href={`/portfolio/${project.slug}`}>
