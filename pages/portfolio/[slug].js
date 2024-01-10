@@ -133,11 +133,12 @@ const Post = ({ project }) => {
                       Github Repo
                     </a>
                   ) : null}
-
-                  <a href={project.liveLink} className="flex gap-3">
-                    <GlobeAltIcon className="h-5 w-auto" />
-                    Live Site
-                  </a>
+                  {project.liveLink !== "N/A" ? (
+                    <a href={project.liveLink} className="flex gap-3">
+                      <GlobeAltIcon className="h-5 w-auto" />
+                      Live Site
+                    </a>
+                  ) : null}
                 </div>
               </div>
               <div className="place-self-center">

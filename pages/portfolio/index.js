@@ -65,12 +65,16 @@ const portfolio = ({ formattedProjects }) => {
               />
             </Link>
             <div>
-              {project.liveLink && (
+              {project.liveLink !== "N/A" ? (
                 <Link passHref href={project.liveLink}>
                   <h4 className="font-medium text-2xl text-blue-500 hover:cursor-pointer w-fit hover:underline transition-all">
                     {project.name}
                   </h4>
                 </Link>
+              ) : (
+                <h4 className="font-medium text-2xl text-blue-500 hover:cursor-pointer w-fit hover:underline transition-all">
+                  {project.name}
+                </h4>
               )}
               <p>
                 {project.summary}{" "}
