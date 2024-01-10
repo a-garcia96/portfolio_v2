@@ -53,7 +53,7 @@ const portfolio = ({ formattedProjects }) => {
       <li className="portfolio__card" key={project.slug}>
         <div className="my-5 border-b-2 border-b-gray-100 pb-7">
           <div className="md:flex md:gap-5">
-            <Link passHref href={`./${project.slug}`}>
+            <Link passHref href={`/portfolio/${project.slug}`}>
               <img
                 src={
                   project.projectIcon
