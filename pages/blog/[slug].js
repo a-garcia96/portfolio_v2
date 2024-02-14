@@ -8,7 +8,8 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import Container from "../../components/Container/Container";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+
+import options from "../../utils/rich-text-options";
 
 // CONTENTFUL
 
@@ -86,33 +87,6 @@ export const getStaticProps = async ({ params }) => {
 const Post = ({ post }) => {
   if (!post) return <div>Loading...</div>;
 
-  const options = {
-    preserveWhitespace: true,
-    renderText: (text) => {
-      return text.split("\n").reduce((children, textSegment, index) => {
-        return [...children, index > 0 && <br key={index} />, textSegment];
-      }, []);
-    },
-    renderNode: {
-      [BLOCKS.HEADING_2]: (node, children) => {
-        return (
-          <h2 className="text-3xl text-blue-500 font-bold my-5">{children}</h2>
-        );
-      },
-      [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <p className="text-base">{children}</p>;
-      },
-      [BLOCKS.OL_LIST]: (node, children) => {
-        return <ol className="list-decimal">{children}</ol>;
-      },
-      // [BLOCKS.LIST_ITEM]: (node, children) => {
-      //   return <li>{children}</li>;
-      // },
-    },
-  };
-
-  console.log(post.postContent);
-
   return (
     <>
       <Head>
@@ -133,7 +107,7 @@ const Post = ({ post }) => {
                     width={post.postImage.fields.file.details.image.width}
                   />
                 )}
-                <h1 className="text-5xl text-blue-500 font-bold my-5">
+                <h1 className="text-xl text-blue-500 font-semibold mt-5">
                   {post.title}
                 </h1>
               </div>
