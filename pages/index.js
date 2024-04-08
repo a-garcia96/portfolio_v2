@@ -155,9 +155,12 @@ export default function Home({ featuredProjects }) {
                     <h1 className="font-bold text-blue-500 text-xl mb-2">
                       Hi, I&apos;m Alex!
                     </h1>
-                    <p className="max-w-prose mb-5">
-                      A creative and analytical developer with a passion for
-                      designing modern, minimal user interfaces
+                    <p className="max-w-prose mb-5 text-sm">
+                      I am a creative and analytical problem solver, with a
+                      desire to learn new technologies. With a strong background
+                      in IT infrastructure and experience in front-end
+                      development, I bring a unique blend of innovative
+                      thinking, analysis, and creativity to every challenge.
                     </p>
                     <Link href="/about" passHref>
                       <button className="bg-blue-500 rounded-full p-3 text-white text-sm">
